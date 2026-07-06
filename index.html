@@ -11,7 +11,7 @@
   <!-- 브랜드 파비콘 (인라인 SVG, 추가 요청 없음) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='22' width='100' height='100' fill='%232f6bff'/%3E%3Ctext x='50' y='72' font-size='64' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
   <!-- ?v= 는 캐시 무효화용. 파일 수정 시 숫자를 올리세요 -->
-  <link rel="stylesheet" href="css/style.css?v=8" />
+  <link rel="stylesheet" href="css/style.css?v=9" />
 </head>
 <body>
   <!-- ===== 상단 네비게이션 ===== -->
@@ -21,7 +21,6 @@
       <nav class="nav" id="nav">
         <a href="#about" data-i18n="nav.about">회사 소개</a>
         <a href="#apps" data-i18n="nav.apps">앱 소개</a>
-        <a href="#contact" data-i18n="nav.contact">문의</a>
       </nav>
       <div class="nav-right">
         <div class="lang-switch" role="group" aria-label="Language">
@@ -44,7 +43,7 @@
       <p class="hero-sub" data-i18n="hero.sub">CodeDAC는 일상을 더 편하게 만드는 <br class="br-pc" />스마트폰 유틸리티 앱을 만듭니다.</p>
       <div class="hero-actions">
         <a href="#apps" class="btn btn-primary" data-i18n="hero.cta1">앱 둘러보기</a>
-        <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">문의하기</a>
+        <a href="mailto:codedac1@gmail.com" class="btn btn-ghost" data-i18n="hero.cta2">문의하기</a>
       </div>
     </div>
   </section>
@@ -88,46 +87,14 @@
     </div>
   </section>
 
-  <!-- ===== 문의 · 연락처 ===== -->
-  <section class="section" id="contact">
-    <div class="container">
-      <p class="section-label">CONTACT</p>
-      <h2 class="section-title" data-i18n="contact.title">문의 · 연락처</h2>
-      <p class="section-lead" data-i18n="contact.lead">앱에 대한 의견, 버그 제보, 협업 제안을 남겨 주세요. 확인 후 빠르게 답변드리겠습니다.</p>
-
-      <div class="contact-wrap">
-        <ul class="contact-info">
-          <!-- ▼▼ 실제 정보로 수정하세요 ▼▼ -->
-          <li><span class="ci-label" data-i18n="contact.email">이메일</span><a href="mailto:codedac1@gmail.com">codedac1@gmail.com</a></li>
-          <li><span class="ci-label" data-i18n="contact.hours">응답 시간</span><span data-i18n="contact.hours.v">평일 1–2일 이내</span></li>
-          <!-- ▲▲ 실제 정보로 수정하세요 ▲▲ -->
-        </ul>
-
-        <form class="contact-form" id="contactForm">
-          <div class="field">
-            <label for="name" data-i18n="form.name">이름</label>
-            <input type="text" id="name" name="name" data-i18n-attr="placeholder" data-i18n="form.name.ph" placeholder="홍길동" required />
-          </div>
-          <div class="field">
-            <label for="email" data-i18n="form.email">이메일</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required />
-          </div>
-          <div class="field">
-            <label for="message" data-i18n="form.msg">문의 내용</label>
-            <textarea id="message" name="message" rows="5" data-i18n-attr="placeholder" data-i18n="form.msg.ph" placeholder="문의하실 내용을 입력해 주세요." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" data-i18n="form.submit">문의 보내기</button>
-          <p class="form-note" data-i18n="form.note">* 전송 버튼을 누르면 메일 앱이 열립니다.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== 푸터 ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <span class="logo small">Code<span>DAC</span></span>
-      <p>&copy; <span id="year"></span> CodeDAC. All rights reserved.</p>
+      <div class="footer-right">
+        <a class="footer-email" href="mailto:codedac1@gmail.com">codedac1@gmail.com</a>
+        <p>&copy; <span id="year"></span> CodeDAC. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
@@ -139,6 +106,6 @@
     <button class="lb-nav lb-next" id="lbNext" aria-label="next">&#8250;</button>
   </div>
 
-  <script src="js/main.js?v=8"></script>
+  <script src="js/main.js?v=9"></script>
 </body>
 </html>

@@ -12,7 +12,6 @@ const I18N = {
 
     'nav.about': '회사 소개',
     'nav.apps': '앱 소개',
-    'nav.contact': '문의',
 
     'hero.eyebrow': 'SMARTPHONE UTILITY APPS',
     'hero.title': '스마트폰을<br />더 스마트하게',
@@ -31,24 +30,6 @@ const I18N = {
 
     'apps.title': '앱 소개',
     'apps.lead': 'CodeDAC가 만들어 배포 중인 스마트폰 유틸리티 앱입니다. 스크린샷을 누르면 크게 볼 수 있습니다.',
-
-    'contact.title': '문의 · 연락처',
-    'contact.lead': '앱에 대한 의견, 버그 제보, 협업 제안을 남겨 주세요. 확인 후 빠르게 답변드리겠습니다.',
-    'contact.email': '이메일',
-    'contact.hours': '응답 시간',
-    'contact.hours.v': '평일 1–2일 이내',
-
-    'form.name': '이름',
-    'form.name.ph': '홍길동',
-    'form.email': '이메일',
-    'form.msg': '문의 내용',
-    'form.msg.ph': '문의하실 내용을 입력해 주세요.',
-    'form.submit': '문의 보내기',
-    'form.note': '* 전송 버튼을 누르면 메일 앱이 열립니다.',
-
-    'mail.subject': '[홈페이지 문의] ',
-    'mail.name': '이름',
-    'mail.email': '이메일',
   },
   en: {
     'meta.title': 'CodeDAC | Smartphone Utility Apps',
@@ -56,7 +37,6 @@ const I18N = {
 
     'nav.about': 'About',
     'nav.apps': 'Apps',
-    'nav.contact': 'Contact',
 
     'hero.eyebrow': 'SMARTPHONE UTILITY APPS',
     'hero.title': 'Make your phone<br />smarter',
@@ -75,29 +55,11 @@ const I18N = {
 
     'apps.title': 'Our Apps',
     'apps.lead': 'Smartphone utility apps built and published by CodeDAC. Tap a screenshot to view it larger.',
-
-    'contact.title': 'Contact',
-    'contact.lead': 'Share feedback, report a bug, or propose a collaboration. We’ll get back to you soon.',
-    'contact.email': 'Email',
-    'contact.hours': 'Response',
-    'contact.hours.v': 'Within 1–2 business days',
-
-    'form.name': 'Name',
-    'form.name.ph': 'John Doe',
-    'form.email': 'Email',
-    'form.msg': 'Message',
-    'form.msg.ph': 'Please enter your message.',
-    'form.submit': 'Send message',
-    'form.note': '* Pressing send will open your mail app.',
-
-    'mail.subject': '[Website inquiry] ',
-    'mail.name': 'Name',
-    'mail.email': 'Email',
   },
 };
 
 // 자산 캐시 버전 (아이콘/스크린샷을 바꾸면 숫자를 올리세요. index.html의 ?v= 와 맞춤)
-const V = '8';
+const V = '9';
 
 // ===== 앱 목록 데이터 =====
 // shots: images/shots/<slug>-1.jpg 형식으로 존재하는 스크린샷 개수
@@ -274,22 +236,4 @@ navToggle.addEventListener('click', () => {
 });
 nav.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => nav.classList.remove('open'));
-});
-
-// ===== 문의 폼 (mailto) =====
-// ▼ 받는 이메일 주소를 수정하세요 ▼
-const CONTACT_EMAIL = 'codedac1@gmail.com';
-
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const dict = I18N[currentLang];
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const subject = encodeURIComponent(dict['mail.subject'] + name);
-  const body = encodeURIComponent(
-    `${dict['mail.name']}: ${name}\n${dict['mail.email']}: ${email}\n\n${message}`
-  );
-  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 });
