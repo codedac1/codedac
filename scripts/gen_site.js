@@ -51,6 +51,14 @@ for (const lang of LANGS) {
 }
 const ACTIVE = LANGS.filter((l) => L[l.code]);
 
+// 개인정보처리방침 (언어별 별도 파일)
+const PRIV = {};
+for (const lang of LANGS) {
+  const p = path.join(ROOT, 'i18n', 'privacy', `${lang.code}.json`);
+  if (fs.existsSync(p)) PRIV[lang.code] = require(p);
+}
+const PRIV_ACTIVE = ACTIVE.filter((l) => PRIV[l.code]);
+
 // --- 유틸 ---
 const escText = (s) => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -59,7 +67,9 @@ const escAttr = (s) => escText(s).replace(/"/g, '&quot;');
 // 내부 링크(루트 절대경로) — 사용자 사이트(codedac1.github.io)라 / 로 시작 가능
 function pathFor(code, kind, slug) {
   const dir = code === 'ko' ? '/' : `/${code}/`;
-  return kind === 'home' ? dir : `${dir}apps/${slug}.html`;
+  if (kind === 'home') return dir;
+  if (kind === 'privacy') return `${dir}privacy.html`;
+  return `${dir}apps/${slug}.html`;
 }
 // 절대 URL (canonical/hreflang/OG)
 function urlFor(code, kind, slug) {
@@ -68,15 +78,18 @@ function urlFor(code, kind, slug) {
 // 출력 파일 경로
 function fileFor(code, kind, slug) {
   const dir = code === 'ko' ? '' : `${code}/`;
-  return kind === 'home' ? `${dir}index.html` : `${dir}apps/${slug}.html`;
+  if (kind === 'home') return `${dir}index.html`;
+  if (kind === 'privacy') return `${dir}privacy.html`;
+  return `${dir}apps/${slug}.html`;
 }
 
-// hreflang 대체 링크 블록
-function hreflangLinks(kind, slug) {
-  const links = ACTIVE.map((l) =>
+// hreflang 대체 링크 블록 (langSet: 이 페이지가 존재하는 언어들)
+function hreflangLinks(kind, slug, langSet) {
+  const set = langSet || ACTIVE;
+  const links = set.map((l) =>
     `  <link rel="alternate" hreflang="${l.hreflang}" href="${urlFor(l.code, kind, slug)}" />`
   );
-  const xd = ACTIVE.find((l) => l.code === XDEFAULT) || ACTIVE[0];
+  const xd = set.find((l) => l.code === XDEFAULT) || set[0];
   links.push(`  <link rel="alternate" hreflang="x-default" href="${urlFor(xd.code, kind, slug)}" />`);
   return links.join('\n');
 }
@@ -98,7 +111,7 @@ ${items}
 
 const FAVICON = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='22' width='100' height='100' fill='%232f6bff'/%3E%3Ctext x='50' y='72' font-size='64' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E`;
 
-function headCommon(lang, { title, desc, canonical, ogImage, kind, slug, keywords }) {
+function headCommon(lang, { title, desc, canonical, ogImage, kind, slug, keywords, langSet }) {
   return `  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="EEOUsUwfv3SoTVMdi2dL1EePYJ9cLNKexZgbojtycc0" />
@@ -110,7 +123,7 @@ function headCommon(lang, { title, desc, canonical, ogImage, kind, slug, keyword
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#2f6bff" />
   <link rel="canonical" href="${canonical}" />
-${hreflangLinks(kind, slug)}
+${hreflangLinks(kind, slug, langSet)}
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CodeDAC" />
@@ -156,7 +169,7 @@ function footer(code, ui) {
       <span class="logo small">Code<span>DAC</span></span>
       <div class="footer-right">
         <a class="footer-email" href="mailto:codedac1@gmail.com">codedac1@gmail.com</a>
-        <a class="footer-email" href="/privacy.html">${escText(ui['footer.privacy'])}</a>
+        <a class="footer-email" href="${pathFor(code, 'privacy')}">${escText(ui['footer.privacy'])}</a>
         <p>&copy; <span id="year">${new Date().getFullYear()}</span> CodeDAC. All rights reserved.</p>
       </div>
     </div>
@@ -441,6 +454,34 @@ ${lightbox}
 `;
 }
 
+// ---------- 개인정보처리방침 ----------
+function buildPrivacy(lang) {
+  const code = lang.code;
+  const ui = L[code].ui;
+  const pv = PRIV[code];
+  const canonical = urlFor(code, 'privacy');
+  return `<!DOCTYPE html>
+<html lang="${lang.htmlLang}">
+<head>
+${headCommon(lang, { title: pv.metaTitle, desc: pv.metaDesc, canonical, ogImage: `${BASE}/images/og-image.png`, kind: 'privacy', keywords: `CodeDAC, ${pv.title}`, langSet: PRIV_ACTIVE })}
+</head>
+<body>
+${header(code, 'privacy', undefined, ui)}
+
+  <main class="legal">
+    <a href="${pathFor(code, 'home')}" class="back">${escText(pv.back)}</a>
+    <h1>${escText(pv.title)}</h1>
+    <p class="eff">${escText(pv.effective)}</p>
+${pv.bodyHtml}
+  </main>
+
+${footer(code, ui)}
+  <script src="/js/site.js?v=${V}"></script>
+</body>
+</html>
+`;
+}
+
 // --- 파일 쓰기 헬퍼 ---
 function writeOut(rel, content) {
   const full = path.join(ROOT, rel);
@@ -450,7 +491,6 @@ function writeOut(rel, content) {
 
 // --- 생성 ---
 let pages = 0;
-const sitemapEntries = []; // {kind, slug}
 for (const lang of ACTIVE) {
   writeOut(fileFor(lang.code, 'home'), buildHome(lang));
   pages++;
@@ -458,32 +498,31 @@ for (const lang of ACTIVE) {
     writeOut(fileFor(lang.code, 'detail', app.slug), buildDetail(lang, app));
     pages++;
   }
+  if (PRIV[lang.code]) { writeOut(fileFor(lang.code, 'privacy'), buildPrivacy(lang)); pages++; }
 }
 
 // --- sitemap.xml (언어별 대체 링크 포함) ---
-function sitemapUrl(kind, slug) {
-  const alts = ACTIVE.map((l) =>
+function sitemapUrl(kind, slug, langSet) {
+  const set = langSet || ACTIVE;
+  const alts = set.map((l) =>
     `    <xhtml:link rel="alternate" hreflang="${l.hreflang}" href="${urlFor(l.code, kind, slug)}" />`
   );
-  const xd = ACTIVE.find((l) => l.code === XDEFAULT) || ACTIVE[0];
+  const xd = set.find((l) => l.code === XDEFAULT) || set[0];
   alts.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${urlFor(xd.code, kind, slug)}" />`);
-  // loc = 각 언어 버전마다 하나씩 (여기서는 대표로 ko/루트 및 각 언어를 모두 등록)
-  return ACTIVE.map((l) => `  <url>
+  const priority = kind === 'home' ? '1.0' : (kind === 'privacy' ? '0.3' : '0.7');
+  const changefreq = kind === 'privacy' ? 'yearly' : 'monthly';
+  // 각 언어 버전마다 <url> 하나씩, 대체 링크는 공통
+  return set.map((l) => `  <url>
     <loc>${urlFor(l.code, kind, slug)}</loc>
 ${alts.join('\n')}
     <lastmod>${LASTMOD}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>${kind === 'home' ? '1.0' : '0.7'}</priority>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
   </url>`).join('\n');
 }
 const urls = [sitemapUrl('home')];
 for (const app of APPS) urls.push(sitemapUrl('detail', app.slug));
-urls.push(`  <url>
-    <loc>${BASE}/privacy.html</loc>
-    <lastmod>${LASTMOD}</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>`);
+urls.push(sitemapUrl('privacy', undefined, PRIV_ACTIVE));
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls.join('\n')}

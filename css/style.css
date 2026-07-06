@@ -270,6 +270,19 @@ img { max-width: 100%; }
 
 .detail-cta { text-align: center; padding: 50px 0 10px; }
 
+/* ===== 법적 고지(개인정보처리방침 등) ===== */
+.legal { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+.legal .eff { color: var(--muted); font-size: 14px; margin-top: 6px; }
+.legal h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 900; }
+.legal h2 { font-size: 20px; font-weight: 700; margin: 36px 0 10px; }
+.legal p, .legal li { color: var(--body); font-size: 15.5px; line-height: 1.8; }
+.legal ul { padding-left: 20px; margin: 8px 0; }
+.legal li { margin: 4px 0; }
+.legal a { color: var(--brand); font-weight: 500; }
+.legal a:hover { color: var(--brand-dark); }
+.legal .back { display: inline-block; margin-bottom: 24px; color: var(--brand); font-weight: 700; }
+.legal .note { background: var(--bg-alt); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin: 18px 0; font-size: 14.5px; }
+
 /* ===== 반응형 ===== */
 @media (max-width: 860px) {
   .grid-3 { grid-template-columns: 1fr 1fr; }
