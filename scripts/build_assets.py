@@ -49,8 +49,12 @@ def make_icon(src, out):
     s = min(w, h)
     im = im.crop(((w - s) // 2, (h - s) // 2, (w - s) // 2 + s, (h - s) // 2 + s))
     im = im.resize((size, size), Image.LANCZOS)
-    im.putalpha(rounded_mask(size, 56))
-    im.save(out)
+    # 투명 여백을 흰색으로 채운다(런처 아이콘은 가운데 도형만 있고 주변이 투명한 경우가 많음)
+    bg = Image.new("RGBA", (size, size), (255, 255, 255, 255))
+    bg.alpha_composite(im)
+    # 둥근 모서리 적용
+    bg.putalpha(rounded_mask(size, 56))
+    bg.save(out)
 
 def make_generated_icon(letter, out):
     size = 256
