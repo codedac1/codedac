@@ -96,6 +96,9 @@ const I18N = {
   },
 };
 
+// 자산 캐시 버전 (아이콘/스크린샷을 바꾸면 숫자를 올리세요. index.html의 ?v= 와 맞춤)
+const V = '4';
+
 // ===== 앱 목록 데이터 =====
 // shots: images/shots/<slug>-1.jpg 형식으로 존재하는 스크린샷 개수
 // store: 실제 Google Play 주소를 넣으면 카드에 스토어 버튼이 표시됩니다. (없으면 '' 로 두세요)
@@ -152,7 +155,7 @@ function renderApps(lang) {
     const shots = [];
     for (let i = 1; i <= app.shots; i++) {
       shots.push(
-        `<img src="images/shots/${app.slug}-${i}.jpg" alt="${app.name} screenshot ${i}" loading="lazy" class="shot" data-app="${app.slug}" data-idx="${i - 1}" />`
+        `<img src="images/shots/${app.slug}-${i}.jpg?v=${V}" alt="${app.name} screenshot ${i}" loading="lazy" class="shot" data-app="${app.slug}" data-idx="${i - 1}" />`
       );
     }
     const shotsHtml = app.shots
@@ -164,7 +167,7 @@ function renderApps(lang) {
     return `
       <article class="app-card">
         <div class="app-head">
-          <img class="app-icon" src="images/icons/${app.slug}.png" alt="${app.name} icon" loading="lazy" />
+          <img class="app-icon" src="images/icons/${app.slug}.png?v=${V}" alt="${app.name} icon" loading="lazy" />
           <div class="app-meta">
             <h3>${app.name}</h3>
             <span class="app-tag">${app.tag[lang]}</span>
@@ -187,7 +190,7 @@ function openLightbox(slug, idx) {
   const app = APPS.find((a) => a.slug === slug);
   if (!app) return;
   lbList = [];
-  for (let i = 1; i <= app.shots; i++) lbList.push(`images/shots/${slug}-${i}.jpg`);
+  for (let i = 1; i <= app.shots; i++) lbList.push(`images/shots/${slug}-${i}.jpg?v=${V}`);
   lbIndex = idx;
   showLbImage();
   lightbox.classList.add('open');
