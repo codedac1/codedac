@@ -16,7 +16,7 @@ const I18N = {
 
     'hero.eyebrow': 'SMARTPHONE UTILITY APPS',
     'hero.title': '스마트폰을<br />더 스마트하게',
-    'hero.sub': 'CodeDAC는 일상을 더 편하게 만드는<br class="br-pc" />스마트폰 유틸리티 앱을 만듭니다.',
+    'hero.sub': 'CodeDAC는 일상을 더 편하게 만드는 <br class="br-pc" />스마트폰 유틸리티 앱을 만듭니다.',
     'hero.cta1': '앱 둘러보기',
     'hero.cta2': '문의하기',
 
@@ -60,7 +60,7 @@ const I18N = {
 
     'hero.eyebrow': 'SMARTPHONE UTILITY APPS',
     'hero.title': 'Make your phone<br />smarter',
-    'hero.sub': 'CodeDAC builds smartphone utility apps<br class="br-pc" />that make everyday life easier.',
+    'hero.sub': 'CodeDAC builds smartphone utility apps <br class="br-pc" />that make everyday life easier.',
     'hero.cta1': 'Explore apps',
     'hero.cta2': 'Contact us',
 
@@ -97,7 +97,7 @@ const I18N = {
 };
 
 // 자산 캐시 버전 (아이콘/스크린샷을 바꾸면 숫자를 올리세요. index.html의 ?v= 와 맞춤)
-const V = '7';
+const V = '8';
 
 // ===== 앱 목록 데이터 =====
 // shots: images/shots/<slug>-1.jpg 형식으로 존재하는 스크린샷 개수
@@ -216,10 +216,26 @@ document.addEventListener('keydown', (e) => {
   else if (e.key === 'ArrowRight') lbStep(1);
 });
 
-// ===== 언어 적용 =====
-let currentLang = localStorage.getItem('lang') || 'ko';
+// ===== 언어 결정 =====
+// 우선순위: 사용자가 직접 고른 값(localStorage) > 접속 지역 자동 감지
+// 자동 감지: 브라우저 언어가 한국어이거나 시간대가 서울이면 한국어, 그 외에는 영어
+function detectLang() {
+  const saved = localStorage.getItem('lang');
+  if (saved === 'ko' || saved === 'en') return saved;
 
-function applyLang(lang) {
+  const langs = navigator.languages || [navigator.language || ''];
+  if (langs.some((l) => (l || '').toLowerCase().startsWith('ko'))) return 'ko';
+
+  try {
+    if (Intl.DateTimeFormat().resolvedOptions().timeZone === 'Asia/Seoul') return 'ko';
+  } catch (e) { /* 무시 */ }
+
+  return 'en'; // 외국 접속 기본값: 영어
+}
+
+let currentLang = detectLang();
+
+function applyLang(lang, persist) {
   const dict = I18N[lang] || I18N.ko;
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -238,13 +254,13 @@ function applyLang(lang) {
   });
 
   renderApps(lang); // 앱 카드도 언어에 맞게 다시 그리기
-  localStorage.setItem('lang', lang);
+  if (persist) localStorage.setItem('lang', lang); // 사용자가 직접 고른 경우만 기억
 }
 
 document.querySelectorAll('.lang-btn').forEach((btn) => {
-  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang, true));
 });
-applyLang(currentLang);
+applyLang(currentLang, false); // 초기 로드: 자동 감지값(저장 안 함)
 
 // ===== 현재 연도 =====
 document.getElementById('year').textContent = new Date().getFullYear();
