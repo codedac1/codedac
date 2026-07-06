@@ -8,7 +8,7 @@
 const I18N = {
   ko: {
     'meta.title': 'CodeDAC | 스마트폰 유틸리티 앱',
-    'meta.desc': 'CodeDAC는 Clipboard+, AutoStart+, FloatCalc+ 등 16종의 스마트폰 유틸리티 앱을 만들고 배포합니다.',
+    'meta.desc': 'CodeDAC는 Clipboard+, AutoStart+, FloatCalc+ 등 14종의 스마트폰 유틸리티 앱을 만들고 배포합니다.',
 
     'nav.about': '회사 소개',
     'nav.apps': '앱 소개',
@@ -52,7 +52,7 @@ const I18N = {
   },
   en: {
     'meta.title': 'CodeDAC | Smartphone Utility Apps',
-    'meta.desc': 'CodeDAC builds and publishes 16 smartphone utility apps including Clipboard+, AutoStart+ and FloatCalc+.',
+    'meta.desc': 'CodeDAC builds and publishes 14 smartphone utility apps including Clipboard+, AutoStart+ and FloatCalc+.',
 
     'nav.about': 'About',
     'nav.apps': 'Apps',
@@ -130,12 +130,6 @@ const APPS = [
   { slug: 'readfocus', name: 'ReadFocus+', shots: 3, store: '',
     tag: { ko: '접근성', en: 'Accessibility' },
     desc: { ko: '난독증·ADHD 읽기 보조. 줄 강조·마스크로 읽는 줄에 시선 고정.', en: 'A dyslexia & ADHD reading aid with line highlight & mask.' } },
-  { slug: 'hearingtest', name: 'HearingTest+', shots: 0, store: '',
-    tag: { ko: '건강', en: 'Health' },
-    desc: { ko: '청력을 확인하고 이명을 완화하는 기기 내 청력 케어 앱.', en: 'Check your hearing and ease tinnitus — private, on-device.' } },
-  { slug: 'decibellog', name: 'DecibelLog+', shots: 0, store: '',
-    tag: { ko: '측정 도구', en: 'Measure' },
-    desc: { ko: '소음을 데시벨로 측정·기록하고 PDF 증빙 리포트로 내보내기.', en: 'Measure noise in dB, log sessions, and export PDF reports.' } },
   { slug: 'colorcards', name: 'Color Cards+', shots: 3, store: '',
     tag: { ko: '유아 교육', en: 'Kids' },
     desc: { ko: '보고 듣고 따라 말하며 색깔을 배우는 유아용 플래시카드.', en: 'Talking color flashcards that help toddlers learn colors.' } },
