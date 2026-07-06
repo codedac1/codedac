@@ -20,7 +20,8 @@ const I18N = {
     'hero.cta2': '문의하기',
 
     'about.title': '회사 소개',
-    'about.lead': 'CodeDAC는 스마트폰을 더 편리하게 쓰도록 돕는 유틸리티 앱을 만들고 배포하는 개발사입니다. 작지만 매일 쓰게 되는, 꼭 필요한 도구를 지향합니다.',
+    'about.meaning': 'Code 기반의 <b>D</b>evelopment <b>A</b>nd <b>C</b>onsulting',
+    'about.lead': 'CodeDAC는 이름 그대로 코드(Code)를 기반으로 개발(Development)과 컨설팅(Consulting)을 제공하는 것을 지향하는 개발사입니다. 지금은 매일 손이 가는 스마트폰 유틸리티 앱을 직접 만들어 선보이고 있으며, 앞으로 탄탄한 기술력으로 고객의 문제를 함께 풀어가는 파트너로 성장하고자 합니다.',
     'about.c1.t': '단순함',
     'about.c1.d': '복잡한 기능보다, 한눈에 이해되고 바로 쓰는 편리함을 우선합니다.',
     'about.c2.t': '신뢰',
@@ -47,7 +48,8 @@ const I18N = {
     'hero.cta2': 'Contact us',
 
     'about.title': 'About Us',
-    'about.lead': 'CodeDAC is a studio that builds and publishes utility apps that make smartphones more convenient. We aim for small, essential tools you reach for every day.',
+    'about.meaning': 'Code-based <b>D</b>evelopment <b>A</b>nd <b>C</b>onsulting',
+    'about.lead': 'True to its name, CodeDAC is built on Code to deliver Development And Consulting. Today we design and publish smartphone utility apps people reach for every day, and we aim to grow into a trusted technology partner that solves our clients’ challenges with solid engineering.',
     'about.c1.t': 'Simplicity',
     'about.c1.d': 'We favor clarity and instant usability over complex features.',
     'about.c2.t': 'Trust',
@@ -63,7 +65,7 @@ const I18N = {
 };
 
 // 자산 캐시 버전 (아이콘/스크린샷을 바꾸면 숫자를 올리세요. index.html의 ?v= 와 맞춤)
-const V = '10';
+const V = '11';
 
 // ===== 앱 목록 데이터 =====
 // shots: images/shots/<slug>-1.jpg 형식으로 존재하는 스크린샷 개수

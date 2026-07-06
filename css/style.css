@@ -93,6 +93,19 @@ img { max-width: 100%; }
 .section-title { font-size: clamp(26px, 4vw, 38px); font-weight: 900; margin: 8px 0 16px; }
 .section-lead { color: var(--muted); max-width: 620px; font-size: 17px; margin-bottom: 44px; }
 
+/* 회사명 의미 (CodeDAC = Code + Development And Consulting) */
+.name-meaning {
+  display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin: 6px 0 20px; padding: 11px 20px;
+  background: var(--bg-alt); border: 1px solid var(--line); border-radius: 999px;
+  font-size: 15px; font-weight: 700;
+}
+.name-meaning .nm-brand { color: var(--ink); font-weight: 900; letter-spacing: -.3px; }
+.name-meaning .nm-brand span { color: var(--brand); }
+.name-meaning .nm-eq { color: var(--muted); }
+.name-meaning .nm-expand { color: var(--body); font-weight: 500; }
+.name-meaning .nm-expand b { color: var(--brand); font-weight: 900; }
+
 /* ===== 그리드 & 카드 ===== */
 .grid { display: grid; gap: 22px; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
