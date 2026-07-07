@@ -284,6 +284,21 @@ img { max-width: 100%; }
 .app-link { display: inline-block; margin-top: 16px; color: var(--link-teal); font-weight: 700; font-size: 14px; transition: color .2s; }
 .app-link:hover { color: var(--link-teal-h); }
 
+/* ===== 사용자 후기 ===== */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+.review-card {
+  margin: 0; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 26px; box-shadow: var(--shadow);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.review-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: #cfd6e4; }
+.review-stars { color: #f2a900; font-size: 15px; letter-spacing: 3px; line-height: 1; }
+.review-text { margin: 0; color: var(--body); font-size: 15.5px; line-height: 1.75; }
+.review-meta { display: flex; flex-direction: column; gap: 2px; margin-top: auto; }
+.review-name { font-weight: 800; color: var(--ink); font-size: 14.5px; }
+.review-app { color: var(--muted); font-size: 12.5px; }
+
 /* ===== 라이트박스 ===== */
 .lightbox {
   position: fixed; inset: 0; z-index: 100;

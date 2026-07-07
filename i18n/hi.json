@@ -50,7 +50,10 @@
     "stats.apps": "ऐप्स",
     "stats.downloads": "डाउनलोड",
     "stats.languages": "ऐप भाषाएँ",
-    "app.langs": "{n} भाषाएँ"
+    "app.langs": "{n} भाषाएँ",
+    "reviews.title": "उपयोगकर्ता क्या कहते हैं",
+    "reviews.lead": "Google Play पर दी गई असली 5-स्टार समीक्षाएँ।",
+    "nav.reviews": "समीक्षाएँ"
   },
   "apps": {
     "clipboard": {

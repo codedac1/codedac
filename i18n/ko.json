@@ -50,7 +50,10 @@
     "stats.apps": "출시 앱",
     "stats.downloads": "다운로드",
     "stats.languages": "앱 언어",
-    "app.langs": "{n}개 언어"
+    "app.langs": "{n}개 언어",
+    "reviews.title": "사용자 후기",
+    "reviews.lead": "Google Play에 남겨주신 실제 별점 5점 리뷰입니다.",
+    "nav.reviews": "후기"
   },
   "apps": {
     "clipboard": {

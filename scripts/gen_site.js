@@ -15,7 +15,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const BASE = 'https://codedac1.github.io';
-const V = '25'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
+const V = '26'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
 const LASTMOD = new Date().toISOString().slice(0, 10);
 
 // 언어 정의 (표시 순서 = 스위처 순서). code=폴더/파일, hreflang=검색엔진용
@@ -63,6 +63,15 @@ try {
   console.warn('(경고) scripts/app_langs.json 없음 — 앱 언어 배지 생략. `node scripts/scan_app_langs.js` 로 생성하세요.');
 }
 const langCountOf = (slug) => (APP_LANGS[slug] && APP_LANGS[slug].count) || 0;
+
+// 사용자 후기 (reviews.json — 손수 큐레이션한 5★ Google Play 리뷰). 없으면 섹션 생략.
+let REVIEWS = [];
+try {
+  REVIEWS = (require('./reviews.json').items) || [];
+} catch {
+  console.warn('(경고) scripts/reviews.json 없음 — 후기 섹션 생략.');
+}
+
 // 앱들이 통틀어 지원하는 언어 수(합집합) → "50+" (10 단위로 내림). 지표 스트립용.
 const APP_LANG_UNION = new Set();
 for (const v of Object.values(APP_LANGS)) (v.codes || []).forEach((c) => APP_LANG_UNION.add(c));
@@ -175,7 +184,8 @@ function header(code, kind, slug, ui) {
       <nav class="nav" id="nav">
         <a href="${pathFor(code, 'home')}#about">${escText(ui['nav.about'])}</a>
         <a href="${pathFor(code, 'home')}#services">${escText(ui['nav.services'])}</a>
-        <a href="${pathFor(code, 'home')}#apps">${escText(ui['nav.apps'])}</a>
+        <a href="${pathFor(code, 'home')}#apps">${escText(ui['nav.apps'])}</a>${REVIEWS.length ? `
+        <a href="${pathFor(code, 'home')}#reviews">${escText(ui['nav.reviews'])}</a>` : ''}
       </nav>
       <div class="nav-right">
       ${langSwitcher(code, kind, slug)}
@@ -212,6 +222,33 @@ function statStrip(ui) {
   return `      <ul class="hero-stats">
 ${items.map((it) => `        <li class="hstat"><span class="hstat-num">${escText(it.num)}</span><span class="hstat-label">${escText(it.label)}</span></li>`).join('\n')}
       </ul>`;
+}
+
+// 사용자 후기 섹션 (홈) — reviews.json 이 있을 때만 렌더
+function reviewsSection(code, ui) {
+  if (!REVIEWS.length) return '';
+  const d = L[code];
+  const cards = REVIEWS.map((r) => {
+    const appName = (d.apps[r.slug] && d.apps[r.slug].name) || r.slug;
+    const stars = '★'.repeat(Math.max(1, Math.min(5, r.score || 5)));
+    return `        <figure class="review-card">
+          <div class="review-stars" aria-label="${r.score || 5} / 5">${stars}</div>
+          <blockquote class="review-text">${escText(r.text)}</blockquote>
+          <figcaption class="review-meta"><span class="review-name">${escText(r.name)}</span><span class="review-app">${escText(appName)} · Google Play</span></figcaption>
+        </figure>`;
+  }).join('\n');
+  return `
+  <section class="section section-alt" id="reviews">
+    <div class="container">
+      <p class="section-label">REVIEWS</p>
+      <h2 class="section-title">${escText(ui['reviews.title'])}</h2>
+      <p class="section-lead">${escText(ui['reviews.lead'])}</p>
+      <div class="reviews-grid">
+${cards}
+      </div>
+    </div>
+  </section>
+`;
 }
 
 // 앱 카드 지원 언어 배지 ("🌐 51개 언어") — 언어 데이터가 있는 앱만
@@ -334,7 +371,7 @@ ${cards}
       </div>
     </div>
   </section>
-
+${reviewsSection(code, ui)}
 ${footer(code, ui)}
 
   <div class="lightbox" id="lightbox" aria-hidden="true">

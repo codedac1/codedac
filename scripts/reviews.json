@@ -1,0 +1,41 @@
+{
+  "note": "노출용으로 손수 고른 5★ Google Play 리뷰. 후보는 `node scripts/fetch_reviews.js` → scripts/_reviews_pool.json 참고. 여기 items 를 고치면 홈 후기 섹션이 바뀝니다.",
+  "items": [
+    {
+      "slug": "clipboard",
+      "name": "Fabio Rodriguez",
+      "score": 5,
+      "text": "I reported my frustration about not being able to import a backup, and the developer promptly updated the app to add that feature. Developers who listen to and act on user feedback deserve high praise."
+    },
+    {
+      "slug": "autostart",
+      "name": "James Franke",
+      "score": 5,
+      "text": "All I wanted was my app to open on startup. I tried other apps that were recommended, too complicated, and they didn't work. AutoStart+ was easy and it worked the first time."
+    },
+    {
+      "slug": "clipboard",
+      "name": "Joseph Younger",
+      "score": 5,
+      "text": "Very easy to understand and use. Really handy, particularly when I am using an older keyboard without built-in clipboard access. Thanks so much!!"
+    },
+    {
+      "slug": "clipboard",
+      "name": "Liz W",
+      "score": 5,
+      "text": "Fantastic app, does exactly what I want it to do. Saves all my clips and I can add titles and organize them."
+    },
+    {
+      "slug": "autostart",
+      "name": "Mark Smith",
+      "score": 5,
+      "text": "So far, so good! Great app, just what I was looking for!"
+    },
+    {
+      "slug": "clipboard",
+      "name": "Roche Lopez",
+      "score": 5,
+      "text": "Yes, I like this app. Very useful, easy and convenient to use ♥️"
+    }
+  ]
+}

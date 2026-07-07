@@ -50,7 +50,10 @@
     "stats.apps": "公開アプリ",
     "stats.downloads": "ダウンロード",
     "stats.languages": "アプリ対応言語",
-    "app.langs": "{n}言語"
+    "app.langs": "{n}言語",
+    "reviews.title": "ユーザーの声",
+    "reviews.lead": "Google Play に寄せられた実際の星5レビューです。",
+    "nav.reviews": "レビュー"
   },
   "apps": {
     "clipboard": {

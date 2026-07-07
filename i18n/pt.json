@@ -50,7 +50,10 @@
     "stats.apps": "Apps",
     "stats.downloads": "Downloads",
     "stats.languages": "Idiomas dos apps",
-    "app.langs": "{n} idiomas"
+    "app.langs": "{n} idiomas",
+    "reviews.title": "O que dizem os usuários",
+    "reviews.lead": "Avaliações reais de 5 estrelas no Google Play.",
+    "nav.reviews": "Avaliações"
   },
   "apps": {
     "clipboard": {
