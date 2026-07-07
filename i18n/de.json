@@ -49,7 +49,8 @@
     "platform.windows": "Windows-Desktop-App",
     "stats.apps": "Apps",
     "stats.downloads": "Downloads",
-    "stats.languages": "Sprachen"
+    "stats.languages": "Sprachen",
+    "app.langs": "{n} Sprachen"
   },
   "apps": {
     "clipboard": {
