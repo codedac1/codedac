@@ -1,5 +1,5 @@
 {
-  "note": "홈/앱상세에 노출할 5★ Google Play 리뷰(손수 큐레이션, 너무 짧은 리뷰 배제). 후보는 `node scripts/fetch_reviews.js` → scripts/_reviews_pool.json. byApp[slug] 를 고치면 해당 앱 상세 + 홈 후기 섹션이 바뀝니다(홈은 앱별로 섞어 최대 6개).",
+  "note": "홈/앱상세에 노출할 5★ Google Play 리뷰(손수 큐레이션, 60자 미만·오해 소지 리뷰 배제, 긴 리뷰는 발췌). 후보는 `node scripts/fetch_reviews.js`(다국가) → scripts/_reviews_pool.json. byApp[slug] 를 고치면 해당 앱 상세 + 홈 후기(앱별로 섞어 최대 6개)가 바뀝니다. 리뷰 원문 언어는 그대로 둡니다.",
   "byApp": {
     "clipboard": [
       {
@@ -35,9 +35,35 @@
         "text": "All I wanted was my app to open on startup. I tried other apps that were recommended, too complicated, and they didn't work. AutoStart+ was easy and it worked the first time."
       },
       {
+        "name": "Nexter1",
+        "score": 5,
+        "text": "처음엔 단순히 자동 실행만 되는 줄 알았는데, 생각보다 훨씬 유용하네요! 매번 부팅할 때마다 자주 쓰는 앱을 일일이 실행하던 번거로움이 사라졌어요. 설정도 간단하고, 광고도 거슬리지 않아서 만족스럽습니다. 스마트폰을 효율적으로 쓰고 싶은 분들께 강력 추천합니다!"
+      },
+      {
         "name": "Joseph Younger",
         "score": 5,
         "text": "Super simple to setup and use. Couldn't be easier. Very nicely done as there is no excessive overhead."
+      }
+    ],
+    "volumebooster": [
+      {
+        "name": "Liz W",
+        "score": 5,
+        "text": "WOW! what a difference! I am trying free version & 3 decibel boost helps immensely already! It even has different settings for various types of sound like music, podcast, etc like an equalizer. Already using Clipboard+ from the same developer & it is an awesome app! Highly recommend it!"
+      }
+    ],
+    "readfocus": [
+      {
+        "name": "다비",
+        "score": 5,
+        "text": "난독증 있어서 종이책도 라인자가 있어야 읽는 사람이라, 이북 읽고 싶은 것도 못 읽고 인터넷 자료 서핑도 힘들었는데 이 어플 덕분에 읽을 수 있게 됐습니다. 월정액이나 1년 플랜 다 저렴하고, 무엇보다 영구 결제가 된다는 게 좋네요. 피드백도 빨리 받아주셔서 감사하고, 오래오래 잘 됐으면 좋겠어서 주변에 추천하고 다닐 생각입니다. 저한테 정말 절실한 어플이었어요. 만들어주셔서 감사합니다."
+      }
+    ],
+    "wordcards": [
+      {
+        "name": "나늘보",
+        "score": 5,
+        "text": "완전 심플하게 낱말카드만 되는 게 필요했는데 그 용도로 아주 좋았어요 ㅎㅎ 아이와 함께 하는 즐거운 시간을 만들어주셔서 감사합니다^^"
       }
     ]
   }
