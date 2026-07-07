@@ -8,6 +8,8 @@
   --accent: #4db6ac;       /* 앱 colorSecondary (틸 액센트) */
   --accent-dark: #38948b;  /* 틸 hover */
   --accent-tint: #e3f0ee;  /* 틸 컨테이너 틴트 */
+  --link-teal: #2f8f84;    /* 링크용 진한 틸 (흰 배경 가독성 확보) */
+  --link-teal-h: #1f6d64;  /* 링크 hover (더 진한 틸) */
   --brand-tint: #e9edf4;   /* 아이콘 칩·배지 배경 (네이비 틴트) */
   --ink: #101828;
   --body: #3d4457;
@@ -261,8 +263,8 @@ img { max-width: 100%; }
 .app-shots::-webkit-scrollbar { height: 6px; }
 .app-shots::-webkit-scrollbar-thumb { background: var(--line); border-radius: 6px; }
 
-.app-link { display: inline-block; margin-top: 16px; color: var(--brand); font-weight: 700; font-size: 14px; transition: color .2s; }
-.app-link:hover { color: var(--brand-dark); }
+.app-link { display: inline-block; margin-top: 16px; color: var(--link-teal); font-weight: 700; font-size: 14px; transition: color .2s; }
+.app-link:hover { color: var(--link-teal-h); }
 
 /* ===== 라이트박스 ===== */
 .lightbox {
@@ -296,8 +298,8 @@ img { max-width: 100%; }
 /* 앱 카드의 상세 페이지 링크 */
 .app-card .app-meta h3 a { color: inherit; }
 .app-card .app-meta h3 a:hover { color: var(--brand); }
-.app-more { display: inline-block; margin-top: 16px; margin-right: 16px; color: var(--brand); font-weight: 700; font-size: 14px; transition: color .2s; }
-.app-more:hover { color: var(--brand-dark); }
+.app-more { display: inline-block; margin-top: 16px; margin-right: 16px; color: var(--link-teal); font-weight: 700; font-size: 14px; transition: color .2s; }
+.app-more:hover { color: var(--link-teal-h); }
 .app-links { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; margin-top: auto; }
 .app-links .app-link, .app-links .app-more { margin-top: 16px; }
 
