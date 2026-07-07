@@ -95,9 +95,10 @@ for slug, (icon, shotdir, pat) in APPS.items():
         icon_ok = "copied"
     # 스크린샷
     n = 0
+    MAX_SHOTS = 8  # Play Store 폰 스크린샷 상한과 동일. 소스에 있는 만큼 전부 복사.
     if shotdir:
         files = sorted(glob.glob(os.path.join(ROOT, shotdir, pat)))
-        for i, f in enumerate(files[:3]):
+        for i, f in enumerate(files[:MAX_SHOTS]):
             make_shot(f, os.path.join(SHOT_DIR, f"{slug}-{i+1}.jpg"))
             n += 1
     report[slug] = (icon_ok, n)

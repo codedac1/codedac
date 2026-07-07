@@ -15,7 +15,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const BASE = 'https://codedac1.github.io';
-const V = '23'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
+const V = '24'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
 const LASTMOD = new Date().toISOString().slice(0, 10);
 
 // 언어 정의 (표시 순서 = 스위처 순서). code=폴더/파일, hreflang=검색엔진용
