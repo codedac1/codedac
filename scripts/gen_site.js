@@ -518,12 +518,22 @@ ${Array.from({ length: app.shots }, (_, i) =>
     </div>
   </section>` : '';
 
-  // 스토어 링크 유무는 '출시 여부'만 말해준다. 플랫폼은 app.platform 으로 따로 판단한다.
-  // (예전에는 링크가 없으면 무조건 Windows 앱으로 표시해, 출시 전 Android 앱까지 Windows 로 찍혔다.)
-  const platformNote = app.platform === 'windows' ? ui['platform.windows'] : ui['platform.soon'];
-  const heroAction = app.store
+  // 플랫폼(app.platform)과 출시 여부(app.store 유무)는 서로 독립적이다.
+  // 넷 중 어떤 조합이든 성립한다:
+  //   Android + 출시    → 스토어 버튼
+  //   Android + 미출시  → '출시 준비 중'
+  //   Windows + 출시    → 다운로드 버튼 + 'Windows 데스크톱 앱'
+  //   Windows + 미출시  → 'Windows 데스크톱 앱 · 출시 준비 중'
+  const notes = [];
+  if (app.platform === 'windows') notes.push(ui['platform.windows']);
+  if (!app.store) notes.push(ui['platform.soon']);
+  const noteHtml = notes.length
+    ? `<span class="app-platform-note">${escText(notes.join(' · '))}</span>`
+    : '';
+  const storeBtn = app.store
     ? `<a href="${escAttr(app.store)}" class="btn btn-primary" target="_blank" rel="noopener">${escText(ui['store'])}</a>`
-    : `<span class="app-platform-note">${escText(platformNote)}</span>`;
+    : '';
+  const heroAction = `${storeBtn}${noteHtml}`;
 
   const lightbox = app.shots ? `
   <div class="lightbox" id="lightbox" aria-hidden="true">
