@@ -17,6 +17,15 @@
   });
   document.addEventListener('click', (e) => { if (!menu.contains(e.target)) close(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+  // 사용자가 언어를 직접 고르면 저장해 둔다. 루트(한국어) 페이지의 자동 감지
+  // 리다이렉트는 이 값을 우선 존중하므로, 선택이 매번 덮어써지지 않는다.
+  menu.querySelectorAll('.lang-item').forEach((a) => {
+    a.addEventListener('click', () => {
+      const code = (a.getAttribute('hreflang') || '').toLowerCase().split('-')[0];
+      if (code) { try { localStorage.setItem('lang', code); } catch (e) { /* 저장 불가 무시 */ } }
+    });
+  });
 })();
 
 // ===== 모바일 메뉴 =====

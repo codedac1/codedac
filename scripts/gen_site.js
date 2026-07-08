@@ -15,7 +15,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const BASE = 'https://codedac.com';
-const V = '28'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
+const V = '29'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
 const LASTMOD = new Date().toISOString().slice(0, 10);
 
 // 언어 정의 (표시 순서 = 스위처 순서). code=폴더/파일, hreflang=검색엔진용
@@ -160,9 +160,23 @@ ${items}
 
 const FAVICON = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='22' width='100' height='100' fill='%232F3B59'/%3E%3Ctext x='50' y='72' font-size='64' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E`;
 
+// 자동 언어 감지 리다이렉트 (ko=루트 페이지에만 삽입).
+// - 이전에 사용자가 고른 언어(localStorage.lang)가 있으면 그것을 우선 존중.
+// - 없으면 브라우저 언어를 보고 지원 언어로 이동. 한국어면 루트 유지.
+// - 어디에도 매칭되지 않으면 기본값 영어(/en/)로 이동.
+// rest: 목적지 언어에서의 동일 페이지 경로 접미사(home='' · privacy='privacy.html' · detail='apps/<slug>.html')
+function autoLangRedirect(code, kind, slug) {
+  if (code !== 'ko') return '';
+  const rest = kind === 'home' ? '' : kind === 'privacy' ? 'privacy.html' : `apps/${slug}.html`;
+  const sup = ACTIVE.filter((l) => l.code !== 'ko').map((l) => l.code);
+  const supObj = `{${sup.map((c) => `${c}:1`).join(',')}}`;
+  return `
+  <script>(function(){try{var s=localStorage.getItem('lang'),sup=${supObj},p;if(s){p=s;}else{p='en';var ls=navigator.languages||[navigator.language||'en'];for(var i=0;i<ls.length;i++){var b=String(ls[i]).toLowerCase().split('-')[0];if(b==='ko'){p='ko';break;}if(sup[b]){p=b;break;}}}if(p!=='ko')location.replace('/'+p+'/'+${JSON.stringify(rest)});}catch(e){}})();</script>`;
+}
+
 function headCommon(lang, { title, desc, canonical, ogImage, kind, slug, keywords, langSet }) {
   return `  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />${autoLangRedirect(lang.code, kind, slug)}
   <script>(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <meta name="google-site-verification" content="EEOUsUwfv3SoTVMdi2dL1EePYJ9cLNKexZgbojtycc0" />
   <meta name="naver-site-verification" content="109d8df332a90f3aa9a8623c76a0876131746416" />
