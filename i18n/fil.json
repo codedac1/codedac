@@ -1,0 +1,439 @@
+{
+  "lang": "fil",
+  "ui": {
+    "meta.title": "CodeDAC | Mga Utility App para sa Smartphone",
+    "meta.desc": "Gumagawa at naglalathala ang CodeDAC ng 13 utility app para sa smartphone, kasama ang Clipboard+, AutoStart+ at FloatCalc+.",
+    "nav.about": "Tungkol",
+    "nav.services": "Mga Serbisyo",
+    "nav.apps": "Mga App",
+    "hero.eyebrow": "SMARTPHONE UTILITY APPS",
+    "hero.title": "Gawing mas matalino<br />ang iyong telepono",
+    "hero.sub": "Gumagawa ang CodeDAC ng mga utility app para sa smartphone <br class=\"br-pc\" />na nagpapadali sa pang-araw-araw na buhay.",
+    "hero.cta1": "Tuklasin ang mga app",
+    "hero.cta2": "Makipag-ugnayan",
+    "about.title": "Tungkol sa Amin",
+    "about.meaning": "Code-based <b>D</b>evelopment <b>A</b>nd <b>C</b>onsulting",
+    "about.lead": "Tulad ng pangalan nito, itinayo ang CodeDAC sa pundasyon ng Code para magbigay ng Development And Consulting. Sa ngayon ay gumagawa at naglalathala kami ng mga utility app para sa smartphone na araw-araw na ginagamit ng mga tao, at nilalayon naming lumago bilang isang mapagkakatiwalaang technology partner na lumulutas sa mga hamon ng aming mga kliyente sa pamamagitan ng matatag na engineering.",
+    "about.c1.t": "Pagiging Simple",
+    "about.c1.d": "Mas pinipili namin ang linaw at agarang pagiging madaling gamitin kaysa sa mga masalimuot na feature.",
+    "about.c2.t": "Tiwala",
+    "about.c2.d": "Binabawasan namin ang mga hindi kailangang pahintulot at ad, at iginagalang ang iyong data.",
+    "about.c3.t": "Pagkakatugma",
+    "about.c3.d": "Ang paglabas ay simula pa lang — patuloy kaming nagpapabuti kasama ang feedback ng mga user.",
+    "services.title": "Mga Serbisyo",
+    "services.lead": "Mula sa ideya hanggang sa pagbuo at operasyon, katuwang mo ang CodeDAC sa buong paglalakbay.",
+    "services.s1.t": "Pagbuo ng App",
+    "services.s1.d": "Gumagawa kami ng mga app para sa Android, iOS, Windows desktop at cross-platform, mula sa pagpaplano hanggang sa paglabas at operasyon.",
+    "services.s2.t": "Pagbuo ng Web",
+    "services.s2.d": "Gumagawa kami ng mga responsive na website, web application at admin system.",
+    "services.s3.t": "Technical Consulting",
+    "services.s3.d": "Nagbibigay kami ng payo sa arkitektura, pagpili ng tech stack at code review para gabayan ang mahahalagang desisyon.",
+    "services.s4.t": "Maintenance at Operasyon",
+    "services.s4.d": "Pinapanatili naming malusog ang mga serbisyo sa pamamagitan ng matatag na operasyon, performance tuning at CI/CD automation.",
+    "services.cta": "Simulan ang isang proyekto",
+    "apps.title": "Ang Aming mga App",
+    "apps.lead": "Mga utility app para sa smartphone na ginawa at inilathala ng CodeDAC. I-tap ang isang screenshot para tingnan ito nang mas malaki.",
+    "footer.privacy": "Patakaran sa Privacy",
+    "bc.home": "Home",
+    "bc.apps": "Mga App",
+    "overview": "Pangkalahatang-tanaw",
+    "features": "Mga Pangunahing Feature",
+    "faq": "FAQ",
+    "screenshots": "Mga Screenshot",
+    "shotsHint": "I-tap ang isang screenshot para tingnan ito nang mas malaki.",
+    "store": "Tingnan sa Google Play →",
+    "contact": "Makipag-ugnayan",
+    "otherApps": "Tuklasin pa ang mga app",
+    "card.detail": "Mga Detalye →",
+    "platform.windows": "Windows desktop app",
+    "platform.soon": "Malapit nang ilabas",
+    "stats.apps": "Mga App",
+    "stats.downloads": "Mga Download",
+    "stats.languages": "Mga wika ng app",
+    "app.langs": "{n} na wika",
+    "reviews.title": "Sinabi ng mga user",
+    "reviews.lead": "Totoong 5-star na review na iniwan sa Google Play.",
+    "nav.reviews": "Mga Review",
+    "footer.based": "South Korea",
+    "theme.toggle": "I-toggle ang dark mode"
+  },
+  "apps": {
+    "clipboard": {
+      "name": "Clipboard+",
+      "tag": "Clipboard",
+      "desc": "Awtomatikong nagse-save ng clipboard history mo para ma-paste kahit saan, anumang oras.",
+      "tagline": "Awtomatikong i-save ang bawat kopya gamit ang pinakamatalinong clipboard manager para sa Android",
+      "long": "Ang Clipboard+ ay isang clipboard manager para sa Android na awtomatikong nagse-save ng bawat kinopyang teksto at larawan nang real time. Isang resizable na floating overlay ang tutulong sa iyong maabot ang clipboard history mo mula sa anumang screen nang hindi lumilipat ng app. Ayusin ang madalas gamitin na teksto sa mga snippet at grupo, at i-paste agad ang anumang clip gamit ang keyword search, isang home screen widget, at ang notification panel. Maaari mo ring i-export ang history mo sa PDF at i-back up o i-restore ang mga clip mo anumang oras.",
+      "features": [
+        "Awtomatikong i-save ang kinopyang teksto at larawan nang real time",
+        "Resizable na floating overlay para magamit sa ibabaw ng anumang app",
+        "Ayusin ang madalas gamitin na teksto sa mga snippet at grupo",
+        "Agarang paghahanap at pag-filter ayon sa keyword, teksto, larawan, o petsa",
+        "Mabilis na pag-paste gamit ang widget, Quick Settings tile, at notification panel",
+        "I-export ang clipboard history sa PDF, kasama ang backup at restore"
+      ],
+      "faq": [
+        {
+          "q": "Paano nase-save ang aking clipboard history?",
+          "a": "Ang bawat kinopyang teksto at larawan ay awtomatikong nase-save nang real time, kaya makukuha mo ulit ang anumang clip anumang oras nang walang dagdag na hakbang."
+        },
+        {
+          "q": "Maa-access ko ba ang clipboard history ko habang gumagamit ng ibang app?",
+          "a": "Oo. Isang resizable na floating overlay ang tutulong sa iyong maabot ang history mo mula sa anumang screen nang hindi lumilipat ng app."
+        },
+        {
+          "q": "Ano ang pagkakaiba ng Free at Pro?",
+          "a": "Binibigyan ka ng Free ng buong manager na may mga ad, samantalang inaalis ng Pro ang mga ad, nag-iimbak ng walang limitasyong clipboard history, at binubuksan ang lahat ng feature. Sa FreePass, maaari kang manood ng ad para i-unlock ang mga Pro feature sa loob ng 24 oras."
+        }
+      ]
+    },
+    "autostart": {
+      "name": "AutoStart+",
+      "tag": "Auto Start",
+      "desc": "Awtomatikong i-launch ang mga app mo sa boot. Walang root, isang setup lang.",
+      "tagline": "Awtomatikong i-start ang mga app mo sa sandaling mag-boot ang telepono. Walang root, isang setup lang, tumatakbo habambuhay.",
+      "long": "Ang AutoStart+ ay ang pinakamadaling auto start manager para sa Android, na awtomatikong naglulunsad ng mga napili mong app sa sandaling mag-boot ang device mo, nang walang kailangang root. I-setup ito nang isang beses at maglu-launch ang mga app mo sa bawat startup nang hindi na kailangang mag-tap. Ang libreng bersyon ay awtomatikong nagsi-start ng 1 app, samantalang binubuksan ng PRO ang walang limitasyong app na inilulunsad ayon sa pagkakasunod na gusto mo. Ipinapaalam nito kung nabigo ang isang paglulunsad, at ginagabayan ka nito sa mga setting ng auto start sa mga OEM device tulad ng Samsung at Xiaomi.",
+      "features": [
+        "Agad na awtomatikong nilu-launch ang mga napili mong app sa boot",
+        "Gumagana sa mga karaniwang Android device nang walang kailangang root",
+        "Idagdag ang mga naka-install na app sa ilang segundo at i-toggle ang bawat isa nang isang tap",
+        "Ang smart boot notification ay nagbibigay-alerto kung nabigong mag-launch ang isang app",
+        "Ang boot overlay banner ay nagbibigay-daan sa paglulunsad ng mga app bago mag-unlock (PRO)",
+        "Awtomatikong i-start ang walang limitasyong app ayon sa napili mong pagkakasunod (PRO)"
+      ],
+      "faq": [
+        {
+          "q": "Hindi nagla-launch ang mga app ko pagkatapos ng boot. Ano ang dapat kong gawin?",
+          "a": "May ilang manufacturer (Samsung, Xiaomi, at iba pa) na nagba-block ng autostart ng app sa kanilang sarili. Sundin ang gabay sa loob ng app para makumpleto ang setting na 'payagan ang autostart' na tukoy sa manufacturer."
+        },
+        {
+          "q": "Ilang app ang maaari kong i-auto start?",
+          "a": "Sumusuporta ang libreng bersyon sa 1 app, samantalang binibigyang-daan ka ng PRO na mag-auto start ng walang limitasyong app."
+        },
+        {
+          "q": "Uubusin ba nito ang baterya ko?",
+          "a": "Tumatakbo lang ang AutoStart+ nang isang beses sa boot at hindi ito isang palaging tumatakbong background app, kaya halos wala itong epekto sa tagal ng baterya."
+        }
+      ]
+    },
+    "floatcalc": {
+      "name": "FloatCalc+",
+      "tag": "Floating",
+      "desc": "Isang floating calculator, FX at unit converter sa ibabaw ng anumang app.",
+      "tagline": "Isang floating calculator na nananatili sa ibabaw ng anumang app para hindi ka na umalis para lang magkalkula.",
+      "long": "Ang FloatCalc+ ay isang floating calculator na nananatili sa ibabaw ng anumang app, kaya hindi mo na kailangang lumipat ng screen para lang gumawa ng mabilisang kalkulasyon. Ang built-in na currency converter, unit converter, at quick memo ay gumagana lahat sa loob mismo ng overlay window. I-drag ang window kung saan mo ito kailangan, pagkatapos ay kopyahin ang mga resulta o i-save ang mga ito sa memo sa isang tap. Magaan ito, mabilis, at gumagana offline (araw-araw na naka-cache ang mga FX rate).",
+      "features": [
+        "Lumulutang sa ibabaw ng anumang app — YouTube, mapa, browser, banking, shopping, spreadsheet",
+        "Draggable na overlay window na may one-tap na pagkopya ng mga resulta sa clipboard",
+        "Unit converter para sa haba, timbang, temperatura, sukat, volume, bilis, at oras",
+        "Real-time na ECB exchange rate para sa 30+ na pera, ina-update araw-araw",
+        "Quick memo para i-save ang mga resulta ng kalkulasyon o tala mula sa floating window",
+        "Pumili ng start mode (Calculator/Unit/FX/Memo), 8 tema, gumagana offline"
+      ],
+      "faq": [
+        {
+          "q": "Kailangan ko bang isara ang app ko tuwing gusto kong magkalkula?",
+          "a": "Hindi. Gumagana ang FloatCalc+ bilang isang floating window na nananatili sa ibabaw ng ibang app, kaya makakapagkalkula ka nang hindi umaalis sa iyong shopping, banking, o browser screen."
+        },
+        {
+          "q": "Saan nagmumula ang mga exchange rate?",
+          "a": "Gumagamit ito ng real-time na ECB (European Central Bank) rate, na ina-update araw-araw. Maaari kang mag-convert ng USD, EUR, JPY, KRW, CNY at 30+ na pera sa mundo sa loob mismo ng overlay, at naka-cache ang mga rate araw-araw kaya gumagana rin ito offline."
+        },
+        {
+          "q": "Gaano karami ang magagamit ko nang libre?",
+          "a": "Kasama sa free tier ang 5 session bawat araw, hanggang 20 minuto ang bawat isa. Isang default na tema ang libre, samantalang 7 karagdagang tema at ilang feature ay available sa Pro."
+        }
+      ]
+    },
+    "floatcrypto": {
+      "name": "FloatCrypto+",
+      "tag": "Floating",
+      "desc": "Live na presyo ng Bitcoin at crypto na lumulutang sa ibabaw ng anumang app.",
+      "tagline": "Panatilihing lumulutang sa screen mo ang live na presyo ng Bitcoin — 100% libre.",
+      "long": "Pinapalutang ng FloatCrypto+ ang isang real-time na crypto ticker sa ibabaw ng anumang app — YouTube, Chrome, mga laro, Telegram — kaya masusubaybayan mo ang BTC, ETH, SOL, XRP, DOGE, BNB at 1,000+ na altcoin nang hindi kailanman lumilipat ng app. Pinapagana ng market data ng Binance na may CoinGecko fallback, nagdaragdag ito ng mga live na chart, price alert, at watchlist sa iisang lugar. 100% libre ito na walang login, walang email, at walang kailangang wallet — handa nang gamitin sa ilang segundo.",
+      "features": [
+        "Floating overlay na nagpapanatili ng live na presyo ng Bitcoin at Ethereum sa ibabaw ng bawat app — walang paglipat ng app",
+        "I-drag para ilipat, i-pinch para baguhin ang laki, na may nababagong opacity at laki ng font",
+        "Live na 1D/7D/30D na crypto chart na pinapagana ng data ng Binance, na may 24h change %",
+        "Agarang price alert na may itaas at ibabang threshold at 24/7 na background monitoring",
+        "Mabilis na paghahanap ng coin sa 1,000+ na token na may real-time na watchlist at price tracker",
+        "100% libre, walang kailangang login o wallet, tumatakbo bilang magaan at battery-friendly na serbisyo"
+      ],
+      "faq": [
+        {
+          "q": "Libre ba ang FloatCrypto+? Kailangan ko ba ng account?",
+          "a": "100% libre ito. Walang login, walang email, at walang koneksyon sa wallet — i-install mo lang at magsimulang mag-track sa ilang segundo."
+        },
+        {
+          "q": "Anong mga coin ang suportado at saan nagmumula ang data?",
+          "a": "Sumusuporta ito sa Bitcoin, Ethereum, Solana, XRP, Dogecoin, BNB at mahigit 1,000 na altcoin, gamit ang market data ng Binance na may CoinGecko fallback para sa pagiging maaasahan."
+        },
+        {
+          "q": "Makikita ko ba ang mga presyo habang gumagamit ng ibang app?",
+          "a": "Oo. Nananatili ang floating overlay sa ibabaw ng bawat app, kaya mapapanood mo ang live na presyo habang gumagamit ng YouTube, naglalaro, o nakikipag-chat — walang kailangang paglipat ng app."
+        }
+      ]
+    },
+    "floattimer": {
+      "name": "FloatTimer+",
+      "tag": "Floating",
+      "desc": "Isang floating interval, Pomodoro at multi-timer sa ibabaw ng anumang app.",
+      "tagline": "Isang interval, Pomodoro, at multi-timer, counter, at stopwatch na lumulutang sa ibabaw ng bawat app.",
+      "long": "Ang FloatTimer+ ay isang floating overlay app na nagpapanatili ng interval timer, multi-timer, counter, at stopwatch sa ibabaw ng anumang app na ginagamit mo. Nananatiling nakikita ang timer mo habang nagmu-multitask ka, at maaari mo itong i-drag kahit saan sa screen habang ini-customize ang laki, opacity, at background color nito. Tumatakbo ito sa background, kaya patuloy itong gumagana kahit lumipat ka ng app o i-lock ang screen. I-setup ito nang isang beses at magpatuloy sa pagluluto, pag-eehersisyo, pag-aaral, o paglalaro nang hindi nawawala sa paningin ang timer mo.",
+      "features": [
+        "Floating overlay — lumulutang ang mga timer, counter, at stopwatch sa anumang app, na may per-item na laki, opacity, at background color",
+        "Multi-timer — magpatakbo ng maraming custom na oras/minuto/segundo na countdown nang sabay-sabay at maglagay ng memo sa bawat isa",
+        "Interval timer — bumuo ng mga Work/Rest phase na may mga round para sa HIIT at Tabata, kasama ang one-tap na preset (Pomodoro, HIIT, Tabata, mga break)",
+        "Tally counter — tap-to-count na floating counter na may custom na step para magdagdag o magbawas ng anumang halaga (+1, +2, +5, +10…)",
+        "Floating stopwatch — mag-start, mag-pause, at mag-reset nang hindi umaalis sa kasalukuyan mong app",
+        "Estadistika, streak, at backup — pang-araw-araw na kasaysayan ng paggamit at mga streak, backup at restore ng timer/counter file, CSV export (Pro)"
+      ],
+      "faq": [
+        {
+          "q": "Mananatili bang nakikita ang timer habang gumagamit ako ng ibang app?",
+          "a": "Oo. Lumulutang ang timer, counter, at stopwatch sa ibabaw ng anumang app at tumatakbo sa background, kaya patuloy ang mga ito kahit lumipat ka ng app o i-lock ang screen."
+        },
+        {
+          "q": "Sinusuportahan ba nito ang interval timer at Pomodoro?",
+          "a": "Oo. Maaari kang bumuo ng custom na Work/Rest phase na may maraming round para sa HIIT at Tabata, at may mga one-tap na preset para sa Pomodoro, HIIT, Tabata, maikling break, at mahabang break."
+        },
+        {
+          "q": "Maaari ba akong magpatakbo ng maraming timer o counter nang sabay-sabay?",
+          "a": "Ang pagpapatakbo ng maraming timer at counter nang sabay-sabay ay isang Pro feature. Pinapayagan ka pa rin ng libreng bersyon na gumamit ng iisang timer, counter, at stopwatch."
+        }
+      ]
+    },
+    "volumebooster": {
+      "name": "VolumeBooster+",
+      "tag": "Audio",
+      "desc": "Volume booster, equalizer at bass boost na may totoo, nasusukat na dB.",
+      "tagline": "Gawing mas malakas ang bawat app sa totoo at nasusukat na desibel — hindi isang walang-kabuluhang 200%.",
+      "long": "Ang VolumeBooster+ ay isang volume booster na nagpapataas ng buong system output mo — mahihinang speaker, mababang earphone, mahihirap marinig na video, tawag, musika at laro — para sa wakas ay marinig mo ang mga ito nang malinaw. Nagbo-boost ito sa totoong desibel (0 hanggang +15 dB) sa halip na isang walang-kabuluhang \"200%\", at nagpapakita ng WHO-based na Safe / Caution / Danger zone para makapagpalakas ka habang pinoprotektahan ang iyong pandinig. Pinagsasama nito ang 5-band equalizer, bass booster, 3D virtualizer at AutoEQ headphone correction sa iisang app.",
+      "features": [
+        "Real-decibel na volume boost (0 → +15 dB) na may Safe/Caution/Danger na label, na nagpapalakas sa bawat app sa buong system",
+        "Loudness Maximizer kasama ang always-on na peak limiter para sa tunay na mas malakas na tunog nang walang clipping o distortion",
+        "5-band Equalizer na may 12 tuned preset (Pop, Rock, Vocal, Movie, Classical, Jazz, EDM, Gaming, Night at iba pa)",
+        "Bass Booster + 3D Virtualizer para sa mas malalim at mas malawak na tunog",
+        "AutoEQ headphone correction gamit ang nasusukat na frequency-response data",
+        "Hearing Health Score + WHO-based na exposure monitoring, Sleep Timer, Channel Balance at Floating Widget (Pro)"
+      ],
+      "faq": [
+        {
+          "q": "Talaga bang mas nilalakasan nito ang telepono ko?",
+          "a": "Oo. Gumagamit ang Loudness Maximizer ng multiband compression at makeup gain para tunay na dagdagan ang nararamdamang lakas, at pinapataas nito ang buong system output mula 0 hanggang +15 dB — hindi lang isang app. Nalalapat ito sa musika, video, YouTube, laro, tawag at lahat ng iba pa."
+        },
+        {
+          "q": "Paano ito naiiba sa mga '200%' na booster?",
+          "a": "Walang kabuluhan ang mga numerong tulad ng \"200%\" o \"500%\" na sinisigaw ng ibang booster. Ipinapakita ng VolumeBooster+ ang totoong gain sa desibel at minamarkahan ang WHO-based na Safe, Caution at Danger zone, kaya alam mo palagi kung gaano ka talaga kalakas."
+        },
+        {
+          "q": "Ang ipinapakitang dB ba ay eksaktong sukat?",
+          "a": "Ang halaga ng desibel ay isang tantiya batay sa iyong system volume at ang inilapat na gain, at nag-iiba ang totoong lakas ayon sa device, headphone at nilalaman. Hindi isang medical device ang app, kaya kung makaramdam ka ng sakit o pagtunog sa tainga, hinaan ang volume at kumonsulta sa isang propesyonal."
+        }
+      ]
+    },
+    "photocleaner": {
+      "name": "PhotoCleaner+",
+      "tag": "Privacy",
+      "desc": "Itago ang personal na impormasyon sa mga larawan at PDF, buong-buo sa device.",
+      "tagline": "Itago ang personal na impormasyon sa mga larawan at PDF gamit ang isang solidong mask, buong-buo sa iyong device.",
+      "long": "Itinatago ng PhotoCleaner+ ang personal na impormasyon sa mga larawan at PDF nang buong-buo sa iyong device. Tinatakpan nito ang mga sensitibong bahagi ng isang solido at opaque na mask (hindi blur o mosaic, kaya hindi na mababawi ang mga natakpang bahagi) at nag-e-export ng malinis na kopya. Isang built-in na detector ang nagmumungkahi ng mga malamang na sensitibong teksto tulad ng ID number, card, numero ng telepono, at email bilang panimula, ngunit ikaw mismo ang gumuguhit at nag-aayos ng mga mask para magpasya kung ano talaga ang itatago. Walang larawang ina-upload kahit kailan, tumatakbo lahat offline, at hindi kailanman humihingi ng pahintulot sa gallery o storage.",
+      "features": [
+        "Solido at opaque na mask na hindi na mababawi (hindi blur o mosaic)",
+        "Gumuhit ng mga mask nang manu-mano, pagkatapos ay ilipat, baguhin ang laki o tanggalin ang mga ito, na may zoom para sa katumpakan",
+        "Nagmumungkahi ang built-in na detection ng malamang na sensitibong teksto (ID number, card, telepono, email) para makapagsimula ka",
+        "Mag-mask ng mga larawan, ID card at multi-page na PDF na dokumento",
+        "May paalala sa EXIF at GPS, at ang bawat na-save o na-share na kopya ay muling ni-encode nang walang EXIF",
+        "Walang pahintulot, at malinis na image export nang walang watermark para sa lahat"
+      ],
+      "faq": [
+        {
+          "q": "Ang masking ba ay blur o mosaic?",
+          "a": "Hindi. Iisang istilo lang ang ginagamit ng masking, isang solido at opaque na fill, at hindi na mababawi ang mga natakpang bahagi. Sa Pro maaari kang pumili ng anumang kulay ng mask."
+        },
+        {
+          "q": "Ina-upload ba ang mga larawan ko kahit saan?",
+          "a": "Hindi. Tumatakbo lahat offline sa iyong device at walang larawang ina-upload kahit kailan. Hindi rin kailanman humihingi ang app ng pahintulot sa gallery o storage."
+        },
+        {
+          "q": "Maaari ba akong umasa sa auto-detection lang bago mag-export?",
+          "a": "Ang detection ay panimula lamang na nagmumungkahi ng malamang na sensitibong teksto. Palaging suriin ang mga mungkahi at magdagdag o mag-alis ng mga mask nang ikaw mismo bago mag-export."
+        }
+      ]
+    },
+    "secretalbum": {
+      "name": "SecretAlbum+",
+      "tag": "Privacy",
+      "desc": "Itago ang mga larawan at video gamit ang AES-256 encryption at PIN lock.",
+      "tagline": "Itago at protektahan ang mga larawan at video mo gamit ang AES-256 encryption at PIN lock.",
+      "long": "Ang SecretAlbum+ ay isang pribadong vault na nagpoprotekta sa mahahalagang larawan at video mo gamit ang military-grade na AES-256 encryption. Gumagana ito nang buong-buo offline sa iyong device at hindi kailanman nag-a-upload ng mga file sa anumang external na server. Ang bawat file na ini-import mo ay agad na na-encrypt at hindi maa-access nang wala ang personal mong key, na tuluyang nawawala sa gallery mo nang walang naiiwang bakas. Maaari mo pang i-disguise ang icon ng app bilang isang Calculator, Notes, Weather, o Clock app para walang makaalam na naka-install ito.",
+      "features": [
+        "Agad na pinoprotektahan ng military-grade na AES-256 encryption ang bawat file",
+        "6-digit na PIN lock na may email na temporary-PIN recovery pagkatapos ng 5 nabigong pagtatangka",
+        "Binabago ng disguise mode ang icon papuntang Calculator, Notes, Weather, o Clock app",
+        "Mag-import ng maraming larawan at video mula sa gallery, na awtomatikong inaalis ang mga orihinal",
+        "Full-screen viewer na may pinch-to-zoom at awtomatikong slideshow",
+        "Gumagana 100% offline na may lossless na restore pabalik sa gallery mo anumang oras"
+      ],
+      "faq": [
+        {
+          "q": "Ipinapadala ba ang mga file ko sa anumang external na server o cloud?",
+          "a": "Hindi. Gumagana ang SecretAlbum+ nang buong-buo offline at hindi kailanman kumokonekta sa anumang external na server. Lahat ng file ay iniimbak lamang sa isang naka-encrypt na espasyo sa iyong device."
+        },
+        {
+          "q": "Ano ang mangyayari kung makalimutan ko ang PIN ko?",
+          "a": "Pagkatapos ng 5 sunod-sunod na maling paglalagay ng 6-digit mong PIN, isang one-time na temporary PIN ang awtomatikong ipinapadala sa email sa iyong nakarehistrong recovery address kaya hindi ka kailanman tuluyang mala-lock out."
+        },
+        {
+          "q": "Maaari ko bang ibalik ang mga nakatagong file sa gallery ko?",
+          "a": "Oo. Maaari mong i-restore ang anumang file sa gallery mo anumang oras, at lossless ang proseso ng decryption, kaya ang bawat larawan at video ay bumabalik nang eksaktong tulad ng orihinal nang walang pagkawala ng kalidad."
+        }
+      ]
+    },
+    "readfocus": {
+      "name": "ReadFocus+",
+      "tag": "Accessibility",
+      "desc": "Isang reading aid para sa dyslexia at ADHD na may line highlight at mask.",
+      "tagline": "Isang reading aid para sa dyslexia at ADHD: pinapanatili ng line highlight at reading mask ang mga mata mo sa tamang linya at binabawasan ang pagod ng mata.",
+      "long": "Ang ReadFocus+ ay isang reading ruler, reading mask at reading aid para sa dyslexia at ADHD sa Android. Ipagkaloob ang overlay permission nang isang beses at isang translucent na focus strip ang lulutang sa ibabaw ng anumang app — mga ebook reader, browser, PDF, balita, komiks — na pinapanatili ang mga mata mo sa linyang binabasa mo. Binabawasan nito ang paglaktaw o pagbasa ulit ng parehong linya, na nagpapagaan sa pagod ng mata at nagpapataas ng konsentrasyon at bisa sa pagbasa.",
+      "features": [
+        "Line Highlight (Reading Ruler): pinapaliwanag ang kasalukuyan mong linya para manatili sa tamang landas ang mga mata",
+        "Reading Mask: dinidilim ang lahat maliban sa reading zone mo para sa tunnel-vision na pokus",
+        "Ganap na nababagong focus strip: taas (50dp–300dp), opacity (10%–100%), at pagkabilog ng sulok",
+        "6 na color theme (2 libre + 4 Pro)",
+        "Gumagana sa ibabaw ng anumang app — mga ebook, PDF, webtoon, balita, research paper",
+        "Pro: karanasang walang ad, walang limitasyong oras ng overlay, at panatilihing nakabukas ang screen habang nagbabasa"
+      ],
+      "faq": [
+        {
+          "q": "Paano gumagana ang ReadFocus+?",
+          "a": "Ipagkaloob ang overlay permission nang isang beses at isang semi-transparent na focus strip ang lulutang sa ibabaw ng anumang app. I-drag ito sa linyang binabasa mo at mananatili sa tamang landas ang mga mata mo sa halip na gumala o lumaktaw ng mga linya."
+        },
+        {
+          "q": "Sa aling mga app ito gumagana?",
+          "a": "Gumagana ito sa ibabaw ng anumang app na nasa screen — mga ebook at PDF reader, research paper, artikulo sa web, blog, balita, tala sa pag-aaral, textbook, komiks, webtoon, at mahahabang email o kasaysayan ng chat."
+        },
+        {
+          "q": "Libre ba itong gamitin?",
+          "a": "Oo. Binibigyan ka ng libreng bersyon ng 60 minutong oras ng overlay bawat session at 2 color theme. Nagdaragdag ang Pro ng karanasang walang ad, lahat ng 6 na tema, at walang limitasyong oras ng overlay — at maaari ka ring manood ng maikling rewarded na ad para i-unlock ang anumang Pro feature nang libre sa loob ng 24 oras."
+        }
+      ]
+    },
+    "colorcards": {
+      "name": "Color Cards+",
+      "tag": "Kids",
+      "desc": "Mga nagsasalitang color flashcard na tumutulong sa mga bata na matutuhan ang mga kulay.",
+      "tagline": "Mga nagsasalitang color flashcard kung saan nakikita, naririnig, at inuulit ng mga bata para matutuhan ang mga kulay",
+      "long": "Ang Color Cards+ ay isang nagsasalita at nakikinig na color flashcard app para sa mga bata. Naglalahad ito ng mga card ng bagay na child-friendly sa anim na kulay (pula, asul, dilaw, berde, orange, at lila) at binabasa nang malakas ang bawat pangalan para maulit ng mga bata at matutuhan ang mga kulay nang natural. Suportado ang maraming learning mode tulad ng auto play, hide word, card shuffle, at bilingual na view sa maraming wika. Isang malinis at walang-distraction na kapaligiran ang tumutulong sa bata mong manatiling nakapokus habang natututo.",
+      "features": [
+        "Anim na kategorya ng kulay: pula, asul, dilaw, berde, orange, at lila",
+        "Mga nagsasalitang flashcard na binabasa nang malakas ang pangalan ng bawat bagay",
+        "Auto play at hide-word na mode para sa iba't ibang paraan ng pagkatuto",
+        "I-shuffle ang mga card para mag-review sa ibang pagkakasunod",
+        "Bilingual na mode para ipakita rin ang Ingles, na may suporta sa maraming wika",
+        "Background music at opsyong walang ad sa pamamagitan ng Pro o Free Pass"
+      ],
+      "faq": [
+        {
+          "q": "Anong mga kulay ang matututuhan ng anak ko?",
+          "a": "Anim na kulay: pula, asul, dilaw, berde, orange, at lila, bawat isa ay itinuturo gamit ang mga pamilyar na card ng bagay na tumutugma sa kulay."
+        },
+        {
+          "q": "Maaari bang basahin nang malakas ang mga card?",
+          "a": "Oo. Mga nagsasalitang flashcard ang mga ito na binibigkas nang malakas ang pangalan ng bawat bagay, kaya makikinig at makakaulit ang mga bata para matutuhan ang mga kulay."
+        },
+        {
+          "q": "Magagamit ko ba ito nang walang ad?",
+          "a": "Maaari mong alisin ang mga ad at ma-access ang lahat ng color card gamit ang Pro subscription, o manood ng rewarded na ad para i-unlock ang lahat ng nilalaman gamit ang 24-oras na Free Pass."
+        }
+      ]
+    },
+    "wordcards": {
+      "name": "Word Cards+",
+      "tag": "Kids",
+      "desc": "Mga flashcard para sa mga bata para magsalita at makinig sa mga salita.",
+      "tagline": "Ang mga unang salita ng anak mo — makita, marinig, at masabi gamit ang mga card.",
+      "long": "Ang Word Cards+ ay isang picture flashcard app na tumutulong sa mga bata na matutuhan ang mga salita sa masayang paraan. Sa mga cute na card sa mga pamilyar na tema tulad ng mga hayop, prutas, sasakyan, at pang-araw-araw na bagay, makikita ng mga bata ang bawat larawan, maririnig ang salita, at masasabi ito nang malakas. Ang malilinis na puting background at malilinaw na ilustrasyon ay tumutulong sa maliliit na bata na makapokus sa bawat bagay at natural na palawakin ang kanilang bokabularyo.",
+      "features": [
+        "Mga themed na flashcard para sa mga hayop, prutas, sasakyan, at pang-araw-araw na bagay",
+        "Cute at malilinaw na ilustrasyon na nakakaakit sa interes at pokus ng mga bata",
+        "Listen-and-repeat na pagkatuto na may binibigkas na salita sa bawat card",
+        "Malilinis na puting background na nagpapanatili ng pokus sa bawat bagay",
+        "Simple at child-friendly na kontrol para makapag-swipe ng mga card nang mag-isa",
+        "Praktikal na bokabularyong binuo sa paligid ng pamilyar at pang-araw-araw na bagay"
+      ],
+      "faq": [
+        {
+          "q": "Para sa anong edad ang app na ito?",
+          "a": "Ginawa ito para sa mga batang nagsisimula pa lang magsalita. Matututuhan nila ang mga salita sa pamamagitan ng pagtingin sa mga larawan, pakikinig sa salita, at pag-uulit nito nang malakas."
+        },
+        {
+          "q": "Anong mga tema ng salita ang kasama?",
+          "a": "Sumasaklaw ang mga flashcard sa mga pamilyar na tema para sa maliliit na bata, kasama ang mga hayop, prutas, sasakyan, at pang-araw-araw na bagay."
+        },
+        {
+          "q": "Magagamit ba ito ng anak ko nang mag-isa?",
+          "a": "Ang pag-swipe sa mga card ay sapat na simple para matingnan at mapakinggan ng mga bata nang mag-isa, at mas maganda pa itong gumagana kapag sumasama ang magulang."
+        }
+      ]
+    },
+    "sleepbaby": {
+      "name": "SleepBaby+",
+      "tag": "Parenting",
+      "desc": "Mga nakakapawing lullaby at white noise para makatulog ang sanggol mo.",
+      "tagline": "Mga nakakapawing lullaby at white noise para makatulog ang sanggol mo.",
+      "long": "Ang SleepBaby+ ay isang lullaby at white noise app na tumutulong sa sanggol mo na makatulog nang mapayapa. Nag-aalok ito ng mga nakakapanatag na tunog tulad ng Brahms' Lullaby, banayad na alon ng dagat, umaagos na batis sa lambak, at kumakalatas na siga. Isang built-in na sleep timer ang awtomatikong humihinto sa pag-play pagkatapos ng napili mong tagal, at ang nababagong volume ay nagdadala ng mapayapang pahinga sa sanggol at magulang.",
+      "features": [
+        "Maiinit na klasikong lullaby kasama ang Brahms' Lullaby",
+        "Natural na white noise tulad ng mga alon ng dagat, batis sa lambak, at siga",
+        "Sleep timer para sa 30 min, 45 min, 1, 2, 3 oras, o walang limitasyon",
+        "Awtomatikong humihinto ang pag-play kapag natapos ang timer",
+        "Madaling pagsasaayos ng volume",
+        "Built-in na opsyon sa pagbabahagi ng app at feedback"
+      ],
+      "faq": [
+        {
+          "q": "Anong mga tunog ang pinapatugtog nito?",
+          "a": "Nag-aalok ito ng mga nakakapawing lullaby at white noise, kasama ang Brahms' Lullaby, banayad na alon ng dagat, batis sa lambak, at kumakalatas na siga."
+        },
+        {
+          "q": "Awtomatiko ba itong nagsasara pagkalipas ng ilang sandali?",
+          "a": "Oo. Maaari kang magtakda ng sleep timer para sa 30 min, 45 min, 1, 2, o 3 oras, o walang limitasyon, at awtomatikong humihinto ang pag-play kapag natapos ang oras."
+        },
+        {
+          "q": "Maaari ko bang baguhin ang volume?",
+          "a": "Oo. Malaya mong maaaring baguhin ang volume sa loob ng app para makita ang perpektong antas na tutulong sa sanggol mo na makatulog."
+        }
+      ]
+    },
+    "clipboardwin": {
+      "name": "Clipboard+ for Windows",
+      "tag": "Windows App",
+      "desc": "Isang Windows tray clipboard manager na naka-sync sa Clipboard+ Android app.",
+      "tagline": "Isang Windows tray clipboard manager na naka-sync sa Android phone mo sa pamamagitan ng sarili mong Google Drive.",
+      "long": "Ang Clipboard+ for Windows ay isang tray-resident na clipboard manager na awtomatikong nagre-record ng teksto at larawan na kinokopya mo. Ginagamit nito ang parehong format ng data ng Android Clipboard+ app, kaya nag-sync nang bidirectional ang phone at PC mo sa pamamagitan ng sarili mong Google Drive (isang app-private na nakatagong folder) nang walang dedikadong server. Kinukuha nito ang mga clip sa pamamagitan ng native na Windows clipboard event nang walang polling, at binibigyang-daan kang ayusin ang teksto at larawan sa mga grupo at snippet at maghanap sa mga ito.",
+      "features": [
+        "Tray-resident na may poll-free at real-time na clipboard monitoring (Win32 events), awtomatikong kinukuha ang teksto at larawan",
+        "Bidirectional na sync ng phone-to-PC sa pamamagitan ng sarili mong Google Drive — walang dedikadong server, gamit lamang ang drive.appdata scope",
+        "Android-style na UI na may light/dark theme, group sidebar, snippet, at pin/copy/edit/search",
+        "Multi-select na bulk move, delete, at merge, newest/oldest na sorting, at isang full-size na image viewer",
+        "Global hotkey para buksan ang window at agad na kunin ang teksto na napili sa ibang app, kasama ang run-at-startup",
+        "Export/import na compatible sa backup format ng Android Clipboard+ (text JSON, image ZIP)"
+      ],
+      "faq": [
+        {
+          "q": "Nag-sync ba ito sa Android Clipboard+ app?",
+          "a": "Oo. Parehong ginagamit ng mga app ang parehong sync format at pinapanatiling naka-sync nang bidirectional ang clipboard ng phone at PC mo sa pamamagitan ng isang app-private na folder sa sarili mong Google Drive, nang walang dedikadong server na kasangkot."
+        },
+        {
+          "q": "Saan iniimbak ang aking clipboard data, at ligtas ba ito?",
+          "a": "Ang lokal na data ay iniimbak sa %APPDATA%\\ClipboardPlus sa PC mo, at ang naka-sync na data ay nananatili lamang sa isang app-private na nakatagong bahagi ng sarili mong Google Drive. Ginagamit lamang ng app ang drive.appdata scope, kaya hindi nito hinihipo ang iyong mga regular na Drive file."
+        },
+        {
+          "q": "Ano ang kailangan ko para i-enable ang sync?",
+          "a": "Para i-on ang Google Drive sync, gumawa ng isang desktop OAuth client nang isang beses sa Google Cloud Console, ilagay ang google_client.json file sa app folder, pagkatapos ay i-click ang sync sa app para gawin ang one-time na Google sign-in at pagbibigay ng pahintulot."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,439 @@
+{
+  "lang": "pl",
+  "ui": {
+    "meta.title": "CodeDAC | Aplikacje narzędziowe na smartfony",
+    "meta.desc": "CodeDAC tworzy i publikuje 13 aplikacji narzędziowych na smartfony, w tym Clipboard+, AutoStart+ i FloatCalc+.",
+    "nav.about": "O nas",
+    "nav.services": "Usługi",
+    "nav.apps": "Aplikacje",
+    "hero.eyebrow": "APLIKACJE NARZĘDZIOWE NA SMARTFONY",
+    "hero.title": "Uczyń swój telefon<br />mądrzejszym",
+    "hero.sub": "CodeDAC tworzy aplikacje narzędziowe na smartfony, <br class=\"br-pc\" />które ułatwiają codzienne życie.",
+    "hero.cta1": "Poznaj aplikacje",
+    "hero.cta2": "Kontakt",
+    "about.title": "O nas",
+    "about.meaning": "Code-based <b>D</b>evelopment <b>A</b>nd <b>C</b>onsulting",
+    "about.lead": "Wierny swojej nazwie, CodeDAC opiera się na kodzie (Code), by dostarczać rozwój i doradztwo (Development And Consulting). Dziś projektujemy i publikujemy aplikacje narzędziowe na smartfony, po które ludzie sięgają każdego dnia, i dążymy do tego, by stać się zaufanym partnerem technologicznym rozwiązującym wyzwania naszych klientów dzięki solidnej inżynierii.",
+    "about.c1.t": "Prostota",
+    "about.c1.d": "Cenimy przejrzystość i natychmiastową użyteczność bardziej niż rozbudowane funkcje.",
+    "about.c2.t": "Zaufanie",
+    "about.c2.d": "Ograniczamy zbędne uprawnienia i reklamy oraz szanujemy Twoje dane.",
+    "about.c3.t": "Konsekwencja",
+    "about.c3.d": "Premiera to dopiero początek — nieustannie ulepszamy aplikacje na podstawie opinii użytkowników.",
+    "services.title": "Usługi",
+    "services.lead": "Od pomysłu przez rozwój po utrzymanie — CodeDAC towarzyszy Ci na każdym etapie tej drogi.",
+    "services.s1.t": "Tworzenie aplikacji",
+    "services.s1.d": "Tworzymy aplikacje na Androida, iOS, komputery z systemem Windows oraz aplikacje wieloplatformowe — od planowania po premierę i utrzymanie.",
+    "services.s2.t": "Tworzenie stron WWW",
+    "services.s2.d": "Tworzymy responsywne strony internetowe, aplikacje webowe i systemy administracyjne.",
+    "services.s3.t": "Doradztwo techniczne",
+    "services.s3.d": "Doradzamy w zakresie architektury, doboru stosu technologicznego i przeglądu kodu, wspierając kluczowe decyzje.",
+    "services.s4.t": "Utrzymanie i eksploatacja",
+    "services.s4.d": "Dbamy o kondycję usług dzięki stabilnej eksploatacji, optymalizacji wydajności i automatyzacji CI/CD.",
+    "services.cta": "Rozpocznij projekt",
+    "apps.title": "Nasze aplikacje",
+    "apps.lead": "Aplikacje narzędziowe na smartfony tworzone i publikowane przez CodeDAC. Dotknij zrzutu ekranu, aby zobaczyć go w powiększeniu.",
+    "footer.privacy": "Polityka prywatności",
+    "bc.home": "Strona główna",
+    "bc.apps": "Aplikacje",
+    "overview": "Przegląd",
+    "features": "Najważniejsze funkcje",
+    "faq": "FAQ",
+    "screenshots": "Zrzuty ekranu",
+    "shotsHint": "Dotknij zrzutu ekranu, aby zobaczyć go w powiększeniu.",
+    "store": "Zobacz w Google Play →",
+    "contact": "Kontakt",
+    "otherApps": "Zobacz więcej aplikacji",
+    "card.detail": "Szczegóły →",
+    "platform.windows": "Aplikacja na komputery z systemem Windows",
+    "platform.soon": "Już wkrótce",
+    "stats.apps": "Aplikacje",
+    "stats.downloads": "Pobrania",
+    "stats.languages": "Języki aplikacji",
+    "app.langs": "Języki: {n}",
+    "reviews.title": "Co mówią użytkownicy",
+    "reviews.lead": "Prawdziwe pięciogwiazdkowe recenzje wystawione w Google Play.",
+    "nav.reviews": "Recenzje",
+    "footer.based": "Korea Południowa",
+    "theme.toggle": "Przełącz tryb ciemny"
+  },
+  "apps": {
+    "clipboard": {
+      "name": "Clipboard+",
+      "tag": "Schowek",
+      "desc": "Automatycznie zapisuje historię schowka, byś mógł wkleić ją wszędzie i o każdej porze.",
+      "tagline": "Automatycznie zapisuj każdą kopię dzięki najinteligentniejszemu menedżerowi schowka na Androida",
+      "long": "Clipboard+ to menedżer schowka na Androida, który w czasie rzeczywistym automatycznie zapisuje każdy skopiowany tekst i obraz. Skalowalna pływająca nakładka pozwala sięgnąć po historię schowka z dowolnego ekranu, bez przełączania aplikacji. Uporządkuj często używane teksty we fragmenty i grupy, a dowolny wpis wklejaj błyskawicznie dzięki wyszukiwaniu słów kluczowych, widżetowi na ekranie głównym i panelowi powiadomień. Historię możesz też wyeksportować do pliku PDF oraz w każdej chwili utworzyć kopię zapasową lub przywrócić swoje wpisy.",
+      "features": [
+        "Automatyczny zapis kopiowanych tekstów i obrazów w czasie rzeczywistym",
+        "Skalowalna pływająca nakładka do korzystania nad dowolną aplikacją",
+        "Porządkowanie często używanych tekstów we fragmenty i grupy",
+        "Natychmiastowe wyszukiwanie i filtrowanie według słowa kluczowego, tekstu, obrazu lub daty",
+        "Szybkie wklejanie dzięki widżetowi, kafelkowi Szybkich ustawień i panelowi powiadomień",
+        "Eksport historii schowka do pliku PDF oraz kopia zapasowa i przywracanie"
+      ],
+      "faq": [
+        {
+          "q": "Jak zapisywana jest moja historia schowka?",
+          "a": "Każdy skopiowany tekst i obraz jest zapisywany automatycznie w czasie rzeczywistym, więc w każdej chwili możesz przywołać dowolny wpis bez dodatkowych czynności."
+        },
+        {
+          "q": "Czy mogę korzystać z historii schowka podczas używania innych aplikacji?",
+          "a": "Tak. Skalowalna pływająca nakładka pozwala sięgnąć po historię z dowolnego ekranu, bez przełączania aplikacji."
+        },
+        {
+          "q": "Jaka jest różnica między wersją darmową a Pro?",
+          "a": "Wersja darmowa daje pełnego menedżera z reklamami, a Pro usuwa reklamy, przechowuje nieograniczoną historię schowka i odblokowuje wszystkie funkcje. Dzięki FreePass możesz obejrzeć reklamę, aby odblokować funkcje Pro na 24 godziny."
+        }
+      ]
+    },
+    "autostart": {
+      "name": "AutoStart+",
+      "tag": "Automatyczne uruchamianie",
+      "desc": "Automatycznie uruchamiaj aplikacje po starcie systemu. Bez roota, ustaw raz.",
+      "tagline": "Automatycznie uruchamiaj aplikacje w chwili startu telefonu. Bez roota, ustaw raz, działa zawsze.",
+      "long": "AutoStart+ to najprostszy menedżer automatycznego uruchamiania na Androida — uruchamia wybrane aplikacje automatycznie w chwili startu urządzenia, bez potrzeby roota. Ustaw raz, a Twoje aplikacje będą uruchamiać się przy każdym starcie, bez ręcznego dotykania. Wersja darmowa uruchamia automatycznie 1 aplikację, a PRO odblokowuje nieograniczoną liczbę aplikacji uruchamianych w wybranej kolejności. Powiadamia Cię, jeśli uruchomienie się nie powiedzie, i przeprowadza przez ustawienia automatycznego uruchamiania na urządzeniach producentów takich jak Samsung czy Xiaomi.",
+      "features": [
+        "Natychmiast automatycznie uruchamia wybrane aplikacje po starcie systemu",
+        "Działa na standardowych urządzeniach z Androidem, bez potrzeby roota",
+        "Dodawaj zainstalowane aplikacje w kilka sekund i włączaj lub wyłączaj każdą jednym dotknięciem",
+        "Inteligentne powiadomienie po starcie ostrzega, jeśli aplikacja się nie uruchomi",
+        "Baner nakładki po starcie pozwala uruchamiać aplikacje przed odblokowaniem (PRO)",
+        "Automatyczne uruchamianie nieograniczonej liczby aplikacji w wybranej kolejności (PRO)"
+      ],
+      "faq": [
+        {
+          "q": "Moje aplikacje nie uruchamiają się po starcie. Co powinienem zrobić?",
+          "a": "Niektórzy producenci (Samsung, Xiaomi i inni) samodzielnie blokują automatyczne uruchamianie aplikacji. Postępuj zgodnie z instrukcją w aplikacji, aby dokończyć ustawienie „zezwól na automatyczne uruchamianie” specyficzne dla danego producenta."
+        },
+        {
+          "q": "Ile aplikacji mogę uruchamiać automatycznie?",
+          "a": "Wersja darmowa obsługuje 1 aplikację, a wersja PRO pozwala automatycznie uruchamiać nieograniczoną liczbę aplikacji."
+        },
+        {
+          "q": "Czy będzie zużywać baterię?",
+          "a": "AutoStart+ działa tylko raz przy starcie systemu i nie jest aplikacją stale działającą w tle, więc ma niemal zerowy wpływ na czas pracy baterii."
+        }
+      ]
+    },
+    "floatcalc": {
+      "name": "FloatCalc+",
+      "tag": "Pływające narzędzia",
+      "desc": "Pływający kalkulator, przelicznik walut i jednostek nad każdą aplikacją.",
+      "tagline": "Pływający kalkulator, który pozostaje nad każdą aplikacją, więc nigdy nie musisz jej opuszczać, by coś obliczyć.",
+      "long": "FloatCalc+ to pływający kalkulator, który pozostaje nad każdą aplikacją, więc nigdy nie musisz przełączać ekranów, aby wykonać szybkie obliczenia. Wbudowany przelicznik walut, przelicznik jednostek i szybka notatka działają bezpośrednio w oknie nakładki. Przeciągnij okno tam, gdzie go potrzebujesz, a następnie jednym dotknięciem skopiuj wyniki lub zapisz je w notatce. Jest lekki, szybki i działa offline (kursy walut są buforowane każdego dnia).",
+      "features": [
+        "Pływa nad każdą aplikacją — YouTube, mapami, przeglądarką, bankowością, zakupami, arkuszami kalkulacyjnymi",
+        "Przeciągane okno nakładki z kopiowaniem wyników do schowka jednym dotknięciem",
+        "Przelicznik jednostek dla długości, wagi, temperatury, powierzchni, objętości, prędkości i czasu",
+        "Kursy walut EBC w czasie rzeczywistym dla ponad 30 walut, odświeżane codziennie",
+        "Szybka notatka do zapisywania wyników obliczeń lub uwag z pływającego okna",
+        "Wybór trybu startowego (Kalkulator/Jednostki/Waluty/Notatka), 8 motywów, działanie offline"
+      ],
+      "faq": [
+        {
+          "q": "Czy za każdym razem muszę zamykać aplikację, by coś obliczyć?",
+          "a": "Nie. FloatCalc+ działa jako pływające okno, które pozostaje nad innymi aplikacjami, więc możesz liczyć bez opuszczania ekranu zakupów, bankowości czy przeglądarki."
+        },
+        {
+          "q": "Skąd pochodzą kursy walut?",
+          "a": "Korzysta z kursów EBC (Europejskiego Banku Centralnego) w czasie rzeczywistym, odświeżanych codziennie. Bezpośrednio w nakładce możesz przeliczać USD, EUR, JPY, KRW, CNY i ponad 30 walut świata, a kursy są buforowane każdego dnia, więc działa też offline."
+        },
+        {
+          "q": "Ile mogę korzystać za darmo?",
+          "a": "Wersja darmowa obejmuje 5 sesji dziennie, każda do 20 minut. Jeden domyślny motyw jest darmowy, a 7 dodatkowych motywów i część funkcji jest dostępna w wersji Pro."
+        }
+      ]
+    },
+    "floatcrypto": {
+      "name": "FloatCrypto+",
+      "tag": "Pływające narzędzia",
+      "desc": "Aktualne ceny Bitcoina i kryptowalut pływające nad każdą aplikacją.",
+      "tagline": "Miej aktualną cenę Bitcoina na ekranie w pływającym okienku — w 100% za darmo.",
+      "long": "FloatCrypto+ wyświetla pływający ticker kryptowalut w czasie rzeczywistym nad każdą aplikacją — YouTube, Chrome, grami, Telegramem — więc możesz śledzić BTC, ETH, SOL, XRP, DOGE, BNB i ponad 1000 altcoinów bez przełączania aplikacji. Napędzany danymi rynkowymi Binance z rezerwowym źródłem CoinGecko, dodaje w jednym miejscu wykresy na żywo, alerty cenowe i listę obserwowanych. Jest w 100% darmowy — bez logowania, adresu e-mail i portfela — gotowy do użycia w kilka sekund.",
+      "features": [
+        "Pływająca nakładka utrzymująca aktualne ceny Bitcoina i Ethereum nad każdą aplikacją — bez przełączania aplikacji",
+        "Przeciągaj, by przesunąć, ściągaj palcami, by zmienić rozmiar, z regulowaną przezroczystością i wielkością czcionki",
+        "Wykresy kryptowalut na żywo 1D/7D/30D oparte na danych Binance, ze zmianą 24h w procentach",
+        "Natychmiastowe alerty cenowe z górnym i dolnym progiem oraz monitorowaniem w tle 24/7",
+        "Szybkie wyszukiwanie monet wśród ponad 1000 tokenów z listą obserwowanych i śledzeniem cen w czasie rzeczywistym",
+        "W 100% darmowy, bez logowania i portfela, działa jako lekka i oszczędzająca baterię usługa"
+      ],
+      "faq": [
+        {
+          "q": "Czy FloatCrypto+ jest darmowy? Czy potrzebuję konta?",
+          "a": "Jest w 100% darmowy. Nie ma logowania, adresu e-mail ani łączenia portfela — po prostu zainstaluj i zacznij śledzić w kilka sekund."
+        },
+        {
+          "q": "Jakie monety są obsługiwane i skąd pochodzą dane?",
+          "a": "Obsługuje Bitcoina, Ethereum, Solanę, XRP, Dogecoina, BNB i ponad 1000 altcoinów, korzystając z danych rynkowych Binance z rezerwowym źródłem CoinGecko dla większej niezawodności."
+        },
+        {
+          "q": "Czy mogę widzieć ceny podczas korzystania z innych aplikacji?",
+          "a": "Tak. Pływająca nakładka pozostaje nad każdą aplikacją, więc możesz obserwować ceny na żywo, korzystając z YouTube, grając w gry czy rozmawiając — bez przełączania aplikacji."
+        }
+      ]
+    },
+    "floattimer": {
+      "name": "FloatTimer+",
+      "tag": "Pływające narzędzia",
+      "desc": "Pływający minutnik interwałowy, Pomodoro i wielominutnik nad każdą aplikacją.",
+      "tagline": "Minutnik interwałowy, Pomodoro oraz wielominutnik, licznik i stoper, które pływają nad każdą aplikacją.",
+      "long": "FloatTimer+ to aplikacja z pływającą nakładką, która utrzymuje minutnik interwałowy, wielominutnik, licznik i stoper nad każdą używaną aplikacją. Twój minutnik pozostaje widoczny podczas wielozadaniowości, a możesz przeciągnąć go w dowolne miejsce ekranu, dostosowując jego rozmiar, przezroczystość i kolor tła. Działa w tle, więc odlicza dalej nawet po przełączeniu aplikacji lub zablokowaniu ekranu. Ustaw raz i gotuj, ćwicz, ucz się lub graj, nie tracąc minutnika z oczu.",
+      "features": [
+        "Pływająca nakładka — minutniki, liczniki i stoper pływają nad każdą aplikacją, z rozmiarem, przezroczystością i kolorem tła osobno dla każdego elementu",
+        "Wielominutnik — uruchom jednocześnie kilka własnych odliczań w godzinach/minutach/sekundach i dołącz notatkę do każdego z nich",
+        "Minutnik interwałowy — buduj fazy Praca/Odpoczynek z rundami dla HIIT i Tabaty, plus gotowe ustawienia jednym dotknięciem (Pomodoro, HIIT, Tabata, przerwy)",
+        "Licznik zliczający — pływający licznik dotykowy z własnym krokiem, by dodawać lub odejmować dowolną wartość (+1, +2, +5, +10…)",
+        "Pływający stoper — uruchamiaj, wstrzymuj i resetuj, nigdy nie opuszczając bieżącej aplikacji",
+        "Statystyki, serie i kopia zapasowa — dzienna historia użycia i serie, kopia zapasowa i przywracanie plików minutników/liczników, eksport do CSV (Pro)"
+      ],
+      "faq": [
+        {
+          "q": "Czy minutnik pozostaje widoczny, gdy korzystam z innych aplikacji?",
+          "a": "Tak. Minutnik, licznik i stoper pływają nad każdą aplikacją i działają w tle, więc odliczają dalej nawet po przełączeniu aplikacji lub zablokowaniu ekranu."
+        },
+        {
+          "q": "Czy obsługuje minutniki interwałowe i Pomodoro?",
+          "a": "Tak. Możesz budować własne fazy Praca/Odpoczynek z wieloma rundami dla HIIT i Tabaty, a do dyspozycji masz gotowe ustawienia jednym dotknięciem dla Pomodoro, HIIT, Tabaty, krótkiej i długiej przerwy."
+        },
+        {
+          "q": "Czy mogę uruchomić kilka minutników lub liczników naraz?",
+          "a": "Jednoczesne działanie kilku minutników i liczników to funkcja Pro. Wersja darmowa nadal pozwala korzystać z pojedynczego minutnika, licznika i stopera."
+        }
+      ]
+    },
+    "volumebooster": {
+      "name": "VolumeBooster+",
+      "tag": "Dźwięk",
+      "desc": "Wzmacniacz głośności, korektor i wzmocnienie basów w rzeczywistych, mierzonych decybelach.",
+      "tagline": "Rozgłoś każdą aplikację w rzeczywistych, mierzonych decybelach — a nie w nic nieznaczących 200%.",
+      "long": "VolumeBooster+ to wzmacniacz głośności, który podnosi całe wyjście systemowe — ciche głośniki, słabe słuchawki, trudne do usłyszenia filmy, rozmowy, muzykę i gry — więc wreszcie usłyszysz je wyraźnie. Wzmacnia w rzeczywistych decybelach (od 0 do +15 dB), a nie w nic nieznaczących „200%”, i pokazuje strefy Bezpieczna / Ostrożnie / Niebezpieczna oparte na wytycznych WHO, byś mógł podkręcać dźwięk, chroniąc jednocześnie słuch. Łączy w jednej aplikacji 5-pasmowy korektor, wzmacniacz basów, wirtualizator 3D i korekcję słuchawek AutoEQ.",
+      "features": [
+        "Wzmocnienie głośności w rzeczywistych decybelach (0 → +15 dB) z oznaczeniami Bezpieczna/Ostrożnie/Niebezpieczna, wzmacniające każdą aplikację w całym systemie",
+        "Maksymalizator głośności plus stale działający limiter szczytów dla naprawdę głośniejszego dźwięku bez przesterowań i zniekształceń",
+        "5-pasmowy korektor z 12 dopracowanymi ustawieniami (Pop, Rock, Wokal, Film, Klasyka, Jazz, EDM, Gry, Noc i więcej)",
+        "Wzmacniacz basów + wirtualizator 3D dla głębszego, szerszego brzmienia",
+        "Korekcja słuchawek AutoEQ na podstawie zmierzonych danych o charakterystyce częstotliwościowej",
+        "Wynik zdrowia słuchu + monitorowanie ekspozycji oparte na WHO, minutnik snu, balans kanałów i pływający widżet (Pro)"
+      ],
+      "faq": [
+        {
+          "q": "Czy naprawdę sprawia, że telefon gra głośniej?",
+          "a": "Tak. Maksymalizator głośności wykorzystuje kompresję wielopasmową i wzmocnienie kompensacyjne, by realnie zwiększyć odczuwalną głośność, i podnosi całe wyjście systemowe od 0 aż do +15 dB — nie tylko jednej aplikacji. Działa dla muzyki, filmów, YouTube, gier, rozmów i wszystkiego innego."
+        },
+        {
+          "q": "Czym różni się od wzmacniaczy „200%”?",
+          "a": "Liczby takie jak „200%” czy „500%”, którymi chwalą się inne wzmacniacze, są nic nieznaczące. VolumeBooster+ pokazuje rzeczywiste wzmocnienie w decybelach i oznacza strefy Bezpieczna, Ostrożnie i Niebezpieczna oparte na WHO, więc zawsze dokładnie wiesz, jak głośno naprawdę słuchasz."
+        },
+        {
+          "q": "Czy wyświetlana wartość dB to dokładny pomiar?",
+          "a": "Wartość w decybelach to szacunek na podstawie głośności systemowej i zastosowanego wzmocnienia, a rzeczywista głośność zależy od urządzenia, słuchawek i treści. Aplikacja nie jest urządzeniem medycznym, więc jeśli poczujesz ból lub dzwonienie w uszach, zmniejsz głośność i skonsultuj się ze specjalistą."
+        }
+      ]
+    },
+    "photocleaner": {
+      "name": "PhotoCleaner+",
+      "tag": "Prywatność",
+      "desc": "Ukrywaj dane osobowe na zdjęciach i w plikach PDF, w pełni na urządzeniu.",
+      "tagline": "Ukrywaj dane osobowe na zdjęciach i w plikach PDF solidną maską, w całości na swoim urządzeniu.",
+      "long": "PhotoCleaner+ ukrywa dane osobowe na zdjęciach i w plikach PDF w całości na Twoim urządzeniu. Zakrywa wrażliwe obszary solidną, nieprzezroczystą maską (nie rozmyciem ani mozaiką, więc zakrytych fragmentów nie da się odtworzyć) i eksportuje czystą kopię. Wbudowany detektor sugeruje prawdopodobnie wrażliwy tekst, taki jak numery dowodów, karty, numery telefonów i adresy e-mail, jako punkt wyjścia, ale to Ty rysujesz i dopasowujesz maski ręcznie, decydując dokładnie, co zostanie ukryte. Żadne zdjęcie nigdy nie jest przesyłane, wszystko działa offline, a aplikacja nigdy nie prosi o uprawnienie do galerii ani pamięci.",
+      "features": [
+        "Solidna, nieprzezroczysta maska, której nie da się odtworzyć (nie rozmycie ani mozaika)",
+        "Rysuj maski ręcznie, a następnie przesuwaj je, zmieniaj ich rozmiar lub usuwaj, z powiększeniem dla precyzji",
+        "Wbudowane wykrywanie sugeruje prawdopodobnie wrażliwy tekst (numery dowodów, karty, telefony, e-maile), by Cię ukierunkować",
+        "Maskuj zdjęcia, dowody tożsamości i wielostronicowe dokumenty PDF",
+        "Informacja o danych EXIF i GPS, a każda zapisana lub udostępniona kopia jest ponownie kodowana bez EXIF",
+        "Zero uprawnień oraz eksport czystego obrazu bez znaku wodnego dla każdego"
+      ],
+      "faq": [
+        {
+          "q": "Czy maskowanie to rozmycie lub mozaika?",
+          "a": "Nie. Maskowanie korzysta tylko z jednego stylu — solidnego, nieprzezroczystego wypełnienia — a zakrytych fragmentów nie da się odtworzyć. W wersji Pro możesz wybrać dowolny kolor maski."
+        },
+        {
+          "q": "Czy moje zdjęcia są gdzieś przesyłane?",
+          "a": "Nie. Wszystko działa offline na Twoim urządzeniu i żadne zdjęcie nigdy nie jest przesyłane. Aplikacja nigdy nie prosi też o uprawnienie do galerii ani pamięci."
+        },
+        {
+          "q": "Czy mogę polegać wyłącznie na automatycznym wykrywaniu przed eksportem?",
+          "a": "Wykrywanie to tylko punkt wyjścia, który sugeruje prawdopodobnie wrażliwy tekst. Zawsze przejrzyj sugestie i samodzielnie dodaj lub usuń maski przed eksportem."
+        }
+      ]
+    },
+    "secretalbum": {
+      "name": "SecretAlbum+",
+      "tag": "Prywatność",
+      "desc": "Ukrywaj zdjęcia i filmy dzięki szyfrowaniu AES-256 i blokadzie PIN.",
+      "tagline": "Ukrywaj i chroń zdjęcia oraz filmy dzięki szyfrowaniu AES-256 i blokadzie PIN.",
+      "long": "SecretAlbum+ to prywatny sejf, który chroni Twoje cenne zdjęcia i filmy szyfrowaniem klasy wojskowej AES-256. Działa w całości offline na Twoim urządzeniu i nigdy nie przesyła plików na żaden zewnętrzny serwer. Każdy zaimportowany plik jest natychmiast szyfrowany i bez Twojego osobistego klucza pozostaje niedostępny, znikając całkowicie z galerii bez pozostawiania śladów. Możesz nawet zamaskować ikonę aplikacji jako Kalkulator, Notatki, Pogodę lub Zegar, by nikt nie wiedział, że jest zainstalowana.",
+      "features": [
+        "Szyfrowanie klasy wojskowej AES-256 natychmiast chroni każdy plik",
+        "6-cyfrowa blokada PIN z odzyskiwaniem tymczasowego PIN-u e-mailem po 5 nieudanych próbach",
+        "Tryb kamuflażu zmienia ikonę na aplikację Kalkulator, Notatki, Pogoda lub Zegar",
+        "Importuj wiele zdjęć i filmów z galerii, z automatycznym usuwaniem oryginałów",
+        "Podgląd pełnoekranowy z powiększaniem palcami i automatycznym pokazem slajdów",
+        "Działa w 100% offline z bezstratnym przywracaniem do galerii w dowolnej chwili"
+      ],
+      "faq": [
+        {
+          "q": "Czy moje pliki są wysyłane na jakiś zewnętrzny serwer lub do chmury?",
+          "a": "Nie. SecretAlbum+ działa całkowicie offline i nigdy nie łączy się z żadnym zewnętrznym serwerem. Wszystkie pliki są przechowywane wyłącznie w zaszyfrowanej przestrzeni na Twoim urządzeniu."
+        },
+        {
+          "q": "Co się stanie, jeśli zapomnę PIN-u?",
+          "a": "Po 5 kolejnych błędnych wpisaniach 6-cyfrowego PIN-u jednorazowy tymczasowy PIN jest automatycznie wysyłany e-mailem na Twój zarejestrowany adres odzyskiwania, więc nigdy nie zostaniesz trwale zablokowany."
+        },
+        {
+          "q": "Czy mogę przenieść ukryte pliki z powrotem do galerii?",
+          "a": "Tak. W dowolnej chwili możesz przywrócić dowolny plik do galerii, a proces odszyfrowywania jest bezstratny, więc każde zdjęcie i film wracają dokładnie jak oryginał, bez utraty jakości."
+        }
+      ]
+    },
+    "readfocus": {
+      "name": "ReadFocus+",
+      "tag": "Dostępność",
+      "desc": "Pomoc w czytaniu dla dysleksji i ADHD z podświetleniem wiersza i maską czytania.",
+      "tagline": "Pomoc w czytaniu dla dysleksji i ADHD: podświetlenie wiersza i maska czytania utrzymują wzrok na właściwej linii i łagodzą zmęczenie oczu.",
+      "long": "ReadFocus+ to linijka do czytania, maska czytania i pomoc w czytaniu dla osób z dysleksją i ADHD na Androida. Przyznaj uprawnienie do nakładki raz, a półprzezroczysty pasek skupienia zacznie pływać nad każdą aplikacją — czytnikami e-booków, przeglądarkami, plikami PDF, wiadomościami, komiksami — utrzymując wzrok na czytanej właśnie linii. Ogranicza przeskakiwanie i ponowne czytanie tego samego wiersza, łagodząc zmęczenie oczu oraz zwiększając koncentrację i efektywność czytania.",
+      "features": [
+        "Podświetlenie wiersza (linijka do czytania): rozjaśnia bieżącą linię, by utrzymać wzrok na właściwym miejscu",
+        "Maska czytania: przyciemnia wszystko poza strefą czytania, dla skupienia jak w tunelu",
+        "W pełni regulowany pasek skupienia: wysokość (50dp–300dp), przezroczystość (10%–100%) i zaokrąglenie rogów",
+        "6 motywów kolorystycznych (2 darmowe + 4 Pro)",
+        "Działa nad każdą aplikacją — e-booki, PDF, webtoony, wiadomości, prace naukowe",
+        "Pro: brak reklam, nieograniczony czas nakładki oraz utrzymywanie ekranu włączonego podczas czytania"
+      ],
+      "faq": [
+        {
+          "q": "Jak działa ReadFocus+?",
+          "a": "Przyznaj uprawnienie do nakładki raz, a półprzezroczysty pasek skupienia zacznie pływać nad każdą aplikacją. Przeciągnij go do czytanej linii, a Twój wzrok pozostanie na właściwym miejscu, zamiast błądzić lub przeskakiwać wiersze."
+        },
+        {
+          "q": "Z jakimi aplikacjami współpracuje?",
+          "a": "Działa nad każdą aplikacją na ekranie — czytnikami e-booków i PDF, pracami naukowymi, artykułami internetowymi, blogami, wiadomościami, notatkami do nauki, podręcznikami, komiksami, webtoonami oraz długimi e-mailami czy historią czatu."
+        },
+        {
+          "q": "Czy korzystanie jest darmowe?",
+          "a": "Tak. Wersja darmowa daje 60 minut czasu nakładki na sesję i 2 motywy kolorystyczne. Pro dodaje brak reklam, wszystkie 6 motywów i nieograniczony czas nakładki — a możesz też obejrzeć krótką reklamę z nagrodą, by odblokować dowolną funkcję Pro za darmo na 24 godziny."
+        }
+      ]
+    },
+    "colorcards": {
+      "name": "Color Cards+",
+      "tag": "Dla dzieci",
+      "desc": "Mówiące fiszki z kolorami, które pomagają maluchom uczyć się kolorów.",
+      "tagline": "Mówiące fiszki z kolorami, w których maluchy widzą, słyszą i powtarzają, by uczyć się kolorów",
+      "long": "Color Cards+ to mówiąca i słuchająca aplikacja z fiszkami kolorów dla maluchów. Prezentuje przyjazne dzieciom karty z przedmiotami w sześciu kolorach (czerwony, niebieski, żółty, zielony, pomarańczowy i fioletowy) i odczytuje każdą nazwę na głos, aby dzieci mogły powtarzać i naturalnie uczyć się kolorów. Wiele trybów nauki, takich jak automatyczne odtwarzanie, ukrywanie słowa, tasowanie kart i widok dwujęzyczny, jest obsługiwanych w wielu językach. Przejrzyste, wolne od rozpraszaczy środowisko pomaga dziecku skupić się podczas nauki.",
+      "features": [
+        "Sześć kategorii kolorów: czerwony, niebieski, żółty, zielony, pomarańczowy i fioletowy",
+        "Mówiące fiszki, które odczytują na głos nazwę każdego przedmiotu",
+        "Tryby automatycznego odtwarzania i ukrywania słowa dla urozmaiconej nauki",
+        "Tasowanie kart, by powtarzać w innej kolejności",
+        "Tryb dwujęzyczny pokazujący też angielski, z obsługą wielu języków",
+        "Muzyka w tle i opcja bez reklam dzięki Pro lub Free Pass"
+      ],
+      "faq": [
+        {
+          "q": "Jakich kolorów może uczyć się moje dziecko?",
+          "a": "Sześciu kolorów: czerwonego, niebieskiego, żółtego, zielonego, pomarańczowego i fioletowego, a każdego z nich uczą znajome karty z przedmiotami pasującymi do koloru."
+        },
+        {
+          "q": "Czy karty mogą być odczytywane na głos?",
+          "a": "Tak. To mówiące fiszki, które wymawiają na głos nazwę każdego przedmiotu, więc dzieci mogą słuchać i powtarzać, by uczyć się kolorów."
+        },
+        {
+          "q": "Czy mogę korzystać bez reklam?",
+          "a": "Reklamy możesz usunąć i uzyskać dostęp do wszystkich kart kolorów dzięki subskrypcji Pro albo obejrzeć reklamę z nagrodą, by odblokować całą zawartość na 24 godziny dzięki Free Pass."
+        }
+      ]
+    },
+    "wordcards": {
+      "name": "Word Cards+",
+      "tag": "Dla dzieci",
+      "desc": "Fiszki dla maluchów do wymawiania i słuchania słów.",
+      "tagline": "Pierwsze słowa Twojego dziecka — zobacz je, usłysz je i wypowiedz z kartami.",
+      "long": "Word Cards+ to aplikacja z obrazkowymi fiszkami, która pomaga maluchom uczyć się słów w zabawny sposób. Dzięki uroczym kartom o znajomych tematach, takich jak zwierzęta, owoce, pojazdy i przedmioty codziennego użytku, dzieci mogą patrzeć na każdy obrazek, słyszeć słowo i wypowiadać je na głos. Czyste białe tła i wyraźne ilustracje pomagają maluchom skupić się na każdym przedmiocie i naturalnie poszerzać słownictwo.",
+      "features": [
+        "Tematyczne fiszki dla zwierząt, owoców, pojazdów i przedmiotów codziennego użytku",
+        "Urocze, wyraźne ilustracje przyciągające zainteresowanie i uwagę dzieci",
+        "Nauka przez słuchanie i powtarzanie z wymawianym słowem na każdej karcie",
+        "Czyste białe tła utrzymujące skupienie na każdym przedmiocie",
+        "Proste, przyjazne maluchom sterowanie do samodzielnego przewijania kart",
+        "Praktyczne słownictwo oparte na znajomych, codziennych rzeczach"
+      ],
+      "faq": [
+        {
+          "q": "Dla jakiego wieku jest ta aplikacja?",
+          "a": "Jest stworzona dla maluchów, które zaczynają mówić. Mogą uczyć się słów, patrząc na obrazki, słysząc słowo i powtarzając je na głos."
+        },
+        {
+          "q": "Jakie tematy słów są uwzględnione?",
+          "a": "Fiszki obejmują znajome dla małych dzieci tematy, w tym zwierzęta, owoce, pojazdy i przedmioty codziennego użytku."
+        },
+        {
+          "q": "Czy moje dziecko może korzystać samodzielnie?",
+          "a": "Przewijanie kart jest na tyle proste, że maluchy mogą oglądać i słuchać samodzielnie, a jeszcze lepiej działa, gdy dołączy rodzic."
+        }
+      ]
+    },
+    "sleepbaby": {
+      "name": "SleepBaby+",
+      "tag": "Rodzicielstwo",
+      "desc": "Kojące kołysanki i biały szum, które pomagają Twojemu dziecku zasnąć.",
+      "tagline": "Kojące kołysanki i biały szum, które pomagają Twojemu dziecku zasnąć.",
+      "long": "SleepBaby+ to aplikacja z kołysankami i białym szumem, która pomaga Twojemu dziecku spokojnie zasnąć. Oferuje kojące dźwięki, takie jak Kołysanka Brahmsa, delikatny szum fal oceanu, płynący górski strumień i trzaskające ognisko. Wbudowany minutnik snu automatycznie zatrzymuje odtwarzanie po wybranym czasie, a regulowana głośność zapewnia spokojny odpoczynek zarówno dziecku, jak i rodzicom.",
+      "features": [
+        "Ciepłe klasyczne kołysanki, w tym Kołysanka Brahmsa",
+        "Naturalny biały szum, taki jak fale oceanu, górski strumień i ognisko",
+        "Minutnik snu na 30 min, 45 min, 1, 2, 3 godziny lub bez ograniczeń",
+        "Odtwarzanie zatrzymuje się automatycznie po upływie czasu minutnika",
+        "Łatwa regulacja głośności",
+        "Wbudowane opcje udostępniania aplikacji i przesyłania opinii"
+      ],
+      "faq": [
+        {
+          "q": "Jakie dźwięki odtwarza?",
+          "a": "Oferuje kojące kołysanki i biały szum, w tym Kołysankę Brahmsa, delikatny szum fal oceanu, górski strumień i trzaskające ognisko."
+        },
+        {
+          "q": "Czy wyłącza się automatycznie po pewnym czasie?",
+          "a": "Tak. Możesz ustawić minutnik snu na 30 min, 45 min, 1, 2 lub 3 godziny albo bez ograniczeń, a odtwarzanie zatrzymuje się automatycznie po upływie czasu."
+        },
+        {
+          "q": "Czy mogę regulować głośność?",
+          "a": "Tak. Możesz dowolnie regulować głośność w aplikacji, by znaleźć idealny poziom pomagający Twojemu dziecku zasnąć."
+        }
+      ]
+    },
+    "clipboardwin": {
+      "name": "Clipboard+ for Windows",
+      "tag": "Aplikacja na Windows",
+      "desc": "Menedżer schowka w zasobniku Windows, który synchronizuje się z aplikacją Clipboard+ na Androida.",
+      "tagline": "Menedżer schowka w zasobniku Windows, który synchronizuje się z Twoim telefonem z Androidem przez Twój własny Dysk Google.",
+      "long": "Clipboard+ for Windows to menedżer schowka rezydujący w zasobniku systemowym, który automatycznie rejestruje kopiowane teksty i obrazy. Współdzieli ten sam format danych co aplikacja Clipboard+ na Androida, więc Twój telefon i komputer synchronizują się dwukierunkowo przez Twój własny Dysk Google (prywatny, ukryty folder aplikacji), bez dedykowanego serwera. Przechwytuje wpisy dzięki natywnym zdarzeniom schowka Windows, bez odpytywania, i pozwala porządkować teksty oraz obrazy w grupy i fragmenty, a także wyszukiwać wśród nich.",
+      "features": [
+        "Rezyduje w zasobniku z monitorowaniem schowka w czasie rzeczywistym bez odpytywania (zdarzenia Win32), automatycznie przechwytując teksty i obrazy",
+        "Dwukierunkowa synchronizacja telefon–komputer przez Twój własny Dysk Google — bez dedykowanego serwera, z użyciem wyłącznie zakresu drive.appdata",
+        "Interfejs w stylu Androida z jasnym/ciemnym motywem, paskiem bocznym grup, fragmentami oraz przypinaniem/kopiowaniem/edycją/wyszukiwaniem",
+        "Zbiorcze przenoszenie, usuwanie i scalanie wielu zaznaczonych elementów, sortowanie od najnowszych/najstarszych oraz podgląd obrazu w pełnym rozmiarze",
+        "Globalne skróty klawiszowe do otwierania okna i natychmiastowego przechwytywania tekstu zaznaczonego w innych aplikacjach, plus uruchamianie przy starcie systemu",
+        "Eksport/import zgodny z formatem kopii zapasowej Clipboard+ na Androida (tekst w JSON, obrazy w ZIP)"
+      ],
+      "faq": [
+        {
+          "q": "Czy synchronizuje się z aplikacją Clipboard+ na Androida?",
+          "a": "Tak. Obie aplikacje współdzielą ten sam format synchronizacji i utrzymują schowki telefonu oraz komputera zsynchronizowane dwukierunkowo przez prywatny folder aplikacji na Twoim własnym Dysku Google, bez udziału dedykowanego serwera."
+        },
+        {
+          "q": "Gdzie przechowywane są dane mojego schowka i czy są bezpieczne?",
+          "a": "Dane lokalne są przechowywane w folderze %APPDATA%\\ClipboardPlus na Twoim komputerze, a dane zsynchronizowane znajdują się wyłącznie w prywatnym, ukrytym obszarze aplikacji na Twoim własnym Dysku Google. Aplikacja używa tylko zakresu drive.appdata, więc nigdy nie dotyka Twoich zwykłych plików na Dysku."
+        },
+        {
+          "q": "Czego potrzebuję, aby włączyć synchronizację?",
+          "a": "Aby włączyć synchronizację z Dyskiem Google, utwórz raz klienta OAuth typu desktop w Google Cloud Console, umieść plik google_client.json w folderze aplikacji, a następnie kliknij synchronizację w aplikacji, by jednorazowo zalogować się do Google i przyznać uprawnienia."
+        }
+      ]
+    }
+  }
+}

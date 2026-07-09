@@ -4,7 +4,7 @@
 //  - 출력:
 //      /                         홈 (ko, 루트)
 //      /apps/<slug>.html         앱 상세 (ko)
-//      /<code>/                  홈 (en, ja, es, pt, de, fr, id, hi, vi)
+//      /<code>/                  홈 (ko 외 나머지 언어. LANGS 참고)
 //      /<code>/apps/<slug>.html  앱 상세
 //      sitemap.xml               (hreflang 대체 링크 포함)
 //  - 모든 페이지에 hreflang 대체 링크가 들어가 시장별 SEO를 지원한다.
@@ -22,6 +22,7 @@ const LASTMOD = new Date().toISOString().slice(0, 10);
 const GA_ID = 'G-RVR49V8M2Z';
 
 // 언어 정의 (표시 순서 = 스위처 순서). code=폴더/파일, hreflang=검색엔진용
+// ogLocale: og:locale 값. 생략하면 hreflang의 '-'를 '_'로 바꿔 쓴다.
 const LANGS = [
   { code: 'ko', hreflang: 'ko', htmlLang: 'ko', native: '한국어' },
   { code: 'en', hreflang: 'en', htmlLang: 'en', native: 'English' },
@@ -33,8 +34,21 @@ const LANGS = [
   { code: 'id', hreflang: 'id', htmlLang: 'id', native: 'Bahasa Indonesia' },
   { code: 'hi', hreflang: 'hi', htmlLang: 'hi', native: 'हिन्दी' },
   { code: 'vi', hreflang: 'vi', htmlLang: 'vi', native: 'Tiếng Việt' },
+  // 앱은 간체(values-zh)만 제공하므로 hreflang에도 Hans 스크립트를 명시한다.
+  { code: 'zh', hreflang: 'zh-Hans', htmlLang: 'zh-Hans', ogLocale: 'zh_CN', native: '简体中文' },
+  { code: 'ru', hreflang: 'ru', htmlLang: 'ru', native: 'Русский' },
+  { code: 'tr', hreflang: 'tr', htmlLang: 'tr', native: 'Türkçe' },
+  { code: 'it', hreflang: 'it', htmlLang: 'it', native: 'Italiano' },
+  { code: 'pl', hreflang: 'pl', htmlLang: 'pl', native: 'Polski' },
+  { code: 'th', hreflang: 'th', htmlLang: 'th', native: 'ไทย' },
+  // hreflang은 ISO 639-1만 받으므로 'fil'이 아니라 타갈로그의 'tl'을 쓴다.
+  { code: 'fil', hreflang: 'tl', htmlLang: 'fil', native: 'Filipino' },
 ];
 const XDEFAULT = 'en';
+
+// 브라우저가 보내는 기본 언어 코드 → 사이트 폴더 코드.
+// 안드로이드/iOS는 필리핀어를 'tl-PH'로도 'fil-PH'로도 보고한다.
+const LANG_ALIAS = { tl: 'fil' };
 
 // schema.org applicationCategory (slug 기준)
 const APP_SCHEMA_CAT = {
@@ -171,10 +185,13 @@ const FAVICON = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
 function autoLangRedirect(code, kind, slug) {
   if (code !== 'ko') return '';
   const rest = kind === 'home' ? '' : kind === 'privacy' ? 'privacy.html' : `apps/${slug}.html`;
-  const sup = ACTIVE.filter((l) => l.code !== 'ko').map((l) => l.code);
-  const supObj = `{${sup.map((c) => `${c}:1`).join(',')}}`;
+  // 브라우저 기본 코드 → 폴더 코드. 별칭은 대상 언어가 실제로 빌드될 때만 넣는다.
+  const codes = ACTIVE.filter((l) => l.code !== 'ko').map((l) => l.code);
+  const map = Object.fromEntries(codes.map((c) => [c, c]));
+  for (const [from, to] of Object.entries(LANG_ALIAS)) if (codes.includes(to)) map[from] = to;
+  const supObj = JSON.stringify(map);
   return `
-  <script>(function(){try{var s=localStorage.getItem('lang'),sup=${supObj},p;if(s){p=s;}else{p='en';var ls=navigator.languages||[navigator.language||'en'];for(var i=0;i<ls.length;i++){var b=String(ls[i]).toLowerCase().split('-')[0];if(b==='ko'){p='ko';break;}if(sup[b]){p=b;break;}}}if(p!=='ko')location.replace('/'+p+'/'+${JSON.stringify(rest)});}catch(e){}})();</script>`;
+  <script>(function(){try{var s=localStorage.getItem('lang'),sup=${supObj},p;if(s){p=s;}else{p='en';var ls=navigator.languages||[navigator.language||'en'];for(var i=0;i<ls.length;i++){var b=String(ls[i]).toLowerCase().split('-')[0];if(b==='ko'){p='ko';break;}if(sup[b]){p=sup[b];break;}}}if(p!=='ko')location.replace('/'+p+'/'+${JSON.stringify(rest)});}catch(e){}})();</script>`;
 }
 
 // GDPR/UK GDPR/nFADP 적용 지역. 이 지역에서만 분석 쿠키를 기본 거부한다.
@@ -226,7 +243,7 @@ ${hreflangLinks(kind, slug, langSet)}
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CodeDAC" />
-  <meta property="og:locale" content="${lang.hreflang.replace('-', '_')}" />
+  <meta property="og:locale" content="${lang.ogLocale || lang.hreflang.replace('-', '_')}" />
   <meta property="og:title" content="${escAttr(title)}" />
   <meta property="og:description" content="${escAttr(desc)}" />
   <meta property="og:url" content="${canonical}" />
