@@ -13,39 +13,76 @@
 // =====================================================================
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const ROOT = path.join(__dirname, '..');
 const BASE = 'https://codedac.com';
 const V = '32'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
-const LASTMOD = new Date().toISOString().slice(0, 10);
+const TODAY = new Date().toISOString().slice(0, 10);
+
+// ---------------------------------------------------------------------
+//  sitemap 의 <lastmod> — 페이지별 '실제로 바뀐 날'
+//
+//  빌드할 때마다 전 URL 을 오늘로 찍으면 안 된다. 구글은 lastmod 가 일관되고
+//  검증 가능하게 정확할 때만 사용하고, 어긋나면 그 사이트의 lastmod 를 아예
+//  믿지 않는다. 오타 하나 고친 빌드가 270개 페이지를 전부 "오늘 갱신"으로
+//  둔갑시키면 신호가 무의미해진다.
+//
+//  그래서 렌더된 HTML 의 해시를 페이지마다 캐시(scripts/page_lastmod.json)에
+//  담아 커밋해 두고, 해시가 달라진 페이지만 날짜를 오늘로 올린다.
+//  자산 캐시 버전(?v=NN)은 본문 변경이 아니므로 해시 계산에서 지운다.
+// ---------------------------------------------------------------------
+const LASTMOD_FILE = path.join(__dirname, 'page_lastmod.json');
+let LASTMOD_CACHE = {};
+try { LASTMOD_CACHE = JSON.parse(fs.readFileSync(LASTMOD_FILE, 'utf8')); } catch { /* 최초 실행 */ }
+const LASTMOD_NEXT = {};
+const LASTMOD_BY_URL = {};
+let lastmodChanged = 0;
+
+const contentHash = (html) => crypto.createHash('sha1')
+  .update(html.replace(/\?v=\d+/g, ''))
+  .digest('hex')
+  .slice(0, 16);
+
+// 페이지를 쓰기 직전에 호출한다. 반환값은 쓰지 않고 부수효과로 날짜를 기록한다.
+function trackLastmod(url, html) {
+  const h = contentHash(html);
+  const prev = LASTMOD_CACHE[url];
+  const date = (prev && prev.h === h) ? prev.d : TODAY;
+  if (!prev || prev.h !== h) lastmodChanged++;
+  LASTMOD_NEXT[url] = { h, d: date };
+  LASTMOD_BY_URL[url] = date;
+}
 
 // GA4 측정 ID. 빈 문자열로 두면 모든 페이지에서 분석 스크립트가 빠진다.
 const GA_ID = 'G-RVR49V8M2Z';
 
 // 언어 정의 (표시 순서 = 스위처 순서). code=폴더/파일, hreflang=검색엔진용
-// ogLocale: og:locale 값. 생략하면 hreflang의 '-'를 '_'로 바꿔 쓴다.
+// ogLocale: og:locale 값. Open Graph 는 언어만이 아니라 '언어_지역' 형태를 요구하므로
+//           hreflang 에서 유도하지 않고 언어마다 명시한다. 페이스북이 인식하지 못하는
+//           값은 무시되고 en_US 로 취급된다(필리핀어는 fil_PH 가 아니라 tl_PH 가 목록에 있다).
 // dir: 쓰기 방향. 생략하면 'ltr'. css/style.css 가 논리 속성으로 반전을 처리한다.
 const LANGS = [
-  { code: 'ko', hreflang: 'ko', htmlLang: 'ko', native: '한국어' },
-  { code: 'en', hreflang: 'en', htmlLang: 'en', native: 'English' },
-  { code: 'ja', hreflang: 'ja', htmlLang: 'ja', native: '日本語' },
-  { code: 'es', hreflang: 'es', htmlLang: 'es', native: 'Español' },
-  { code: 'pt', hreflang: 'pt-BR', htmlLang: 'pt-BR', native: 'Português' },
-  { code: 'de', hreflang: 'de', htmlLang: 'de', native: 'Deutsch' },
-  { code: 'fr', hreflang: 'fr', htmlLang: 'fr', native: 'Français' },
-  { code: 'id', hreflang: 'id', htmlLang: 'id', native: 'Bahasa Indonesia' },
-  { code: 'hi', hreflang: 'hi', htmlLang: 'hi', native: 'हिन्दी' },
-  { code: 'vi', hreflang: 'vi', htmlLang: 'vi', native: 'Tiếng Việt' },
+  { code: 'ko', hreflang: 'ko', htmlLang: 'ko', ogLocale: 'ko_KR', native: '한국어' },
+  { code: 'en', hreflang: 'en', htmlLang: 'en', ogLocale: 'en_US', native: 'English' },
+  { code: 'ja', hreflang: 'ja', htmlLang: 'ja', ogLocale: 'ja_JP', native: '日本語' },
+  { code: 'es', hreflang: 'es', htmlLang: 'es', ogLocale: 'es_ES', native: 'Español' },
+  { code: 'pt', hreflang: 'pt-BR', htmlLang: 'pt-BR', ogLocale: 'pt_BR', native: 'Português' },
+  { code: 'de', hreflang: 'de', htmlLang: 'de', ogLocale: 'de_DE', native: 'Deutsch' },
+  { code: 'fr', hreflang: 'fr', htmlLang: 'fr', ogLocale: 'fr_FR', native: 'Français' },
+  { code: 'id', hreflang: 'id', htmlLang: 'id', ogLocale: 'id_ID', native: 'Bahasa Indonesia' },
+  { code: 'hi', hreflang: 'hi', htmlLang: 'hi', ogLocale: 'hi_IN', native: 'हिन्दी' },
+  { code: 'vi', hreflang: 'vi', htmlLang: 'vi', ogLocale: 'vi_VN', native: 'Tiếng Việt' },
   // 앱은 간체(values-zh)만 제공하므로 hreflang에도 Hans 스크립트를 명시한다.
   { code: 'zh', hreflang: 'zh-Hans', htmlLang: 'zh-Hans', ogLocale: 'zh_CN', native: '简体中文' },
-  { code: 'ru', hreflang: 'ru', htmlLang: 'ru', native: 'Русский' },
-  { code: 'tr', hreflang: 'tr', htmlLang: 'tr', native: 'Türkçe' },
-  { code: 'it', hreflang: 'it', htmlLang: 'it', native: 'Italiano' },
-  { code: 'pl', hreflang: 'pl', htmlLang: 'pl', native: 'Polski' },
-  { code: 'th', hreflang: 'th', htmlLang: 'th', native: 'ไทย' },
+  { code: 'ru', hreflang: 'ru', htmlLang: 'ru', ogLocale: 'ru_RU', native: 'Русский' },
+  { code: 'tr', hreflang: 'tr', htmlLang: 'tr', ogLocale: 'tr_TR', native: 'Türkçe' },
+  { code: 'it', hreflang: 'it', htmlLang: 'it', ogLocale: 'it_IT', native: 'Italiano' },
+  { code: 'pl', hreflang: 'pl', htmlLang: 'pl', ogLocale: 'pl_PL', native: 'Polski' },
+  { code: 'th', hreflang: 'th', htmlLang: 'th', ogLocale: 'th_TH', native: 'ไทย' },
   // hreflang은 ISO 639-1만 받으므로 'fil'이 아니라 타갈로그의 'tl'을 쓴다.
-  { code: 'fil', hreflang: 'tl', htmlLang: 'fil', native: 'Filipino' },
-  { code: 'ar', hreflang: 'ar', htmlLang: 'ar', dir: 'rtl', native: 'العربية' },
+  { code: 'fil', hreflang: 'tl', htmlLang: 'fil', ogLocale: 'tl_PH', native: 'Filipino' },
+  { code: 'ar', hreflang: 'ar', htmlLang: 'ar', ogLocale: 'ar_AR', dir: 'rtl', native: 'العربية' },
 ];
 // 루트(/)에 놓이는 언어. 나머지는 /<code>/ 아래로 간다.
 // 국제 사이트의 x-default 는 루트여야 자연스러우므로 ROOT_LANG 과 XDEFAULT 는 같은 값을 쓴다.
@@ -294,7 +331,7 @@ ${hreflangLinks(kind, slug, langSet)}
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CodeDAC" />
-  <meta property="og:locale" content="${lang.ogLocale || lang.hreflang.replace('-', '_')}" />
+  <meta property="og:locale" content="${lang.ogLocale}" />
   <meta property="og:title" content="${escAttr(title)}" />
   <meta property="og:description" content="${escAttr(desc)}" />
   <meta property="og:url" content="${canonical}" />
@@ -755,6 +792,36 @@ function redirectShell(kind, slug) {
 `;
 }
 
+// 404 페이지. GitHub Pages 가 없는 경로에 대해 이 파일을 404 상태 코드와 함께 돌려준다.
+// 어느 언어의 하위 경로에서도 뜨므로 루트 언어로 쓰고, sitemap·hreflang 에는 넣지 않는다.
+// 색인될 이유가 없으므로 noindex — 상태 코드가 404 라 리다이렉트 신호와 충돌할 일도 없다.
+function notFoundPage() {
+  const ui = L[ROOT_LANG].ui;
+  return `<!DOCTYPE html>
+<html lang="${LANGS.find((l) => l.code === ROOT_LANG).htmlLang}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Page not found | CodeDAC</title>
+  <script>(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <link rel="icon" href="${FAVICON}" />
+  <link rel="stylesheet" href="/css/style.css?v=${V}" />
+</head>
+<body>
+  <main class="detail-cta" style="min-height:70vh;display:grid;place-items:center">
+    <div>
+      <p class="eyebrow">404</p>
+      <h1 class="section-title">Page not found</h1>
+      <p class="section-lead">The page you are looking for does not exist or has moved.</p>
+      <a class="btn btn-primary" href="/">${escText(ui['bc.home'])}</a>
+    </div>
+  </main>
+</body>
+</html>
+`;
+}
+
 // --- 파일 쓰기 헬퍼 ---
 function writeOut(rel, content) {
   const full = path.join(ROOT, rel);
@@ -763,15 +830,17 @@ function writeOut(rel, content) {
 }
 
 // --- 생성 ---
+// 페이지를 쓰면서 sitemap 에 넣을 lastmod 도 같이 기록한다(껍데기는 sitemap 에 없으므로 제외).
 let pages = 0;
-for (const lang of ACTIVE) {
-  writeOut(fileFor(lang.code, 'home'), buildHome(lang));
+function emit(lang, kind, slug, html) {
+  writeOut(fileFor(lang.code, kind, slug), html);
+  trackLastmod(urlFor(lang.code, kind, slug), html);
   pages++;
-  for (const app of APPS) {
-    writeOut(fileFor(lang.code, 'detail', app.slug), buildDetail(lang, app));
-    pages++;
-  }
-  if (PRIV[lang.code]) { writeOut(fileFor(lang.code, 'privacy'), buildPrivacy(lang)); pages++; }
+}
+for (const lang of ACTIVE) {
+  emit(lang, 'home', undefined, buildHome(lang));
+  for (const app of APPS) emit(lang, 'detail', app.slug, buildDetail(lang, app));
+  if (PRIV[lang.code]) emit(lang, 'privacy', undefined, buildPrivacy(lang));
 }
 
 // 예전 영어 URL 을 덮어써 리다이렉트 껍데기로 만든다. sitemap 에는 넣지 않는다.
@@ -781,6 +850,8 @@ if (ROOT_LANG === LEGACY_ROOT_DIR) {
   for (const app of APPS) { writeOut(`${LEGACY_ROOT_DIR}/apps/${app.slug}.html`, redirectShell('detail', app.slug)); shells++; }
   if (PRIV[ROOT_LANG]) { writeOut(`${LEGACY_ROOT_DIR}/privacy.html`, redirectShell('privacy')); shells++; }
 }
+
+writeOut('404.html', notFoundPage());
 
 // --- sitemap.xml (언어별 대체 링크 포함) ---
 function sitemapUrl(kind, slug, langSet) {
@@ -793,13 +864,16 @@ function sitemapUrl(kind, slug, langSet) {
   const priority = kind === 'home' ? '1.0' : (kind === 'privacy' ? '0.3' : '0.7');
   const changefreq = kind === 'privacy' ? 'yearly' : 'monthly';
   // 각 언어 버전마다 <url> 하나씩, 대체 링크는 공통
-  return set.map((l) => `  <url>
-    <loc>${urlFor(l.code, kind, slug)}</loc>
+  return set.map((l) => {
+    const url = urlFor(l.code, kind, slug);
+    return `  <url>
+    <loc>${url}</loc>
 ${alts.join('\n')}
-    <lastmod>${LASTMOD}</lastmod>
+    <lastmod>${LASTMOD_BY_URL[url]}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
-  </url>`).join('\n');
+  </url>`;
+  }).join('\n');
 }
 const urls = [sitemapUrl('home')];
 for (const app of APPS) urls.push(sitemapUrl('detail', app.slug));
@@ -811,6 +885,11 @@ ${urls.join('\n')}
 `;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap, 'utf8');
 
+// lastmod 캐시를 갱신해 커밋한다. 사라진 URL 은 자연히 빠진다(LASTMOD_NEXT 로 통째 교체).
+const sortedCache = Object.fromEntries(Object.keys(LASTMOD_NEXT).sort().map((k) => [k, LASTMOD_NEXT[k]]));
+fs.writeFileSync(LASTMOD_FILE, JSON.stringify(sortedCache, null, 2) + '\n', 'utf8');
+
 console.log(`생성 완료: ${ACTIVE.length}개 언어, ${pages}개 페이지, 리다이렉트 껍데기 ${shells}개, sitemap.xml`);
 console.log(`루트(/): ${ROOT_LANG}`);
+console.log(`lastmod: ${lastmodChanged}개 페이지 갱신(${TODAY}), ${pages - lastmodChanged}개 유지`);
 console.log(`언어: ${ACTIVE.map((l) => l.code).join(', ')}`);
