@@ -77,9 +77,11 @@
   lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('open')) return;
+    // RTL에서는 이미지가 오른쪽에서 왼쪽으로 늘어서므로 좌우 키의 의미도 뒤집는다.
+    const rtl = document.documentElement.getAttribute('dir') === 'rtl';
     if (e.key === 'Escape') close();
-    else if (e.key === 'ArrowLeft') step(-1);
-    else if (e.key === 'ArrowRight') step(1);
+    else if (e.key === 'ArrowLeft') step(rtl ? 1 : -1);
+    else if (e.key === 'ArrowRight') step(rtl ? -1 : 1);
   });
 })();
 

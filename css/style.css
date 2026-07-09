@@ -97,11 +97,11 @@ img { max-width: 100%; }
 .nav { display: flex; gap: 30px; }
 .nav a { position: relative; font-weight: 500; color: var(--body); transition: color .2s; }
 .nav a::after {
-  content: ''; position: absolute; left: 0; right: 100%; bottom: -6px; height: 2px;
-  background: var(--brand); border-radius: 2px; transition: right .25s ease;
+  content: ''; position: absolute; inset-inline-start: 0; inset-inline-end: 100%; bottom: -6px; height: 2px;
+  background: var(--brand); border-radius: 2px; transition: inset-inline-end .25s ease;
 }
 .nav a:hover { color: var(--brand); }
-.nav a:hover::after { right: 0; }
+.nav a:hover::after { inset-inline-end: 0; }
 
 .nav-right { display: flex; align-items: center; gap: 14px; }
 
@@ -117,7 +117,7 @@ img { max-width: 100%; }
 .lang-btn .caret { font-size: 10px; color: var(--muted); transition: transform .2s; }
 .lang-btn[aria-expanded="true"] .caret { transform: rotate(180deg); }
 .lang-menu {
-  position: absolute; top: calc(100% + 8px); right: 0;
+  position: absolute; top: calc(100% + 8px); inset-inline-end: 0;
   background: var(--bg); border: 1px solid var(--line); border-radius: 14px;
   box-shadow: var(--shadow-lg); padding: 6px; min-width: 168px;
   display: none; z-index: 60; max-height: 72vh; overflow-y: auto;
@@ -173,7 +173,7 @@ img { max-width: 100%; }
 }
 .hstat { display: flex; flex-direction: column; align-items: center; gap: 4px; position: relative; padding: 0 6px; }
 .hstat + .hstat::before {
-  content: ''; position: absolute; left: calc(clamp(24px, 5vw, 56px) / -2); top: 50%;
+  content: ''; position: absolute; inset-inline-start: calc(clamp(24px, 5vw, 56px) / -2); top: 50%;
   transform: translateY(-50%); width: 1px; height: 34px; background: var(--line);
 }
 .hstat-num { font-size: clamp(28px, 4.4vw, 38px); font-weight: 900; color: var(--brand); letter-spacing: -.02em; line-height: 1; }
@@ -304,11 +304,13 @@ img { max-width: 100%; }
   transition: background .2s, transform .2s;
 }
 .lb-close:hover, .lb-nav:hover { background: rgba(255, 255, 255, .28); transform: scale(1.06); }
-.lb-close { top: 22px; right: 22px; width: 44px; height: 44px; font-size: 26px; line-height: 1; }
+.lb-close { top: 22px; inset-inline-end: 22px; width: 44px; height: 44px; font-size: 26px; line-height: 1; }
 .lb-nav { top: 50%; transform: translateY(-50%); width: 52px; height: 52px; font-size: 32px; line-height: 1; }
 .lb-nav:hover { transform: translateY(-50%) scale(1.06); }
-.lb-prev { left: 20px; }
-.lb-next { right: 20px; }
+/* ‹ 와 › 는 유니코드 Bidi_Mirrored 문자라, RTL에서는 브라우저가 자동으로 좌우를 뒤집는다.
+   버튼 위치만 논리 속성으로 옮기면 화살표 방향은 알아서 맞는다. */
+.lb-prev { inset-inline-start: 20px; }
+.lb-next { inset-inline-end: 20px; }
 
 /* ===== 푸터 ===== */
 .site-footer { border-top: 1px solid var(--line); padding: 34px 0; background: var(--bg-alt); }
@@ -323,7 +325,7 @@ img { max-width: 100%; }
 /* 앱 카드의 상세 페이지 링크 */
 .app-card .app-meta h3 a { color: inherit; }
 .app-card .app-meta h3 a:hover { color: var(--brand); }
-.app-more { display: inline-block; margin-top: 16px; margin-right: 16px; color: var(--link-teal); font-weight: 700; font-size: 14px; transition: color .2s; }
+.app-more { display: inline-block; margin-top: 16px; margin-inline-end: 16px; color: var(--link-teal); font-weight: 700; font-size: 14px; transition: color .2s; }
 .app-more:hover { color: var(--link-teal-h); }
 .app-links { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; margin-top: auto; }
 .app-links .app-link, .app-links .app-more { margin-top: 16px; }
@@ -352,9 +354,9 @@ img { max-width: 100%; }
 .detail-long { font-size: 17px; color: var(--body); max-width: 780px; }
 
 .feature-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 30px; }
-.feature-list li { position: relative; padding-left: 32px; color: var(--body); font-size: 15.5px; }
+.feature-list li { position: relative; padding-inline-start: 32px; color: var(--body); font-size: 15.5px; }
 .feature-list li::before {
-  content: '✓'; position: absolute; left: 0; top: 1px;
+  content: '✓'; position: absolute; inset-inline-start: 0; top: 1px;
   width: 20px; height: 20px; display: grid; place-items: center;
   background: var(--accent-tint); color: var(--accent-dark);
   border-radius: 6px; font-size: 12px; font-weight: 900;
@@ -384,7 +386,7 @@ img { max-width: 100%; }
 .legal h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 900; }
 .legal h2 { font-size: 20px; font-weight: 700; margin: 36px 0 10px; }
 .legal p, .legal li { color: var(--body); font-size: 15.5px; line-height: 1.8; }
-.legal ul { padding-left: 20px; margin: 8px 0; }
+.legal ul { padding-inline-start: 20px; margin: 8px 0; }
 .legal li { margin: 4px 0; }
 .legal a { color: var(--brand); font-weight: 500; }
 .legal a:hover { color: var(--brand-dark); }
@@ -409,11 +411,11 @@ img { max-width: 100%; }
   .app-hero-inner { gap: 18px; }
   .app-icon-lg { width: 72px; height: 72px; flex-basis: 72px; }
   .lb-nav { width: 42px; height: 42px; font-size: 26px; }
-  .lb-prev { left: 10px; }
-  .lb-next { right: 10px; }
+  .lb-prev { inset-inline-start: 10px; }
+  .lb-next { inset-inline-end: 10px; }
   .br-pc { display: none; }
   .nav {
-    position: absolute; top: 68px; left: 0; right: 0;
+    position: absolute; top: 68px; inset-inline: 0;
     flex-direction: column; gap: 0;
     background: #fff; border-bottom: 1px solid var(--line);
     max-height: 0; overflow: hidden; transition: max-height .3s ease;
@@ -492,3 +494,19 @@ img { max-width: 100%; }
 @media (max-width: 640px) {
   :root[data-theme="dark"] .nav { background: var(--bg); }
 }
+
+/* ===== RTL (아랍어) =====
+   레이아웃 반전은 논리 속성(inset-inline-*, margin-inline-*, padding-inline-*)이
+   <html dir="rtl"> 만으로 처리하므로, 여기서는 자간만 되돌린다.
+
+   아랍어는 자형이 서로 이어 붙는 문자라 letter-spacing 을 주면 연결이 끊겨
+   한 단어가 여러 조각으로 보인다. 자간은 상속되므로 전체를 normal 로 되돌린 뒤,
+   아랍어가 들어가지 않는 요소들만 원래 값을 복원한다.
+   (.eyebrow · .section-label 은 모든 언어에서 영문 라벨을 그대로 쓰고,
+    .logo · .nm-brand 는 브랜드 표기, .review-stars 는 ★ 기호 간격이다.) */
+[dir="rtl"] * { letter-spacing: normal; }
+[dir="rtl"] .logo,
+[dir="rtl"] .name-meaning .nm-brand { letter-spacing: -.02em; }
+[dir="rtl"] .eyebrow { letter-spacing: 1.5px; }
+[dir="rtl"] .section-label { letter-spacing: 1.5px; }
+[dir="rtl"] .review-stars { letter-spacing: 3px; }

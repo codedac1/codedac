@@ -15,7 +15,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const BASE = 'https://codedac.com';
-const V = '30'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
+const V = '31'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
 const LASTMOD = new Date().toISOString().slice(0, 10);
 
 // GA4 측정 ID. 빈 문자열로 두면 모든 페이지에서 분석 스크립트가 빠진다.
@@ -23,6 +23,7 @@ const GA_ID = 'G-RVR49V8M2Z';
 
 // 언어 정의 (표시 순서 = 스위처 순서). code=폴더/파일, hreflang=검색엔진용
 // ogLocale: og:locale 값. 생략하면 hreflang의 '-'를 '_'로 바꿔 쓴다.
+// dir: 쓰기 방향. 생략하면 'ltr'. css/style.css 가 논리 속성으로 반전을 처리한다.
 const LANGS = [
   { code: 'ko', hreflang: 'ko', htmlLang: 'ko', native: '한국어' },
   { code: 'en', hreflang: 'en', htmlLang: 'en', native: 'English' },
@@ -43,6 +44,7 @@ const LANGS = [
   { code: 'th', hreflang: 'th', htmlLang: 'th', native: 'ไทย' },
   // hreflang은 ISO 639-1만 받으므로 'fil'이 아니라 타갈로그의 'tl'을 쓴다.
   { code: 'fil', hreflang: 'tl', htmlLang: 'fil', native: 'Filipino' },
+  { code: 'ar', hreflang: 'ar', htmlLang: 'ar', dir: 'rtl', native: 'العربية' },
 ];
 const XDEFAULT = 'en';
 
@@ -129,6 +131,12 @@ const PRIV_ACTIVE = ACTIVE.filter((l) => PRIV[l.code]);
 const escText = (s) => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const escAttr = (s) => escText(s).replace(/"/g, '&quot;');
+
+// 앱 이름은 'VolumeBooster+' 처럼 '+' 로 끝난다. RTL 문서에서 이 '+' 는 앞뒤 어느 쪽도
+// 강한 방향성을 주지 않아 중립 문자로 해석되고, 문단 방향(RTL)을 따라 이름 왼쪽으로
+// 밀려나 '+VolumeBooster' 로 보인다. <bdi> 로 감싸 방향을 격리한다.
+// bdi 는 LTR 문서에서는 아무 효과가 없으므로 언어별 분기가 필요 없다.
+const bdiName = (s) => `<bdi>${escText(s)}</bdi>`;
 
 // 내부 링크(루트 절대경로) — 사용자 사이트(codedac1.github.io)라 / 로 시작 가능
 function pathFor(code, kind, slug) {
@@ -307,8 +315,10 @@ function statStrip(ui) {
     DL_DISPLAY ? { num: DL_DISPLAY, label: ui['stats.downloads'] } : null,
     { num: APP_LANG_DISPLAY || String(ACTIVE.length), label: ui['stats.languages'] },
   ].filter(Boolean);
+  // 숫자는 어느 언어에서나 왼쪽에서 오른쪽으로 읽는다. RTL 문서에서 dir 을 명시하지 않으면
+  // "12,000+" 의 후행 '+' 가 중립 문자로 취급돼 숫자 왼쪽으로 밀려 "+12,000" 이 된다.
   return `      <ul class="hero-stats">
-${items.map((it) => `        <li class="hstat"><span class="hstat-num">${escText(it.num)}</span><span class="hstat-label">${escText(it.label)}</span></li>`).join('\n')}
+${items.map((it) => `        <li class="hstat"><span class="hstat-num" dir="ltr">${escText(it.num)}</span><span class="hstat-label">${escText(it.label)}</span></li>`).join('\n')}
       </ul>`;
 }
 
@@ -317,7 +327,7 @@ function reviewCard(r, code, showApp) {
   const d = L[code];
   const appName = (d.apps[r.slug] && d.apps[r.slug].name) || r.slug;
   const stars = '★'.repeat(Math.max(1, Math.min(5, r.score || 5)));
-  const source = showApp ? `${escText(appName)} · Google Play` : 'Google Play';
+  const source = showApp ? `${bdiName(appName)} · Google Play` : 'Google Play';
   return `        <figure class="review-card">
           <div class="review-stars" aria-label="${r.score || 5} / 5">${stars}</div>
           <blockquote class="review-text">${escText(r.text)}</blockquote>
@@ -372,7 +382,7 @@ ${Array.from({ length: cardShots }, (_, i) =>
     return `        <article class="app-card">
           <div class="app-head">
             <img class="app-icon" src="/images/icons/${app.slug}.png?v=${V}" alt="${escAttr(a.name)} icon" loading="lazy" width="56" height="56" />
-            <div class="app-meta"><h3><a href="${pathFor(code, 'detail', app.slug)}">${escText(a.name)}</a></h3><span class="app-meta-row"><span class="app-tag">${escText(a.tag)}</span>${langBadge(app.slug, ui)}</span></div>
+            <div class="app-meta"><h3><a href="${pathFor(code, 'detail', app.slug)}">${bdiName(a.name)}</a></h3><span class="app-meta-row"><span class="app-tag">${escText(a.tag)}</span>${langBadge(app.slug, ui)}</span></div>
           </div>
           <p class="app-desc">${escText(a.desc)}</p>${shotsHtml}
           <div class="app-links"><a class="app-more" href="${pathFor(code, 'detail', app.slug)}">${escText(ui['card.detail'])}</a>${store}</div>
@@ -391,7 +401,7 @@ ${Array.from({ length: cardShots }, (_, i) =>
   const keywords = `CodeDAC, 코드댁, ${APPS.map((a) => a.name).join(', ')}`;
 
   return `<!DOCTYPE html>
-<html lang="${lang.htmlLang}">
+<html lang="${lang.htmlLang}"${lang.dir ? ` dir="${lang.dir}"` : ''}>
 <head>
 ${headCommon(lang, { title: ui['meta.title'], desc: String(ui['meta.desc']).replace(/<[^>]+>/g, ''), canonical, ogImage: `${BASE}/images/og-image.png`, kind: 'home', keywords })}
   <script type="application/ld+json">
@@ -560,7 +570,7 @@ ${Array.from({ length: app.shots }, (_, i) =>
   const keywords = `${a.name}, ${a.tag}, CodeDAC, 코드댁`;
 
   return `<!DOCTYPE html>
-<html lang="${lang.htmlLang}">
+<html lang="${lang.htmlLang}"${lang.dir ? ` dir="${lang.dir}"` : ''}>
 <head>
 ${headCommon(lang, { title, desc: metaDesc, canonical, ogImage: shotAbs[0] || iconAbs, kind: 'detail', slug: app.slug, keywords })}
   <script type="application/ld+json">
@@ -582,7 +592,7 @@ ${header(code, 'detail', app.slug, ui)}
       <span class="sep">/</span>
       <a href="${pathFor(code, 'home')}#apps">${escText(ui['bc.apps'])}</a>
       <span class="sep">/</span>
-      <span class="current">${escText(a.name)}</span>
+      <span class="current">${bdiName(a.name)}</span>
     </nav>
   </div>
 
@@ -591,7 +601,7 @@ ${header(code, 'detail', app.slug, ui)}
       <img class="app-icon-lg" src="/images/icons/${app.slug}.png?v=${V}" alt="${escAttr(a.name)} icon" width="96" height="96" />
       <div class="app-hero-text">
         <span class="app-meta-row"><span class="app-tag">${escText(a.tag)}</span>${langBadge(app.slug, ui)}</span>
-        <h1>${escText(a.name)}</h1>
+        <h1>${bdiName(a.name)}</h1>
         <p class="app-tagline">${escText(a.tagline)}</p>
         <div class="app-hero-actions">
           ${heroAction}
@@ -655,7 +665,7 @@ function buildPrivacy(lang) {
   const pv = PRIV[code];
   const canonical = urlFor(code, 'privacy');
   return `<!DOCTYPE html>
-<html lang="${lang.htmlLang}">
+<html lang="${lang.htmlLang}"${lang.dir ? ` dir="${lang.dir}"` : ''}>
 <head>
 ${headCommon(lang, { title: pv.metaTitle, desc: pv.metaDesc, canonical, ogImage: `${BASE}/images/og-image.png`, kind: 'privacy', keywords: `CodeDAC, ${pv.title}`, langSet: PRIV_ACTIVE })}
 </head>
