@@ -1,0 +1,365 @@
+{
+  "lang": "nl",
+  "ui": {
+    "meta.title": "CodeDAC | Handige smartphone-apps",
+    "meta.desc": "CodeDAC ontwikkelt en publiceert 10 handige smartphone-apps, waaronder Clipboard+, AutoStart+ en FloatCalc+.",
+    "nav.about": "Over ons",
+    "nav.services": "Diensten",
+    "nav.apps": "Apps",
+    "hero.eyebrow": "SMARTPHONE UTILITY APPS",
+    "hero.title": "Maak je telefoon<br />slimmer",
+    "hero.sub": "CodeDAC ontwikkelt handige smartphone-apps <br class=\"br-pc\" />die het dagelijks leven makkelijker maken.",
+    "hero.cta1": "Apps ontdekken",
+    "hero.cta2": "Contact",
+    "about.title": "Over ons",
+    "about.meaning": "Code-based <b>D</b>evelopment <b>A</b>nd <b>C</b>onsulting",
+    "about.lead": "Zoals de naam al zegt, is CodeDAC gebouwd op Code om Development And Consulting te leveren. Vandaag ontwerpen en publiceren we handige smartphone-apps waar mensen elke dag naar grijpen, en we willen uitgroeien tot een betrouwbare technologiepartner die de uitdagingen van zijn klanten oplost met degelijk technisch werk.",
+    "about.c1.t": "Eenvoud",
+    "about.c1.d": "We kiezen voor duidelijkheid en directe bruikbaarheid boven complexe functies.",
+    "about.c2.t": "Vertrouwen",
+    "about.c2.d": "We beperken onnodige rechten en advertenties en respecteren je gegevens.",
+    "about.c3.t": "Consistentie",
+    "about.c3.d": "De publicatie is pas het begin – we blijven verbeteren met de feedback van gebruikers.",
+    "services.title": "Diensten",
+    "services.lead": "Van idee via ontwikkeling tot beheer begeleidt CodeDAC je op het hele traject.",
+    "services.s1.t": "App-ontwikkeling",
+    "services.s1.d": "We ontwikkelen Android-, iOS-, Windows-desktop- en platformonafhankelijke apps, van planning tot lancering en beheer.",
+    "services.s2.t": "Webontwikkeling",
+    "services.s2.d": "We bouwen responsieve websites, webapplicaties en beheersystemen.",
+    "services.s3.t": "Technisch advies",
+    "services.s3.d": "We adviseren over architectuur, keuze van de tech-stack en code-review om centrale beslissingen te begeleiden.",
+    "services.s4.t": "Onderhoud & beheer",
+    "services.s4.d": "We houden diensten gezond met stabiel beheer, performanceoptimalisatie en CI/CD-automatisering.",
+    "services.cta": "Project starten",
+    "apps.title": "Handige smartphone-apps",
+    "apps.lead": "Handige smartphone-apps ontwikkeld en gepubliceerd door CodeDAC. Tik op een screenshot om hem groter te bekijken.",
+    "footer.privacy": "Privacybeleid",
+    "bc.home": "Home",
+    "bc.apps": "Apps",
+    "overview": "Overzicht",
+    "features": "Belangrijkste functies",
+    "faq": "FAQ",
+    "screenshots": "Screenshots",
+    "shotsHint": "Tik op een screenshot om hem groter te bekijken.",
+    "store": "Bekijk op Google Play →",
+    "contact": "Contact",
+    "otherApps": "Meer apps ontdekken",
+    "card.detail": "Details →",
+    "platform.windows": "Windows-desktop-app",
+    "platform.soon": "Binnenkort beschikbaar",
+    "stats.apps": "Apps",
+    "stats.downloads": "Downloads",
+    "stats.languages": "App-talen",
+    "app.langs": "{n} talen",
+    "reviews.title": "Wat gebruikers zeggen",
+    "reviews.lead": "Echte 5-sterrenbeoordelingen op Google Play.",
+    "nav.reviews": "Beoordelingen",
+    "footer.based": "Zuid-Korea",
+    "theme.toggle": "Donkere modus wisselen",
+    "banner.text": "Deze pagina is beschikbaar in het Nederlands.",
+    "banner.cta": "In het Nederlands bekijken",
+    "banner.dismiss": "Sluiten"
+  },
+  "apps": {
+    "clipboard": {
+      "name": "Clipboard+",
+      "tag": "Klembord",
+      "seo": "Klembordmanager voor Android",
+      "desc": "Slaat je klembordgeschiedenis automatisch op, zodat je altijd en overal kunt plakken.",
+      "tagline": "Sla elke kopie automatisch op – met de slimste klembordmanager voor Android",
+      "long": "Clipboard+ is een klembordmanager voor Android die elke gekopieerde tekst en afbeelding automatisch in realtime opslaat. Een schaalbaar zwevend overlay laat je je klembordgeschiedenis vanaf elk scherm bereiken zonder van app te wisselen. Orden veelgebruikte teksten in snippets en groepen en plak elk item razendsnel – met trefwoordzoeken, een widget op het startscherm en het meldingenpaneel. Je kunt je geschiedenis ook exporteren naar PDF en je items op elk moment back-uppen of herstellen.",
+      "features": [
+        "Gekopieerde teksten en afbeeldingen automatisch in realtime opslaan",
+        "Schaalbaar zwevend overlay voor gebruik over elke app",
+        "Veelgebruikte teksten ordenen in snippets en groepen",
+        "Direct zoeken en filteren op trefwoord, tekst, afbeelding of datum",
+        "Snel plakken via widget, Snelle-instellingen-tegel en meldingenpaneel",
+        "Klembordgeschiedenis exporteren naar PDF, plus back-up en herstel"
+      ],
+      "faq": [
+        {
+          "q": "Hoe wordt mijn klembordgeschiedenis opgeslagen?",
+          "a": "Elke gekopieerde tekst en afbeelding wordt automatisch in realtime opgeslagen, zodat je elk item op elk moment zonder extra stappen weer kunt oproepen."
+        },
+        {
+          "q": "Kan ik mijn klembordgeschiedenis ook bekijken terwijl ik andere apps gebruik?",
+          "a": "Ja. Een schaalbaar zwevend overlay laat je je geschiedenis vanaf elk scherm bereiken zonder van app te wisselen."
+        },
+        {
+          "q": "Wat is het verschil tussen Free en Pro?",
+          "a": "Free biedt je de volledige manager met advertenties, terwijl Pro de advertenties verwijdert, onbeperkte klembordgeschiedenis opslaat en alle functies ontgrendelt. Met FreePass kun je een advertentie bekijken om de Pro-functies 24 uur lang te ontgrendelen."
+        }
+      ]
+    },
+    "autostart": {
+      "name": "AutoStart+",
+      "tag": "Automatisch starten",
+      "seo": "Autostart-manager voor Android",
+      "desc": "Start je apps automatisch bij het opstarten. Geen root nodig, één keer instellen.",
+      "tagline": "Start je apps automatisch zodra je telefoon opstart. Geen root, één keer instellen, werkt voor altijd.",
+      "long": "AutoStart+ is de eenvoudigste autostart-manager voor Android en start je geselecteerde apps automatisch op het moment dat je toestel opstart – helemaal zonder root. Eén keer instellen en je apps starten bij elke keer opstarten zonder handmatig tikken. De gratis versie start 1 app automatisch, terwijl PRO onbeperkt veel apps ontgrendelt die worden gestart in de volgorde die jij kiest. Het waarschuwt je als een start mislukt en leidt je door de autostart-instellingen op OEM-toestellen zoals Samsung en Xiaomi.",
+      "features": [
+        "Start je geselecteerde apps direct automatisch bij het opstarten",
+        "Werkt op gewone Android-toestellen zonder root",
+        "Geïnstalleerde apps in seconden toevoegen en elke met één tik in- of uitschakelen",
+        "Slimme opstartmelding waarschuwt je als een app niet start",
+        "Opstart-overlaybanner laat je apps al vóór het ontgrendelen starten (PRO)",
+        "Onbeperkt veel apps automatisch starten in de volgorde die jij kiest (PRO)"
+      ],
+      "faq": [
+        {
+          "q": "Mijn apps starten niet na het opstarten. Wat moet ik doen?",
+          "a": "Sommige fabrikanten (Samsung, Xiaomi en andere) blokkeren de autostart van apps uit zichzelf. Volg de handleiding in de app om de fabrikantspecifieke instelling 'autostart toestaan' af te ronden."
+        },
+        {
+          "q": "Hoeveel apps kan ik automatisch starten?",
+          "a": "De gratis versie ondersteunt 1 app, terwijl de PRO-versie je een onbeperkt aantal apps automatisch laat starten."
+        },
+        {
+          "q": "Verbruikt het mijn batterij?",
+          "a": "AutoStart+ draait maar één keer bij het opstarten en is geen altijd actieve achtergrond-app, dus het heeft nauwelijks invloed op de batterijduur."
+        }
+      ]
+    },
+    "floatcalc": {
+      "name": "FloatCalc+",
+      "tag": "Zwevend",
+      "seo": "Zwevende rekenmachine voor Android",
+      "desc": "Een zwevende rekenmachine, valuta- & eenhedenomrekener over elke app.",
+      "tagline": "Een zwevende rekenmachine die boven elke app blijft, zodat je nooit de app verlaat om te rekenen.",
+      "long": "FloatCalc+ is een zwevende rekenmachine die boven elke app blijft, zodat je voor snelle berekeningen nooit van scherm hoeft te wisselen. Een ingebouwde valutaomrekener, eenhedenomrekener en een snelle memo werken allemaal direct in het overlayvenster. Sleep het venster naar elke gewenste plek en kopieer resultaten of sla ze met één tik op als memo. Hij is licht, snel en werkt offline (wisselkoersen worden dagelijks gecachet).",
+      "features": [
+        "Zweeft over elke app – YouTube, kaarten, browser, bankieren, shoppen, spreadsheets",
+        "Versleepbaar overlayvenster met resultaten kopiëren naar het klembord met één tik",
+        "Eenhedenomrekener voor lengte, gewicht, temperatuur, oppervlakte, volume, snelheid en tijd",
+        "Realtime ECB-wisselkoersen voor 30+ valuta's, dagelijks bijgewerkt",
+        "Snelle memo om rekenresultaten of notities direct vanuit het zwevende venster op te slaan",
+        "Kies een startmodus (Rekenmachine/Eenheden/Valuta/Memo), 8 thema's, werkt offline"
+      ],
+      "faq": [
+        {
+          "q": "Moet ik mijn app elke keer sluiten als ik wil rekenen?",
+          "a": "Nee. FloatCalc+ werkt als een zwevend venster dat boven andere apps blijft, zodat je kunt rekenen zonder je shopping-, bankier- of browserscherm te verlaten."
+        },
+        {
+          "q": "Waar komen de wisselkoersen vandaan?",
+          "a": "Het gebruikt realtime koersen van de ECB (Europese Centrale Bank), dagelijks bijgewerkt. Je kunt USD, EUR, JPY, KRW, CNY en 30+ wereldvaluta's direct in het overlay omrekenen, en de koersen worden dagelijks gecachet, zodat het ook offline werkt."
+        },
+        {
+          "q": "Hoeveel kan ik gratis gebruiken?",
+          "a": "De gratis versie bevat 5 sessies per dag van elk maximaal 20 minuten. Eén standaardthema is gratis, terwijl 7 extra thema's en enkele functies beschikbaar zijn met Pro."
+        }
+      ]
+    },
+    "floatcrypto": {
+      "name": "FloatCrypto+",
+      "tag": "Zwevend",
+      "seo": "Zwevende bitcoin koers ticker",
+      "desc": "Live koersen voor Bitcoin & crypto, zwevend over elke app.",
+      "tagline": "Houd de live Bitcoin-koers zwevend op je scherm – 100% gratis.",
+      "long": "FloatCrypto+ laat een realtime crypto-ticker zweven over elke app – YouTube, Chrome, games, Telegram – zodat je BTC, ETH, SOL, XRP, DOGE, BNB en 1.000+ altcoins kunt volgen zonder ooit van app te wisselen. Aangedreven door Binance-marktdata met CoinGecko als fallback, brengt het live grafieken, koersalarmen en een watchlist samen op één plek. Het is 100% gratis – zonder login, zonder e-mail en zonder wallet – en in seconden klaar voor gebruik.",
+      "features": [
+        "Zwevend overlay dat live koersen voor Bitcoin en Ethereum boven elke app houdt – geen app-wissel",
+        "Sleep om te verplaatsen, knijp om te schalen, met instelbare dekking en lettergrootte",
+        "Live grafieken voor 1D/7D/30D op basis van Binance-data, met 24-uurs verandering in %",
+        "Directe koersalarmen met boven- en ondergrenzen en 24/7-bewaking op de achtergrond",
+        "Snel zoeken naar coins over 1.000+ tokens met realtime watchlist en koersvolger",
+        "100% gratis, zonder login of wallet, draaiend als een lichte, batterijvriendelijke service"
+      ],
+      "faq": [
+        {
+          "q": "Is FloatCrypto+ gratis? Heb ik een account nodig?",
+          "a": "Het is 100% gratis. Er is geen login, geen e-mail en geen wallet-verbinding – gewoon installeren en in seconden beginnen met volgen."
+        },
+        {
+          "q": "Welke coins worden ondersteund en waar komen de gegevens vandaan?",
+          "a": "Het ondersteunt Bitcoin, Ethereum, Solana, XRP, Dogecoin, BNB en meer dan 1.000 altcoins, met Binance-marktdata en CoinGecko als fallback voor betrouwbaarheid."
+        },
+        {
+          "q": "Kan ik koersen zien terwijl ik andere apps gebruik?",
+          "a": "Ja. Het zwevende overlay blijft boven elke app, zodat je live koersen kunt volgen terwijl je YouTube kijkt, games speelt of chat – helemaal zonder van app te wisselen."
+        }
+      ]
+    },
+    "floattimer": {
+      "name": "FloatTimer+",
+      "tag": "Zwevend",
+      "seo": "Zwevende pomodoro timer",
+      "desc": "Een zwevende interval-, Pomodoro- & multitimer over elke app.",
+      "tagline": "Een interval-, Pomodoro- en multitimer, teller en stopwatch die boven elke app zweeft.",
+      "long": "FloatTimer+ is een zwevende overlay-app die een intervaltimer, multitimer, teller en stopwatch boven elke app houdt die je gebruikt. Je timer blijft zichtbaar terwijl je meerdere dingen tegelijk doet, en je kunt hem overal op het scherm slepen en daarbij zijn grootte, dekking en achtergrondkleur aanpassen. Hij draait op de achtergrond, dus hij gaat door, ook als je van app wisselt of het scherm vergrendelt. Eén keer instellen en verder koken, sporten, studeren of gamen zonder je timer ooit uit het oog te verliezen.",
+      "features": [
+        "Zwevend overlay – timers, tellers en een stopwatch zweven over elke app, met grootte, dekking en achtergrondkleur per item",
+        "Multitimer – meerdere eigen countdowns in uren/minuten/seconden tegelijk laten lopen en aan elk een memo koppelen",
+        "Intervaltimer – werk-/rustfasen met rondes bouwen voor HIIT en Tabata, plus presets met één tik (Pomodoro, HIIT, Tabata, pauzes)",
+        "Turfteller – zwevende teller om te tikken met een eigen stap om elk bedrag op te tellen of af te trekken (+1, +2, +5, +10 …)",
+        "Zwevende stopwatch – starten, pauzeren en resetten zonder ooit je huidige app te verlaten",
+        "Statistieken, reeksen en back-up – dagelijkse gebruiksgeschiedenis en reeksen, back-up en herstel van timer-/tellerbestanden, CSV-export (Pro)"
+      ],
+      "faq": [
+        {
+          "q": "Blijft de timer zichtbaar terwijl ik andere apps gebruik?",
+          "a": "Ja. De timer, de teller en de stopwatch zweven boven elke app en draaien op de achtergrond door, ook als je van app wisselt of het scherm vergrendelt."
+        },
+        {
+          "q": "Ondersteunt het intervaltimers en Pomodoro?",
+          "a": "Ja. Je kunt eigen werk-/rustfasen met meerdere rondes bouwen voor HIIT en Tabata, en er zijn presets met één tik voor Pomodoro, HIIT, Tabata, korte pauze en lange pauze."
+        },
+        {
+          "q": "Kan ik meerdere timers of tellers tegelijk laten lopen?",
+          "a": "Meerdere timers en tellers tegelijk gebruiken is een Pro-functie. De gratis versie laat je nog steeds één timer, teller en stopwatch gebruiken."
+        }
+      ]
+    },
+    "volumebooster": {
+      "name": "VolumeBooster+",
+      "tag": "Audio",
+      "seo": "Volumeversterker en equalizer",
+      "desc": "Volumeversterker, equalizer & bass-boost met echte, gemeten dB.",
+      "tagline": "Maak elke app luider in echte, gemeten decibel – niet in een betekenisloze 200%.",
+      "long": "VolumeBooster+ is een volumeversterker die je hele systeemuitvoer verhoogt – zachte luidsprekers, stille oordopjes, slecht verstaanbare video's, gesprekken, muziek en games – zodat je ze eindelijk helder hoort. Hij versterkt in echte decibel (0 tot +15 dB) in plaats van een betekenisloze \"200%\" en toont op de WHO gebaseerde zones voor Veilig / Voorzichtig / Gevaar, zodat je harder kunt zetten en tegelijk je gehoor beschermt. Hij combineert een 5-bands equalizer, bass-booster, 3D-virtualizer en AutoEQ-hoofdtelefooncorrectie in één app.",
+      "features": [
+        "Volumeboost in echte decibel (0 → +15 dB) met labels Veilig/Voorzichtig/Gevaar, versterkt elke app systeembreed",
+        "Loudness Maximizer plus een altijd actieve piek-limiter voor echt luider geluid zonder clipping of vervorming",
+        "5-bands equalizer met 12 afgestemde presets (Pop, Rock, Vocal, Film, Klassiek, Jazz, EDM, Gaming, Nacht en meer)",
+        "Bass-booster + 3D-virtualizer voor dieper, breder geluid",
+        "AutoEQ-hoofdtelefooncorrectie op basis van gemeten frequentierespons-data",
+        "Gehoorgezondheidsscore + op WHO gebaseerde blootstellingsmonitoring, slaaptimer, kanaalbalans en zwevende widget (Pro)"
+      ],
+      "faq": [
+        {
+          "q": "Maakt het mijn telefoon echt luider?",
+          "a": "Ja. De Loudness Maximizer gebruikt multibandcompressie en makeup-gain om de waargenomen luidheid echt te verhogen, en tilt de hele systeemuitvoer van 0 tot +15 dB op – niet alleen één app. Het geldt voor muziek, video's, YouTube, games, gesprekken en al het andere."
+        },
+        {
+          "q": "Hoe verschilt dit van '200%'-boosters?",
+          "a": "Getallen als \"200%\" of \"500%\" waarmee andere boosters pronken, zijn betekenisloos. VolumeBooster+ toont de echte versterking in decibel en markeert op WHO gebaseerde zones voor Veilig, Voorzichtig en Gevaar, zodat je altijd precies weet hoe luid je echt bent."
+        },
+        {
+          "q": "Is de weergegeven dB een exacte meting?",
+          "a": "De decibelwaarde is een schatting op basis van je systeemvolume en de toegepaste versterking, en de werkelijke luidheid verschilt per toestel, hoofdtelefoon en inhoud. De app is geen medisch apparaat, dus als je oorpijn of gepiep merkt, verlaag dan het volume en raadpleeg een professional."
+        }
+      ]
+    },
+    "photocleaner": {
+      "name": "PhotoCleaner+",
+      "tag": "Privacy",
+      "seo": "Persoonlijke gegevens verbergen",
+      "desc": "Verberg persoonlijke gegevens in foto's & PDF's, volledig op je toestel.",
+      "tagline": "Verberg persoonlijke gegevens in foto's en PDF's met een dekkend masker, volledig op je toestel.",
+      "long": "PhotoCleaner+ verbergt persoonlijke gegevens in foto's en PDF's volledig op je toestel. Het bedekt gevoelige delen met een dekkend, ondoorzichtig masker (geen vervaging of mozaïek, zodat bedekte delen niet kunnen worden hersteld) en exporteert een schone kopie. Een ingebouwde detector stelt waarschijnlijk gevoelige tekst voor, zoals ID-nummers, kaarten, telefoonnummers en e-mails, als vertrekpunt, maar je tekent en past de maskers zelf aan en bepaalt precies wat verborgen wordt. Geen enkele foto wordt ooit geüpload, alles draait offline en er wordt nooit een galerij- of opslagrecht aangevraagd.",
+      "features": [
+        "Dekkend, ondoorzichtig masker dat niet kan worden hersteld (geen vervaging of mozaïek)",
+        "Maskers met de hand tekenen en ze daarna verplaatsen, schalen of verwijderen, met zoom voor precisie",
+        "Ingebouwde detectie stelt waarschijnlijk gevoelige tekst voor (ID-nummers, kaarten, telefoons, e-mails) om te beginnen",
+        "Foto's, ID-kaarten en PDF-documenten van meerdere pagina's maskeren",
+        "EXIF- & GPS-melding, en elke opgeslagen of gedeelde kopie wordt zonder EXIF opnieuw gecodeerd",
+        "Geen rechten, en schone beeldexport zonder watermerk voor iedereen"
+      ],
+      "faq": [
+        {
+          "q": "Is het maskeren een vervaging of mozaïek?",
+          "a": "Nee. Het maskeren gebruikt maar één stijl, een dekkende, ondoorzichtige vulling, en bedekte delen kunnen niet worden hersteld. Met Pro kun je elke maskerkleur kiezen."
+        },
+        {
+          "q": "Worden mijn foto's ergens geüpload?",
+          "a": "Nee. Alles draait offline op je toestel en geen enkele foto wordt ooit geüpload. De app vraagt bovendien nooit een galerij- of opslagrecht aan."
+        },
+        {
+          "q": "Kan ik vóór het exporteren alleen op de automatische detectie vertrouwen?",
+          "a": "De detectie is slechts een vertrekpunt dat waarschijnlijk gevoelige tekst voorstelt. Controleer de suggesties altijd en voeg zelf maskers toe of verwijder ze voordat je exporteert."
+        }
+      ]
+    },
+    "secretalbum": {
+      "name": "SecretAlbum+",
+      "tag": "Privacy",
+      "seo": "Verborgen fotokluis met pincode",
+      "desc": "Verberg foto's & video's met AES-256-versleuteling en een pincodevergrendeling.",
+      "tagline": "Verberg en bescherm je foto's en video's met AES-256-versleuteling en een pincodevergrendeling.",
+      "long": "SecretAlbum+ is een privékluis die je kostbare foto's en video's beschermt met AES-256-versleuteling van militaire kwaliteit. Hij werkt volledig offline op je toestel en uploadt nooit bestanden naar een externe server. Elk bestand dat je importeert, wordt direct versleuteld en is zonder jouw persoonlijke sleutel niet toegankelijk – het verdwijnt volledig uit je galerij, zonder sporen achter te laten. Je kunt het app-icoon zelfs vermommen als een rekenmachine-, notities-, weer- of klok-app, zodat niemand weet dat hij geïnstalleerd is.",
+      "features": [
+        "AES-256-versleuteling van militaire kwaliteit beschermt direct elk bestand",
+        "6-cijferige pincodevergrendeling met tijdelijk-pincodeherstel per e-mail na 5 mislukte pogingen",
+        "Vermommingsmodus verandert het icoon in een rekenmachine-, notities-, weer- of klok-app",
+        "Meerdere foto's en video's uit de galerij importeren, waarbij de originelen automatisch worden verwijderd",
+        "Volledig scherm-viewer met knijpzoomen en een automatische diavoorstelling",
+        "Werkt 100% offline met verliesvrij herstel terug naar je galerij, op elk moment"
+      ],
+      "faq": [
+        {
+          "q": "Worden mijn bestanden naar een externe server of cloud verzonden?",
+          "a": "Nee. SecretAlbum+ werkt volledig offline en maakt nooit verbinding met een externe server. Alle bestanden worden alleen opgeslagen in een versleutelde ruimte op je toestel."
+        },
+        {
+          "q": "Wat gebeurt er als ik mijn pincode vergeet?",
+          "a": "Na 5 opeenvolgende foutieve invoeren van je 6-cijferige pincode wordt automatisch een eenmalige tijdelijke pincode gemaild naar je opgegeven herstel-adres, zodat je nooit permanent buitengesloten raakt."
+        },
+        {
+          "q": "Kan ik verborgen bestanden terugzetten naar mijn galerij?",
+          "a": "Ja. Je kunt elk bestand op elk moment terugzetten naar je galerij, en het ontsleutelingsproces is verliesvrij, zodat elke foto en video exact als het origineel terugkomt, zonder kwaliteitsverlies."
+        }
+      ]
+    },
+    "readfocus": {
+      "name": "ReadFocus+",
+      "tag": "Toegankelijkheid",
+      "seo": "Leeshulp bij dyslexie en ADHD",
+      "desc": "Een leeshulp bij dyslexie & ADHD met regelmarkering & leesmasker.",
+      "tagline": "Een leeshulp bij dyslexie & ADHD: regelmarkering en leesmasker houden je ogen op koers en verlichten vermoeide ogen.",
+      "long": "ReadFocus+ is een leesliniaal, leesmasker en leeshulp bij dyslexie en ADHD voor Android. Verleen eenmalig de overlayrechten en een doorschijnende focusstrip zweeft over elke app – e-bookreaders, browsers, PDF, nieuws, strips – en houdt je ogen op de regel die je leest. Het vermindert het overslaan of opnieuw lezen van dezelfde regel, verlicht vermoeide ogen en verhoogt je leesconcentratie en -efficiëntie.",
+      "features": [
+        "Regelmarkering (leesliniaal): verlicht je huidige regel om je ogen op koers te houden",
+        "Leesmasker: dimt alles behalve je leeszone voor tunnelvisie-focus",
+        "Volledig instelbare focusstrip: hoogte (50 dp–300 dp), dekking (10%–100%) en hoekafronding",
+        "6 kleurenthema's (2 gratis + 4 Pro)",
+        "Werkt over elke app – e-books, PDF, webtoons, nieuws, onderzoeksartikelen",
+        "Pro: advertentievrije ervaring, onbeperkte overlaytijd en scherm aan houden tijdens het lezen"
+      ],
+      "faq": [
+        {
+          "q": "Hoe werkt ReadFocus+?",
+          "a": "Verleen eenmalig de overlayrechten en een halftransparante focusstrip zweeft over elke app. Sleep hem naar de regel die je leest en je ogen blijven op koers in plaats van af te dwalen of regels over te slaan."
+        },
+        {
+          "q": "Met welke apps werkt het?",
+          "a": "Het werkt over elke app op het scherm – e-book- en PDF-readers, onderzoeksartikelen, webartikelen, blogs, nieuws, studienotities, studieboeken, strips, webtoons en lange e-mails of chatgeschiedenis."
+        },
+        {
+          "q": "Is het gratis te gebruiken?",
+          "a": "Ja. De gratis versie geeft 60 minuten overlaytijd per sessie en 2 kleurenthema's. Pro voegt een advertentievrije ervaring, alle 6 thema's en onbeperkte overlaytijd toe – en je kunt ook een korte beloningsadvertentie bekijken om elke Pro-functie 24 uur lang gratis te ontgrendelen."
+        }
+      ]
+    },
+    "clipboardwin": {
+      "name": "Clipboard+ for Windows",
+      "tag": "Windows-app",
+      "seo": "Klembordmanager Windows",
+      "desc": "Een Windows-klembordmanager in het systeemvak die synchroniseert met de Android-app Clipboard+.",
+      "tagline": "Een Windows-klembordmanager in het systeemvak die via je eigen Google Drive synchroniseert met je Android-telefoon.",
+      "long": "Clipboard+ for Windows is een klembordmanager die in het systeemvak zit en de teksten en afbeeldingen die je kopieert automatisch vastlegt. Hij gebruikt hetzelfde gegevensformaat als de Android-app Clipboard+, zodat je telefoon en pc via je eigen Google Drive (een app-privé verborgen map) bidirectioneel synchroniseren – helemaal zonder eigen server. Hij legt items vast via native Windows-klembordgebeurtenissen zonder polling en laat je teksten en afbeeldingen ordenen in groepen en snippets en erin zoeken.",
+      "features": [
+        "In het systeemvak met polling-vrije realtime bewaking van het klembord (Win32-gebeurtenissen), legt teksten en afbeeldingen automatisch vast",
+        "Bidirectionele synchronisatie van telefoon naar pc via je eigen Google Drive – zonder eigen server, alleen met de scope drive.appdata",
+        "UI in Android-stijl met lichte/donkere thema's, groepszijbalk, snippets en vastmaken/kopiëren/bewerken/zoeken",
+        "Meervoudige selectie om in bulk te verplaatsen, verwijderen en samen te voegen, sorteren op nieuwste/oudste en een beeldviewer op ware grootte",
+        "Globale sneltoetsen om het venster te openen en direct in andere apps geselecteerde tekst vast te leggen, plus automatisch starten",
+        "Export/import compatibel met het back-upformaat van de Android-app Clipboard+ (tekst-JSON, afbeelding-ZIP)"
+      ],
+      "faq": [
+        {
+          "q": "Synchroniseert het met de Android-app Clipboard+?",
+          "a": "Ja. Beide apps gebruiken hetzelfde synchronisatieformaat en houden de klemborden van telefoon en pc bidirectioneel synchroon via een app-privé map in je eigen Google Drive, zonder dat er een eigen server bij betrokken is."
+        },
+        {
+          "q": "Waar worden mijn klembordgegevens opgeslagen, en is dat veilig?",
+          "a": "Lokale gegevens worden opgeslagen onder %APPDATA%\\ClipboardPlus op je pc, en gesynchroniseerde gegevens staan alleen in een app-privé verborgen gebied van je eigen Google Drive. De app gebruikt uitsluitend de scope drive.appdata en raakt daarom nooit je gewone Drive-bestanden aan."
+        },
+        {
+          "q": "Wat heb ik nodig om de synchronisatie in te schakelen?",
+          "a": "Om Google Drive-synchronisatie in te schakelen, maak je eenmalig een desktop-OAuth-client aan in de Google Cloud Console, plaats je het bestand google_client.json in de app-map en klik je in de app op synchroniseren om een eenmalige Google-aanmelding en rechtenverlening uit te voeren."
+        }
+      ]
+    }
+  }
+}

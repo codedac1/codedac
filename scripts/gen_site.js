@@ -83,6 +83,10 @@ const LANGS = [
   // hreflang은 ISO 639-1만 받으므로 'fil'이 아니라 타갈로그의 'tl'을 쓴다.
   { code: 'fil', hreflang: 'tl', htmlLang: 'fil', ogLocale: 'tl_PH', native: 'Filipino' },
   { code: 'ar', hreflang: 'ar', htmlLang: 'ar', ogLocale: 'ar_AR', dir: 'rtl', native: 'العربية' },
+  { code: 'nl', hreflang: 'nl', htmlLang: 'nl', ogLocale: 'nl_NL', native: 'Nederlands' },
+  { code: 'uk', hreflang: 'uk', htmlLang: 'uk', ogLocale: 'uk_UA', native: 'Українська' },
+  // 말레이어는 인도네시아어(id)와 별개 언어다. 앱도 values-ms 를 따로 갖고 있다.
+  { code: 'ms', hreflang: 'ms', htmlLang: 'ms', ogLocale: 'ms_MY', native: 'Bahasa Melayu' },
 ];
 // 루트(/)에 놓이는 언어. 나머지는 /<code>/ 아래로 간다.
 // 국제 사이트의 x-default 는 루트여야 자연스러우므로 ROOT_LANG 과 XDEFAULT 는 같은 값을 쓴다.
