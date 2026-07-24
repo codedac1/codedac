@@ -2,7 +2,9 @@
 //  앱별 지원 언어 수 스캔 → scripts/app_langs.json 캐시
 //  - 각 안드로이드 프로젝트(C:\CodeDAC\<Project>)의 res/values-<locale>/ 폴더에서
 //    지원 언어를 도출한다. 기본 res/values/ 는 영어(en)로 간주.
-//  - 지역 변형(pt-rBR, zh-rCN…)은 기본 언어로 정규화해 중복 제거.
+//  - .NET(Windows) 프로젝트는 <Name>.<locale>.resx 위성 리소스로 도출한다.
+//    로케일 없는 기본 <Name>.resx 는 영어(en)로 간주.
+//  - 지역 변형(pt-rBR, zh-rCN, zh-Hans…)은 기본 언어로 정규화해 중복 제거.
 //  - 결과는 정적 데이터로 커밋되며 gen_site.js 가 빌드 시 읽는다.
 //  사용: node scripts/scan_app_langs.js
 //  ※ 앱 소스는 이 저장소 밖(형제 폴더)이라, 스캔은 개발 PC에서만 수행하고
@@ -14,15 +16,20 @@ const path = require('path');
 const APPS_ROOT = path.join('C:', 'CodeDAC');
 const OUT = path.join(__dirname, 'app_langs.json');
 
-// slug → 안드로이드 프로젝트 폴더명 (Windows 앱 등 로케일 없는 앱은 제외)
+// slug → 안드로이드 프로젝트 폴더명 (res/values-<locale>/ 스캔)
 const PROJECT = {
   clipboard: 'Clipboard', autostart: 'AutoStart', floatcalc: 'FloatCalc',
   floatcrypto: 'FloatCrypto', floattimer: 'FloatTimer', volumebooster: 'VolumeBooster',
   photocleaner: 'PhotoCleaner', secretalbum: 'SecretAlbum', readfocus: 'ReadFocus',
 };
 
-// 구식/변형 코드 → 표준 2글자 언어 코드
-const ALIAS = { in: 'id', iw: 'he', ji: 'yi', tl: 'fil' };
+// slug → .NET 프로젝트 폴더명 (*.<locale>.resx 스캔)
+const RESX_PROJECT = {
+  clipboardwin: 'ClipboardWin',
+};
+
+// 구식/변형 코드 → 표준 2글자 언어 코드 (nb=노르웨이어 보크몰 → 안드로이드 쪽 no 와 통일)
+const ALIAS = { in: 'id', iw: 'he', ji: 'yi', tl: 'fil', nb: 'no' };
 const normLang = (code) => {
   let c = code.toLowerCase().replace(/-r[a-z]+$/i, '').replace(/-[a-z]{2,}$/i, '');
   c = c.split('-')[0];
@@ -46,6 +53,24 @@ function findLocaleDirs(dir, acc) {
   return acc;
 }
 
+// .NET 프로젝트 하위에서 위성 리소스(<Name>.<locale>.resx)의 로케일을 모두 찾는다.
+function findResxLocales(dir, acc) {
+  let entries;
+  try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return acc; }
+  for (const e of entries) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) {
+      if (e.name === 'bin' || e.name === 'obj' || e.name === 'artifacts' || e.name === '.git') continue;
+      findResxLocales(full, acc);
+      continue;
+    }
+    // AppStrings.ko.resx → "ko" / AppStrings.resx(기본, 영어)는 로케일 없음이라 매치되지 않음
+    const m = /\.([a-z]{2,3}(?:-[a-z]+)?)\.resx$/i.exec(e.name);
+    if (m) acc.push(m[1]);
+  }
+  return acc;
+}
+
 const out = {};
 for (const [slug, proj] of Object.entries(PROJECT)) {
   const root = path.join(APPS_ROOT, proj);
@@ -56,6 +81,16 @@ for (const [slug, proj] of Object.entries(PROJECT)) {
     if (!/^[a-z]{2,3}(-r?[a-z]+)?$/i.test(code)) continue; // 언어 자원 폴더만 (night, v23 등 제외)
     set.add(normLang(code));
   }
+  const codes = [...set].sort();
+  out[slug] = { count: codes.length, codes };
+  console.log(`✓ ${slug}: ${codes.length} langs`);
+}
+
+for (const [slug, proj] of Object.entries(RESX_PROJECT)) {
+  const root = path.join(APPS_ROOT, proj);
+  if (!fs.existsSync(root)) { console.warn(`✗ ${slug}: ${root} 없음 — 건너뜀`); continue; }
+  const set = new Set(['en']); // 로케일 없는 기본 .resx = 영어
+  for (const code of findResxLocales(root, [])) set.add(normLang(code));
   const codes = [...set].sort();
   out[slug] = { count: codes.length, codes };
   console.log(`✓ ${slug}: ${codes.length} langs`);
