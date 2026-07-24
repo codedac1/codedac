@@ -17,7 +17,7 @@ const crypto = require('crypto');
 
 const ROOT = path.join(__dirname, '..');
 const BASE = 'https://codedac.com';
-const V = '33'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
+const V = '34'; // 자산 캐시 버전 (css/js). 자산 변경 시 올릴 것.
 const TODAY = new Date().toISOString().slice(0, 10);
 
 // ---------------------------------------------------------------------
@@ -450,7 +450,7 @@ function buildHome(lang) {
   const ui = d.ui;
   const canonical = urlFor(code, 'home');
 
-  const cards = APPS.map((app) => {
+  const cardHtml = (app) => {
     const a = d.apps[app.slug];
     const cardShots = Math.min(app.shots, 3); // 홈 카드는 3장까지만(상세 페이지는 전량)
     const shotsHtml = cardShots ? `
@@ -464,12 +464,27 @@ ${Array.from({ length: cardShots }, (_, i) =>
     return `        <article class="app-card">
           <div class="app-head">
             <img class="app-icon" src="/images/icons/${app.slug}.png?v=${V}" alt="${escAttr(a.name)} icon" loading="lazy" width="56" height="56" />
-            <div class="app-meta"><h3><a href="${pathFor(code, 'detail', app.slug)}">${bdiName(a.name)}</a></h3><span class="app-meta-row"><span class="app-tag">${escText(a.tag)}</span>${langBadge(app.slug, ui)}</span></div>
+            <div class="app-meta"><h4><a href="${pathFor(code, 'detail', app.slug)}">${bdiName(a.name)}</a></h4><span class="app-meta-row"><span class="app-tag">${escText(a.tag)}</span>${langBadge(app.slug, ui)}</span></div>
           </div>
           <p class="app-desc">${escText(a.desc)}</p>${shotsHtml}
           <div class="app-links"><a class="app-more" href="${pathFor(code, 'detail', app.slug)}">${escText(ui['card.detail'])}</a>${store}</div>
         </article>`;
-  }).join('\n');
+  };
+
+  // 폰 앱과 데스크톱 앱은 설치처도 쓰는 환경도 달라, 한 목록에 섞으면 읽는 사람이 헷갈린다.
+  // 플랫폼 이름은 고유명사라 번역하지 않고 모든 언어에서 그대로 쓴다.
+  // 그룹에 속한 앱이 없으면 제목째로 빠진다 — 앱이 한 종류뿐일 땐 구분이 군더더기다.
+  const appGroups = [['android', 'Android'], ['windows', 'Windows']]
+    .map(([platform, label]) => {
+      const list = APPS.filter((app) => (app.platform || 'android') === platform);
+      if (!list.length) return '';
+      return `      <h3 class="app-group">${label}</h3>
+      <div class="app-grid">
+${list.map(cardHtml).join('\n')}
+      </div>`;
+    })
+    .filter(Boolean)
+    .join('\n');
 
   const orgLd = {
     '@context': 'https://schema.org', '@type': 'Organization',
@@ -545,9 +560,7 @@ ${statStrip(ui)}
       <p class="section-label">OUR APPS</p>
       <h2 class="section-title">${escText(ui['apps.title'])}</h2>
       <p class="section-lead">${escText(ui['apps.lead'])}</p>
-      <div class="app-grid" id="appGrid">
-${cards}
-      </div>
+${appGroups}
     </div>
   </section>
 ${reviewsSection(code, ui, featuredReviews(), { alt: true, showApp: true })}

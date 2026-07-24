@@ -42,7 +42,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-h1, h2, h3 { color: var(--ink); line-height: 1.3; margin: 0; }
+h1, h2, h3, h4 { color: var(--ink); line-height: 1.3; margin: 0; }
 h1, h2 { letter-spacing: -.02em; }
 p { margin: 0; }
 a { color: inherit; text-decoration: none; }
@@ -236,6 +236,14 @@ img { max-width: 100%; }
 
 /* ===== 앱 그리드 ===== */
 .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 22px; }
+/* 플랫폼 구분 제목(Android · Windows). 섹션 제목보다 확실히 작게 두어
+   'OUR APPS' 아래의 하위 묶음으로 읽히게 한다. 첫 그룹은 리드 문단이
+   이미 아래 여백을 갖고 있어 위 여백을 주지 않는다. */
+.app-group {
+  font-size: 15px; font-weight: 800; letter-spacing: .3px;
+  color: var(--muted); margin: 44px 0 18px;
+}
+.app-group:first-of-type { margin-top: 0; }
 .app-card {
   background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 26px; box-shadow: var(--shadow);
@@ -249,7 +257,7 @@ img { max-width: 100%; }
   border-radius: 15px; object-fit: cover;
   box-shadow: 0 6px 16px rgba(20, 30, 60, .16);
 }
-.app-meta h3 { font-size: 19px; }
+.app-meta h4 { font-size: 19px; }
 .app-meta-row { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 5px; }
 .app-tag {
   display: inline-block;
@@ -323,8 +331,8 @@ img { max-width: 100%; }
 .site-footer p { color: var(--muted); font-size: 14px; }
 
 /* 앱 카드의 상세 페이지 링크 */
-.app-card .app-meta h3 a { color: inherit; }
-.app-card .app-meta h3 a:hover { color: var(--brand); }
+.app-card .app-meta h4 a { color: inherit; }
+.app-card .app-meta h4 a:hover { color: var(--brand); }
 .app-more { display: inline-block; margin-top: 16px; margin-inline-end: 16px; color: var(--link-teal); font-weight: 700; font-size: 14px; transition: color .2s; }
 .app-more:hover { color: var(--link-teal-h); }
 .app-links { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; margin-top: auto; }
